@@ -1,0 +1,125 @@
+/* style.css - dla emaitoken.io */
+
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(180deg, #0d0d2b, #090909);
+  color: white;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  color: #00ffff;
+  margin-bottom: 0.5em;
+}
+
+p {
+  max-width: 600px;
+  margin: 0 auto 1.5em;
+  line-height: 1.6;
+}
+
+.section {
+  padding: 40px 20px;
+}
+
+table {
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+
+th, td {
+  border: 1px solid #00ffff;
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+}
+
+th {
+  background-color: #111;
+  font-weight: bold;
+}
+
+.glow-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #00ffff;
+  border: none;
+  color: #000;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s ease;
+}
+
+.glow-button:hover {
+  background-color: #0ff;
+  box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+}
+
+#countdown {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #00ffff;
+  margin-top: 10px;
+}
+
+img.logo {
+  width: 100px;
+  margin: 0 auto 20px;
+  display: block;
+}
+
+.faq-question {
+  background-color: #1a1a1a;
+  border: 1px solid #00ffff;
+  margin: 10px auto;
+  padding: 10px;
+  cursor: pointer;
+  max-width: 600px;
+  text-align: left;
+}
+
+.faq-question:hover {
+  background-color: #222;
+}
+
+.faq-answer {
+  display: none;
+  padding: 10px;
+  background-color: #0e0e0e;
+  border-top: 1px solid #00ffff;
+}
+
+.faq-question.active + .faq-answer {
+  display: block;
+}
+
+.wallet-section {
+  margin-top: 30px;
+}
+
+.wallet-address {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #00ffff;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  th, td {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
