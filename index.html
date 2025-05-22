@@ -142,59 +142,44 @@
       </table>
     </div>
   </div>
-<!-- Sekcja TOKENOMICS – dodaj pod sekcją Presale -->
+<!-- ROADMAP + PRESALE COUNTDOWN -->
 <div class="section">
-  <h2>Tokenomics</h2>
-  <p>Całkowita podaż tokenów EMAI została ustalona na <strong>1,000,000,000 EMAI</strong>. Projekt nie przewiduje przekroczenia tego limitu – to podstawa naszej przejrzystości i zaufania.</p>
-  <div style="overflow-x:auto;">
-    <table>
-      <tr>
-        <th>Alokacja</th>
-        <th>Ilość EMAI</th>
-        <th>Procent</th>
-        <th>Uwagi</th>
-      </tr>
-      <tr>
-        <td>Presale</td>
-        <td>500,000,000</td>
-        <td>50%</td>
-        <td>3 etapy</td>
-      </tr>
-      <tr>
-        <td>Founders / Team</td>
-        <td>100,000,000</td>
-        <td>10%</td>
-        <td>Vesting: 12 miesięcy</td>
-      </tr>
-      <tr>
-        <td>Marketing & Partnerzy</td>
-        <td>100,000,000</td>
-        <td>10%</td>
-        <td>Kampanie, influencerzy</td>
-      </tr>
-      <tr>
-        <td>Liquidity Pool (DEX)</td>
-        <td>200,000,000</td>
-        <td>20%</td>
-        <td>PancakeSwap / Uniswap</td>
-      </tr>
-      <tr>
-        <td>Future Ecosystem & Staking</td>
-        <td>100,000,000</td>
-        <td>10%</td>
-        <td>Dostępne po 6 miesiącach</td>
-      </tr>
-    </table>
-  </div>
-  <img src="tokenomics_emai_chart.png" alt="Tokenomics Chart" style="max-width: 100%; margin-top: 1.5rem; border-radius: 12px;" />
-  <p style="margin-top: 2rem; font-style: italic; color: #ccc;">
-    *Data debiutu zostanie ogłoszona w trakcie kampanii, w zależności od rozwoju społeczności i zaangażowania.
-  </p>
+  <h2>Roadmap</h2>
+  <table>
+    <tr><th>Etap</th><th>Działania</th><th>Status</th></tr>
+    <tr><td>Q2 2025</td><td>Uruchomienie strony, branding, presale start</td><td>W trakcie</td></tr>
+    <tr><td>Q3 2025</td><td>Zakończenie presale, listing na DEX (PancakeSwap)</td><td>Planowane</td></tr>
+    <tr><td>Q4 2025</td><td>Wdrożenie AI generatora memów, staking</td><td>Planowane</td></tr>
+    <tr><td>Q1 2026</td><td>Airdropy, partnerstwa, rozbudowa społeczności</td><td>Planowane</td></tr>
+    <tr><td>Q2 2026</td><td>Nowy projekt ekosystemowy $EMAI 2.0</td><td>Wstępna faza</td></tr>
+  </table>
 </div>
-  <div class="section">
-    <h2>Join the Presale</h2>
-    <p>Connect your wallet and be part of the $EMAI revolution.</p>
-    <button class="button">Buy $EMAI</button>
-  </div>
-</body>
+
+<div class="section">
+  <h2>Presale Countdown</h2>
+  <p>Start presale: <strong>1 czerwca 2025, godz. 18:00 (UTC+1)</strong></p>
+  <div id="countdown" style="font-size: 1.8rem; font-weight: bold; color: #00ffff; margin-top: 1rem;"></div>
+</div>
+
+<script>
+  const targetDate = new Date("2025-06-01T17:00:00Z").getTime();
+  const countdown = document.getElementById("countdown");
+
+  const x = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if (distance < 0) {
+      clearInterval(x);
+      countdown.innerHTML = "Presale has started!";
+    } else {
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = ${days}d ${hours}h ${minutes}m ${seconds}s;
+    }
+  }, 1000);
+</script>
 </html>
