@@ -224,4 +224,39 @@ document.querySelectorAll('.faq-question').forEach(button => {
   }
 });
 </script>
+ /* HERO SECTION */
+.hero {
+  background: url('hero-bg.jpg') no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: #00f7ff;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 15px #00f7ff;
+}
+
+#dynamic-slogan {
+  font-size: 20px;
+  font-style: italic;
+  animation: pulse 4s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; transform: scale(1.03); }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+} 
 </html>
