@@ -160,7 +160,101 @@
   <p>Start presale: <strong>1 czerwca 2025, godz. 18:00 (UTC+1)</strong></p>
   <div id="countdown" style="font-size: 1.8rem; font-weight: bold; color: #00ffff; margin-top: 1rem;"></div>
 </div>
+[09:35, 22.05.2025] Rafał Dudys: <!-- ROADMAP + PRESALE COUNTDOWN -->
+<div class="section">
+  <h2>Roadmap</h2>
+  <table>
+    <tr><th>Etap</th><th>Działania</th><th>Status</th></tr>
+    <tr><td>Q2 2025</td><td>Uruchomienie strony, branding, presale start</td><td>W trakcie</td></tr>
+    <tr><td>Q3 2025</td><td>Zakończenie presale, listing na DEX (PancakeSwap)</td><td>Planowane</td></tr>
+    <tr><td>Q4 2025</td><td>Wdrożenie AI generatora memów, staking</td><td>Planowane</td></tr>
+    <tr><td>Q1 2026</td><td>Airdropy, partnerstwa, rozbudowa społeczności</td><td>Planowane</td></tr>
+    <tr><td>Q2 2026</td><td>Nowy projekt ekosystemowy $EMAI 2.0</td><td>Wstępna faza</td></tr>
+  </table>
+</div>
 
+<div class="section">
+  <h2>Presale Countdown</h2>
+  <p>Start presale: <strong>1 czerwca 2025, godz. 18:00 (UTC+1)</strong></p>
+  <div id="countdown" style="font-size: 1.8rem; font-weight: bold; color: #00ffff; margin-top: 1rem;"></div>
+</div>
+
+<script>
+  const targetDate = new Date("2025-06-01T17:00:00Z").getTime();
+  const countdown = document.getElementById("countdown");
+
+  const x = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if (distance < 0) {
+      clearInterval(x);
+      countdown.innerHTML = "Presale has started!";
+    } else {
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = ${days}d ${hours}h ${minutes}m ${seconds}s;
+    }
+  }, 1000);
+</script>
+[09:58, 22.05.2025] Rafał Dudys: <div class="section">
+  <h2>FAQ – Najczęściej zadawane pytania</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <button class="faq-question">Czym jest $EMAI?</button>
+      <div class="faq-answer">To połączenie sztucznej inteligencji i memecoinów. $EMAI to token z wizją, który tworzy memy i generuje virale przy pomocy AI.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Jak mogę kupić $EMAI?</button>
+      <div class="faq-answer">Podczas przedsprzedaży kliknij przycisk „Buy $EMAI” i połącz portfel (np. MetaMask). Tokeny otrzymasz po zakończeniu etapu.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Kiedy listing na giełdzie?</button>
+      <div class="faq-answer">Listing planowany jest po zakończeniu 3 etapu przedsprzedaży. Data zostanie ogłoszona oficjalnie na stronie i kanałach społecznościowych.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Czy to projekt typu „rugpull”?</button>
+      <div class="faq-answer">Nie. Wszystkie działania są transparentne. Tokeny teamu są zablokowane (vesting), a społeczność decyduje o przyszłości projektu.</div>
+    </div>
+  </div>
+</div>
+
+<style>
+.faq-question {
+  background: #0ff;
+  color: #000;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+.faq-answer {
+  padding: 10px;
+  display: none;
+  color: #fff;
+  background: #222;
+  border-radius: 10px;
+}
+.faq-item.active .faq-answer {
+  display: block;
+}
+</style>
+
+<script>
+document.querySelectorAll('.faq-question').forEach(button => {
+  button.addEventListener('click', () => {
+    const item = button.parentElement;
+    item.classList.toggle('active');
+  });
+});
+</script>
 <script>
   const targetDate = new Date("2025-06-01T17:00:00Z").getTime();
   const countdown = document.getElementById("countdown");
