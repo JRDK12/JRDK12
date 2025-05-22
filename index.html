@@ -10,94 +10,96 @@
       margin: 0;
       font-family: 'Orbitron', sans-serif;
       background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: #fff;
+      color: #ffffff;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 2rem;
     }
-    img.logo {
-      width: 150px;
+    .logo {
+      width: 120px;
       margin-bottom: 1rem;
+    }
+    h1, h2 {
+      color: #00ffff;
+      text-align: center;
     }
     h1 {
       font-size: 2.5rem;
-      color: #00f0ff;
-      text-shadow: 0 0 10px #00f0ff;
-      margin: 0.5rem 0;
-    }
-    h2 {
-      font-size: 1.5rem;
-      margin-top: 0;
-      color: #a0d8ff;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 10px #00ffff;
     }
     p, li {
-      max-width: 700px;
       text-align: center;
-      font-size: 1.1rem;
-      margin: 0.5rem auto;
+      max-width: 700px;
+      margin: 0 auto 1rem;
+      font-size: 1rem;
+      line-height: 1.5;
     }
     ul {
-      list-style: none;
+      list-style-type: none;
       padding: 0;
     }
-    ul li::before {
-      content: "• ";
-      color: #00f0ff;
+    .button {
+      background-color: #00e6ff;
+      color: #000;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 1.5rem auto;
+      display: block;
+      box-shadow: 0 0 20px #00ffff;
     }
     .section {
-      margin-top: 3rem;
-      text-align: center;
+      margin: 2rem 0;
+      width: 100%;
     }
     .table-container {
       overflow-x: auto;
       width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
     }
     table {
       width: 100%;
-      max-width: 700px;
       border-collapse: collapse;
-      margin: 1rem auto;
+      color: #fff;
+      margin-top: 1rem;
     }
     th, td {
-      border: 1px solid #00f0ff;
-      padding: 10px;
+      border: 1px solid #00ffff;
+      padding: 0.75rem;
       text-align: center;
+      font-size: 0.9rem;
     }
-    .button {
-      background-color: #00f0ff;
-      border: none;
-      padding: 1rem 2rem;
-      margin-top: 1rem;
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #000;
-      border-radius: 10px;
-      box-shadow: 0 0 15px #00f0ff;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .button:hover {
-      background-color: #00cce0;
+    th {
+      background-color: #062c43;
     }
     @media (max-width: 768px) {
       h1 {
         font-size: 2rem;
       }
-      p, li {
-        font-size: 1rem;
+      th, td {
+        font-size: 0.75rem;
+        padding: 0.5rem;
       }
     }
   </style>
 </head>
 <body>
+  <img src="logo-emai.png" alt="$EMAI Logo" class="logo" />
 
-  <img src="logo.png" alt="$EMAI Logo" class="logo"/>
+  <button class="button">Buy $EMAI</button>
 
   <h1>$EMAI</h1>
   <h2>Meme Intelligence Awakened</h2>
 
-  <p>$EMAI is not just another memecoin – it's the fusion of AI and crypto culture. Inspired by the future, built for today.</p>
+  <p>
+    $EMAI is not just another memecoin – it’s the fusion of AI and crypto culture.
+    Inspired by the future, built for today.
+  </p>
 
   <div class="section">
     <h2>Features</h2>
@@ -146,6 +148,5 @@
     <p>Connect your wallet and be part of the $EMAI revolution.</p>
     <button class="button">Buy $EMAI</button>
   </div>
-
 </body>
 </html>
