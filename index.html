@@ -283,17 +283,17 @@ document.querySelectorAll('.faq-question').forEach(button => {
 </script>
   <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
 <script>
-  async function connectWallet() {
-    if (window.ethereum) {
-      try {
-        const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-        document.getElementById('walletAddress').innerText = accounts[0];
-      } catch (error) {
-        console.error('User denied account access');
-      }
-    } else {
-      alert('Please install MetaMask to continue!');
+ document.getElementById("connectButton").addEventListener("click", async () => {
+  if (typeof window.ethereum !== 'undefined') {
+    try {
+      const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+      document.getElementById("wallet-status").innerText = "Connected: " + accounts[0];
+    } catch (err) {
+      document.getElementById("wallet-status").innerText = "Connection rejected.";
     }
+  } else {
+    document.getElementById("wallet-status").innerText = "MetaMask not installed.";
   }
+});
 </script>
 </html>
