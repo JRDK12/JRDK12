@@ -4,225 +4,152 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>$EMAI - Meme Intelligence Awakened</title>
-  <link rel="stylesheet" href="style.css">  <!-- ← Wklej tutaj -->
-  <!-- Możesz też tu dodać font lub favicon -->
-</head>
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .faq-question {
+      background: #0ff;
+      color: #000;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      font-weight: bold;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    .faq-answer {
+      padding: 10px;
+      display: none;
+      color: #fff;
+      background: #222;
+      border-radius: 10px;
+    }
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+    .lang-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #0ff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .meme-generator {
+      margin-top: 2rem;
+      padding: 1rem;
+      background: #111;
+      border-radius: 10px;
+    }
+    .meme-generator input, .meme-generator button {
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 5px;
+    }
   </style>
 </head>
 <body>
-  <img src="logo-emai.png" alt="$EMAI Logo" class="logo" />
-<!-- Sekcja HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>$EMAI</h1>
-    <p id="dynamic-slogan">Meme Intelligence Awakened</p>
-  </div>
-</section>
-  <button class="buy-btn">Buy $EMAI</button>
-<div class="section">
-  <h2>Connect your wallet</h2>
-  <p id="wallet-status">Wallet not connected</p>
-  <button id="connectButton" 
-class="glow-button">Connect MetaMask</button>
-</div>
-  <h1>$EMAI</h1>
-  <h2>Meme Intelligence Awakened</h2>
+  <div class="lang-switch" onclick="toggleLanguage()">PL / EN</div>
 
-  <p>
-    $EMAI is not just another memecoin – it’s the fusion of AI and crypto culture.
-    Inspired by the future, built for today.
-  </p>
+  <img src="logo-emai.png" alt="$EMAI Logo" class="logo" />
+  <section class="hero">
+    <div class="hero-content">
+      <h1>$EMAI</h1>
+      <p id="dynamic-slogan">Meme Intelligence Awakened</p>
+    </div>
+  </section>
+
+  <a href="https://app.uniswap.org/#/swap?outputCurrency=0x93F8E67Af68da54B6e15B352379e4f46B629AE04&chain=base" target="_blank">
+    <button class="buy-btn">Buy $EMAI</button>
+  </a>
+
+  <div class="section">
+    <h2>Connect your wallet</h2>
+    <p id="wallet-status">Wallet not connected</p>
+    <button id="connectButton" class="glow-button">Connect MetaMask</button>
+  </div>
+
+  <div class="section">
+    <h2>About</h2>
+    <p>$EMAI is not just another memecoin – it’s the fusion of AI and crypto culture. Inspired by the future, built for today.</p>
+  </div>
 
   <div class="section">
     <h2>Features</h2>
     <ul>
       <li>AI-powered meme generation</li>
-      <li>Smart presale and fair launch</li>
+      <li>Fair launch (no presale)</li>
       <li>Cyber-futuristic design & branding</li>
     </ul>
   </div>
 
   <div class="section">
-    <h2>Presale Stages</h2>
-    <p>Buy early and enjoy better rates! Each stage has a limited supply – once it's gone, the price increases.</p>
-    <div class="table-container">
-      <table>
-        <tr>
-          <th>Stage</th>
-          <th>Price (EMAI per 1 BNB)</th>
-          <th>Allocation</th>
-          <th>Status</th>
-        </tr>
-        <tr>
-          <td>Stage 1 (Early Access)</td>
-          <td>1,500,000</td>
-          <td>200,000,000 EMAI</td>
-          <td>Upcoming</td>
-        </tr>
-        <tr>
-          <td>Stage 2 (Public)</td>
-          <td>1,200,000</td>
-          <td>200,000,000 EMAI</td>
-          <td>Upcoming</td>
-        </tr>
-        <tr>
-          <td>Stage 3 (Final Round)</td>
-          <td>900,000</td>
-          <td>100,000,000 EMAI</td>
-          <td>Upcoming</td>
-        </tr>
-      </table>
+    <h2>AI Meme Generator</h2>
+    <div class="meme-generator">
+      <input type="text" id="memeText" placeholder="Type your meme idea..." />
+      <button onclick="generateMeme()">Generate Meme</button>
+      <div id="memeOutput" style="margin-top: 1rem;"></div>
     </div>
   </div>
-<!-- ROADMAP + PRESALE COUNTDOWN -->
-<div class="section">
-  <h2>Roadmap</h2>
-  <table>
-    <tr><th>Etap</th><th>Działania</th><th>Status</th></tr>
-    <tr><td>Q2 2025</td><td>Uruchomienie strony, branding, presale start</td><td>W trakcie</td></tr>
-    <tr><td>Q3 2025</td><td>Zakończenie presale, listing na DEX (PancakeSwap)</td><td>Planowane</td></tr>
-    <tr><td>Q4 2025</td><td>Wdrożenie AI generatora memów, staking</td><td>Planowane</td></tr>
-    <tr><td>Q1 2026</td><td>Airdropy, partnerstwa, rozbudowa społeczności</td><td>Planowane</td></tr>
-    <tr><td>Q2 2026</td><td>Nowy projekt ekosystemowy $EMAI 2.0</td><td>Wstępna faza</td></tr>
-  </table>
-</div>
 
-<div class="section">
-  <h2>Presale Countdown</h2>
-  <p>Start presale: <strong>1 czerwca 2025, godz. 18:00 (UTC+1)</strong></p>
-  <div id="countdown" style="font-size: 1.8rem; font-weight: bold; color: #00ffff; margin-top: 1rem;"></div>
-</div>
-<!-- ROADMAP + PRESALE COUNTDOWN -->
-<div class="section">
-  <h2>Roadmap</h2>
-  <table>
-    <tr><th>Etap</th><th>Działania</th><th>Status</th></tr>
-    <tr><td>Q2 2025</td><td>Uruchomienie strony, branding, presale start</td><td>W trakcie</td></tr>
-    <tr><td>Q3 2025</td><td>Zakończenie presale, listing na DEX (PancakeSwap)</td><td>Planowane</td></tr>
-    <tr><td>Q4 2025</td><td>Wdrożenie AI generatora memów, staking</td><td>Planowane</td></tr>
-    <tr><td>Q1 2026</td><td>Airdropy, partnerstwa, rozbudowa społeczności</td><td>Planowane</td></tr>
-    <tr><td>Q2 2026</td><td>Nowy projekt ekosystemowy $EMAI 2.0</td><td>Wstępna faza</td></tr>
-  </table>
-</div>
-
-<div class="section">
-  <h2>Presale Countdown</h2>
-  <p>Start presale: <strong>1 czerwca 2025, godz. 18:00 (UTC+1)</strong></p>
-  <div id="countdown" style="font-size: 1.8rem; font-weight: bold; color: #00ffff; margin-top: 1rem;"></div>
-</div>
-
-<script>
-  const targetDate = new Date("2025-06-01T17:00:00Z").getTime();
-  const countdown = document.getElementById("countdown");
-
-  const x = setInterval(function() {
-    const now = new Date().getTime();
-    const distance = targetDate - now;
-
-    if (distance < 0) {
-      clearInterval(x);
-      countdown.innerHTML = "Presale has started!";
-    } else {
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      countdown.innerHTML = ${days}d ${hours}h ${minutes}m ${seconds}s;
-    }
-  }, 1000);
-</script>
-<div class="section">
-  <h2>FAQ – Najczęściej zadawane pytania</h2>
-  <div class="faq">
-    <div class="faq-item">
-      <button class="faq-question">Czym jest $EMAI?</button>
-      <div class="faq-answer">To połączenie sztucznej inteligencji i memecoinów. $EMAI to token z wizją, który tworzy memy i generuje virale przy pomocy AI.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">Jak mogę kupić $EMAI?</button>
-      <div class="faq-answer">Podczas przedsprzedaży kliknij przycisk „Buy $EMAI” i połącz portfel (np. MetaMask). Tokeny otrzymasz po zakończeniu etapu.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">Kiedy listing na giełdzie?</button>
-      <div class="faq-answer">Listing planowany jest po zakończeniu 3 etapu przedsprzedaży. Data zostanie ogłoszona oficjalnie na stronie i kanałach społecznościowych.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">Czy to projekt typu „rugpull”?</button>
-      <div class="faq-answer">Nie. Wszystkie działania są transparentne. Tokeny teamu są zablokowane (vesting), a społeczność decyduje o przyszłości projektu.</div>
+  <div class="section">
+    <h2>FAQ – Najczęściej zadawane pytania</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <button class="faq-question">Czym jest $EMAI?</button>
+        <div class="faq-answer">To połączenie sztucznej inteligencji i memecoinów. $EMAI to token z wizją, który tworzy memy i generuje virale przy pomocy AI.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Jak mogę kupić $EMAI?</button>
+        <div class="faq-answer">Kliknij przycisk „Buy $EMAI” i połącz portfel (np. MetaMask). Token jest już dostępny na Uniswap.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Czy to projekt typu „rugpull”?</button>
+        <div class="faq-answer">Nie. LP będzie zablokowane, kontrakt publiczny. Projekt stawia na transparentność i społeczność.</div>
+      </div>
     </div>
   </div>
-</div>
 
-<style>
-.faq-question {
-  background: #0ff;
-  color: #000;
-  padding: 10px 15px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  text-align: left;
-  font-weight: bold;
-  border-radius: 10px;
-  margin-top: 10px;
-}
-.faq-answer {
-  padding: 10px;
-  display: none;
-  color: #fff;
-  background: #222;
-  border-radius: 10px;
-}
-.faq-item.active .faq-answer {
-  display: block;
-}
-</style>
+  <script>
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        item.classList.toggle('active');
+      });
+    });
 
-<script>
-document.querySelectorAll('.faq-question').forEach(button => {
-  button.addEventListener('click', () => {
-    const item = button.parentElement;
-    item.classList.toggle('active');
-  });
-});
-</script>
-<script>
-  const targetDate = new Date("2025-06-01T17:00:00Z").getTime();
-  const countdown = document.getElementById("countdown");
-
-  const x = setInterval(function() {
-    const now = new Date().getTime();
-    const distance = targetDate - now;
-
-    if (distance < 0) {
-      clearInterval(x);
-      countdown.innerHTML = "Presale has started!";
-    } else {
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      countdown.innerHTML = ${days}d ${hours}h ${minutes}m ${seconds}s;
+    function toggleLanguage() {
+      alert("Multilingual toggle is coming soon! \n(Obecnie tylko wersja EN)");
     }
-  }, 1000);
-</script>
+
+    function generateMeme() {
+      const text = document.getElementById("memeText").value;
+      const output = document.getElementById("memeOutput");
+      if (text.trim() === '') {
+        output.innerHTML = "<p style='color:red;'>Please enter meme text.</p>";
+        return;
+      }
+      output.innerHTML = `<div style='background:#000; color:#0f0; padding:20px; border:2px dashed #0ff;'>🤖 <strong>AI MEME:</strong><br>${text}</div>`;
+    }
+  </script>
+
   <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
-<script>
- document.getElementById("connectButton").addEventListener("click", async () => {
-  if (typeof window.ethereum !== 'undefined') {
-    try {
-      const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-      document.getElementById("wallet-status").innerText = "Connected: " + accounts[0];
-    } catch (err) {
-      document.getElementById("wallet-status").innerText = "Connection rejected.";
-    }
-  } else {
-    document.getElementById("wallet-status").innerText = "MetaMask not installed.";
-  }
-});
-</script>
-
+  <script>
+    document.getElementById("connectButton").addEventListener("click", async () => {
+      if (typeof window.ethereum !== 'undefined') {
+        try {
+          const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+          document.getElementById("wallet-status").innerText = "Connected: " + accounts[0];
+        } catch (err) {
+          document.getElementById("wallet-status").innerText = "Connection rejected.";
+        }
+      } else {
+        document.getElementById("wallet-status").innerText = "MetaMask not installed.";
+      }
+    });
+  </script>
+</body>
 </html>
