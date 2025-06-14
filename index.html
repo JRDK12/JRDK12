@@ -6,52 +6,75 @@
   <title>$EMAI - Meme Intelligence Awakened</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .faq-question {
-      background: #0ff;
-      color: #000;
-      padding: 10px 15px;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-      text-align: left;
-      font-weight: bold;
-      border-radius: 10px;
-      margin-top: 10px;
-    }
-    .faq-answer {
-      padding: 10px;
-      display: none;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #000;
       color: #fff;
-      background: #222;
-      border-radius: 10px;
     }
-    .faq-item.active .faq-answer {
-      display: block;
+    .hero {
+      position: relative;
+      background: url('hero-emai.jpg') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #0ff;
     }
-    .lang-switch {
+    .hero h1 {
+      font-size: 4rem;
+      text-shadow: 0 0 10px #0ff;
+    }
+    .hero p {
+      font-size: 1.5rem;
+      color: #0ff;
+      font-style: italic;
+      animation: sloganChange 12s infinite;
+    }
+    @keyframes sloganChange {
+      0% { content: "Meme Intelligence Awakened"; }
+      25% { content: "Future of Memes is AI"; }
+      50% { content: "Decentralized Humor Engine"; }
+      75% { content: "Invest in Intelligence"; }
+      100% { content: "Meme Intelligence Awakened"; }
+    }
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 80px;
+    }
+    .meme-link {
       position: absolute;
       top: 20px;
       right: 20px;
       background: #0ff;
-      padding: 5px 10px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .meme-generator {
-      margin-top: 2rem;
-      padding: 1rem;
-      background: #111;
+      color: #000;
+      padding: 10px 15px;
       border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
     }
-    .meme-generator input, .meme-generator button {
-      padding: 10px;
-      margin: 5px 0;
-      border-radius: 5px;
+    .meme-link:hover {
+      background: #00ccff;
     }
   </style>
 </head>
 <body>
+  <img src="logo-emai.png" alt="$EMAI Logo" class="logo" />
+  <a href="mems.html" class="meme-link">AI Meme Generator</a>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>$EMAI</h1>
+      <p id="dynamic-slogan">Meme Intelligence Awakened</p>
+    </div>
+  </section>
+</body>
+</html>
+
   <div class="lang-switch" onclick="toggleLanguage()">PL / EN</div>
 
   <img src="logo-emai.png" alt="$EMAI Logo" class="logo" />
