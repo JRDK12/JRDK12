@@ -25,11 +25,11 @@
       color: #0ff;
     }
     .hero h1 {
-      font-size: 4rem;
+      font-size: 5rem;
       text-shadow: 0 0 10px #0ff;
     }
     .hero p {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       color: #0ff;
       font-style: italic;
       animation: sloganChange 12s infinite;
@@ -38,7 +38,7 @@
       position: absolute;
       top: 20px;
       left: 20px;
-      width: 100px;
+      width: 120px;
     }
     .meme-link {
       position: absolute;
@@ -80,11 +80,26 @@
     .faq-item.active .faq-answer {
       display: block;
     }
+    .meme-generator {
+      padding: 2rem;
+      background: #111;
+      text-align: center;
+    }
+    .meme-generator input,
+    .meme-generator button {
+      padding: 10px;
+      margin: 5px;
+      border-radius: 5px;
+    }
+    #meme-output {
+      margin-top: 1rem;
+      max-width: 100%;
+    }
   </style>
 </head>
 <body>
   <img src="logo-emai.png" alt="$EMAI Logo" class="logo" />
-  <a href="mems.html" class="meme-link">AI Meme Generator</a>
+  <a href="#meme-gen" class="meme-link">AI Meme Generator</a>
 
   <section class="hero">
     <div class="hero-content">
@@ -111,7 +126,65 @@
     </div>
   </div>
 
+  <div id="meme-gen" class="meme-generator">
+    <h2>Generate Your Meme</h2>
+    <input type="file" id="imageUpload" accept="image/*">
+    <input type="text" id="topText" placeholder="Top text">
+    <input type="text" id="bottomText" placeholder="Bottom text">
+    <button onclick="generateMeme()">Generate Meme</button>
+    <button onclick="downloadMeme()">Download Meme</button>
+    <canvas id="memeCanvas" width="500" height="500" style="display:none;"></canvas>
+    <br>
+    <img id="meme-output" alt="Your meme will appear here">
+  </div>
+
   <script>
+    function generateMeme() {
+      const canvas = document.getElementById('memeCanvas');
+      const ctx = canvas.getContext('2d');
+      const topText = document.getElementById('topText').value;
+      const bottomText = document.getElementById('bottomText').value;
+      const file = document.getElementById('imageUpload').files[0];
+
+      if (!file) return alert("Please upload an image");
+
+      const reader = new FileReader();
+      reader.onload = function() {
+        const img = new Image();
+        img.onload = function() {
+          canvas.width = img.width;
+          canvas.height = img.height;
+          ctx.drawImage(img, 0, 0);
+
+          ctx.font = '40px Impact';
+          ctx.fillStyle = 'white';
+          ctx.strokeStyle = 'black';
+          ctx.lineWidth = 2;
+          ctx.textAlign = 'center';
+
+          ctx.fillText(topText, canvas.width / 2, 50);
+          ctx.strokeText(topText, canvas.width / 2, 50);
+
+          ctx.fillText(bottomText, canvas.width / 2, canvas.height - 20);
+          ctx.strokeText(bottomText, canvas.width / 2, canvas.height - 20);
+
+          const output = document.getElementById('meme-output');
+          output.src = canvas.toDataURL('image/png');
+          canvas.style.display = 'none';
+        }
+        img.src = reader.result;
+      }
+      reader.readAsDataURL(file);
+    }
+
+    function downloadMeme() {
+      const canvas = document.getElementById('memeCanvas');
+      const link = document.createElement('a');
+      link.download = 'emai-meme.png';
+      link.href = canvas.toDataURL();
+      link.click();
+    }
+
     document.querySelectorAll('.faq-question').forEach(button => {
       button.addEventListener('click', () => {
         const item = button.parentElement;
