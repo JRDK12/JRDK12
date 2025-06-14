@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Meme Generator | $EMAI</title>
+  <style>
+    body {
+      background: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      text-align: center;
+    }
+    .headline {
+      font-size: 2.5rem;
+      animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+      0% { text-shadow: 0 0 5px #0ff, 0 0 10px #0ff; }
+      100% { text-shadow: 0 0 20px #00f6ff, 0 0 30px #00f6ff; }
+    }
+    .meme-form {
+      margin-top: 2rem;
+    }
+    input, button {
+      padding: 0.7rem;
+      border-radius: 10px;
+      border: none;
+      margin: 0.5rem;
+      font-size: 1rem;
+    }
+    .output {
+      margin-top: 2rem;
+      background: #222;
+      padding: 1rem;
+      border-radius: 10px;
+      min-height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="headline">AI Meme Generator 🤖✨</h1>
+
+  <div class="meme-form">
+    <input type="file" id="memeImage" accept="image/*" /> <br/>
+    <input type="text" id="memePrompt" placeholder="Enter your meme text here" /> <br/>
+    <button onclick="generateMeme()">Generate Meme</button>
+  </div>
+
+  <div class="output" id="output">
+    <!-- Result will appear here -->
+  </div>
+
+  <script>
+    function generateMeme() {
+      const imgFile = document.getElementById("memeImage").files[0];
+      const prompt = document.getElementById("memePrompt").value;
+      const output = document.getElementById("output");
+
+      if (!imgFile || !prompt) {
+        output.innerHTML = '<p>Please upload an image and enter a caption.</p>';
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        output.innerHTML = `
+          <div>
+            <img src="${e.target.result}" style="max-width:100%; border-radius:10px;" alt="Generated Meme" />
+            <p style="margin-top:1rem; font-size:1.2rem;">💬 ${prompt}</p>
+          </div>
+        `;
+      };
+      reader.readAsDataURL(imgFile);
+    }
+  </script>
+</body>
+</html>
