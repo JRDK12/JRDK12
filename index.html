@@ -95,6 +95,18 @@
       margin-top: 1rem;
       max-width: 100%;
     }
+    .tokenomics {
+      padding: 2rem;
+      background: #111;
+      color: #0ff;
+      text-align: center;
+    }
+    .tokenomics h2 {
+      font-size: 2rem;
+    }
+    .tokenomics p {
+      font-size: 1.2rem;
+    }
   </style>
 </head>
 <body>
@@ -107,6 +119,13 @@
       <p id="dynamic-slogan">Meme Intelligence Awakened</p>
     </div>
   </section>
+
+  <div class="tokenomics">
+    <h2>📊 Tokenomics</h2>
+    <p>3% Buy/Sell Tax:</p>
+    <p>🔹 1% Liquidity | 🔹 1% Marketing | 🔹 1% Development</p>
+    <p>✅ Transparent. Fair. Long-Term Focused.</p>
+  </div>
 
   <div class="section">
     <h2>FAQ – Frequently Asked Questions</h2>
@@ -122,6 +141,10 @@
       <div class="faq-item">
         <button class="faq-question">Is this a rugpull?</button>
         <div class="faq-answer">No. The LP will be locked, the contract is public, and the project is fully transparent and community-driven.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How do devs make money?</button>
+        <div class="faq-answer">A small allocation (e.g., 10% of supply) is reserved for the team. It is sold gradually (1–2% at a time) only when the market is healthy, price is rising, and liquidity is strong — never during a dump. Plus, tax from trading helps fund the project (1% marketing, 1% LP, 1% dev).</div>
       </div>
     </div>
   </div>
@@ -190,108 +213,6 @@
         const item = button.parentElement;
         item.classList.toggle('active');
       });
-    });
-  </script>
-</body>
-</html>
-
-  <div class="lang-switch" onclick="toggleLanguage()">PL / EN</div>
-
-  <img src="logo-emai.png" alt="$EMAI Logo" class="logo" />
-  <section class="hero">
-    <div class="hero-content">
-      <h1>$EMAI</h1>
-      <p id="dynamic-slogan">Meme Intelligence Awakened</p>
-    </div>
-  </section>
-
-  <a href="https://app.uniswap.org/#/swap?outputCurrency=0x93F8E67Af68da54B6e15B352379e4f46B629AE04&chain=base" target="_blank">
-    <button class="buy-btn">Buy $EMAI</button>
-  </a>
-
-  <div class="section">
-    <h2>Connect your wallet</h2>
-    <p id="wallet-status">Wallet not connected</p>
-    <button id="connectButton" class="glow-button">Connect MetaMask</button>
-  </div>
-
-  <div class="section">
-    <h2>About</h2>
-    <p>$EMAI is not just another memecoin – it’s the fusion of AI and crypto culture. Inspired by the future, built for today.</p>
-  </div>
-
-  <div class="section">
-    <h2>Features</h2>
-    <ul>
-      <li>AI-powered meme generation</li>
-      <li>Fair launch (no presale)</li>
-      <li>Cyber-futuristic design & branding</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>AI Meme Generator</h2>
-    <div class="meme-generator">
-      <input type="text" id="memeText" placeholder="Type your meme idea..." />
-      <button onclick="generateMeme()">Generate Meme</button>
-      <div id="memeOutput" style="margin-top: 1rem;"></div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>FAQ – Najczęściej zadawane pytania</h2>
-    <div class="faq">
-      <div class="faq-item">
-        <button class="faq-question">Czym jest $EMAI?</button>
-        <div class="faq-answer">To połączenie sztucznej inteligencji i memecoinów. $EMAI to token z wizją, który tworzy memy i generuje virale przy pomocy AI.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Jak mogę kupić $EMAI?</button>
-        <div class="faq-answer">Kliknij przycisk „Buy $EMAI” i połącz portfel (np. MetaMask). Token jest już dostępny na Uniswap.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Czy to projekt typu „rugpull”?</button>
-        <div class="faq-answer">Nie. LP będzie zablokowane, kontrakt publiczny. Projekt stawia na transparentność i społeczność.</div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    document.querySelectorAll('.faq-question').forEach(button => {
-      button.addEventListener('click', () => {
-        const item = button.parentElement;
-        item.classList.toggle('active');
-      });
-    });
-
-    function toggleLanguage() {
-      alert("Multilingual toggle is coming soon! \n(Obecnie tylko wersja EN)");
-    }
-
-    function generateMeme() {
-      const text = document.getElementById("memeText").value;
-      const output = document.getElementById("memeOutput");
-      if (text.trim() === '') {
-        output.innerHTML = "<p style='color:red;'>Please enter meme text.</p>";
-        return;
-      }
-      output.innerHTML = `<div style='background:#000; color:#0f0; padding:20px; border:2px dashed #0ff;'>🤖 <strong>AI MEME:</strong><br>${text}</div>`;
-    }
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
-  <script>
-    document.getElementById("connectButton").addEventListener("click", async () => {
-      if (typeof window.ethereum !== 'undefined') {
-        try {
-          const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-          document.getElementById("wallet-status").innerText = "Connected: " + accounts[0];
-        } catch (err) {
-          document.getElementById("wallet-status").innerText = "Connection rejected.";
-        }
-      } else {
-        document.getElementById("wallet-status").innerText = "MetaMask not installed.";
-      }
     });
   </script>
 </body>
