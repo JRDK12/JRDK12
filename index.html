@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>$EMAI - Meme Intelligence Awakened</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
   <style>
- html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -17,31 +15,42 @@
     }
     .hero {
       position: relative;
-      background: url('hero-emai.jpg') no-repeat center center fixed;
+      background: url('hero-bg.jpg') no-repeat center center;
       background-size: cover;
-      min-height: 100vh;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
       color: #0ff;
+      padding: 2rem;
     }
     .hero h1 {
       font-size: 5rem;
-      text-shadow: 0 0 10px #0ff;
+      text-shadow: 0 0 20px #0ff;
+      margin-bottom: 0.5rem;
     }
     .hero p {
-      font-size: 1.8rem;
-      color: #0ff;
+      font-size: 1.6rem;
       font-style: italic;
-      animation: sloganChange 12s infinite;
+      animation: sloganChange 16s infinite;
+      color: #0ff;
+    }
+    @keyframes sloganChange {
+      0% { content: "Meme Intelligence Awakened"; }
+      25% { content: "Where Memes Meet AI"; }
+      50% { content: "Built to Go Viral"; }
+      75% { content: "Secure. Smart. Funny."; }
+      100% { content: "Meme Intelligence Awakened"; }
     }
     .logo {
       position: absolute;
       top: 20px;
       left: 20px;
-      width: 120px;
+      width: 260px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #0ff;
     }
     .meme-link {
       position: absolute;
@@ -53,6 +62,8 @@
       border-radius: 10px;
       font-weight: bold;
       text-decoration: none;
+      box-shadow: 0 0 10px #0ff;
+      z-index: 1000;
     }
     .meme-link:hover {
       background: #00ccff;
@@ -61,32 +72,11 @@
       padding: 2rem;
       background: #111;
     }
-    .faq-question {
-      background: #0ff;
-      color: #000;
-      padding: 10px 15px;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-      text-align: left;
-      font-weight: bold;
-      border-radius: 10px;
-      margin-top: 10px;
-    }
-    .faq-answer {
-      padding: 10px;
-      display: none;
-      color: #fff;
-      background: #222;
-      border-radius: 10px;
-    }
-    .faq-item.active .faq-answer {
-      display: block;
-    }
     .meme-generator {
       padding: 2rem;
       background: #111;
       text-align: center;
+      scroll-margin-top: 120px;
     }
     .meme-generator input,
     .meme-generator button {
@@ -94,28 +84,22 @@
       margin: 5px;
       border-radius: 5px;
     }
-    #meme-output {
+    #meme-canvas {
+      display: none;
       margin-top: 1rem;
       max-width: 100%;
-    }
-    .tokenomics {
-      padding: 2rem;
-      background: #111;
-      color: #0ff;
-      text-align: center;
-    }
-    .tokenomics h2 {
-      font-size: 2rem;
-    }
-    .tokenomics p {
-      font-size: 1.2rem;
     }
   </style>
 </head>
 <body>
-  <img src="logo-emai.png" alt="$EMAI Logo" class="logo" />
-  <a href="#meme-gen" class="meme-generator">AI Meme Generator</a>
 
+  <!-- LOGO -->
+  <img src="logo-emai.png" alt="$EMAI Logo" class="logo" />
+
+  <!-- TOP RIGHT LINK TO GENERATOR -->
+  <a href="#meme-gen" class="meme-link">AI Meme Generator</a>
+
+  <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-content">
       <h1>$EMAI</h1>
@@ -123,100 +107,55 @@
     </div>
   </section>
 
-  <div class="tokenomics">
-    <h2>📊 Tokenomics</h2>
-    <p>3% Buy/Sell Tax:</p>
-    <p>🔹 1% Liquidity | 🔹 1% Marketing | 🔹 1% Development</p>
-    <p>✅ Transparent. Fair. Long-Term Focused.</p>
-  </div>
-
-  <div class="section">
-    <h2>FAQ – Frequently Asked Questions</h2>
-    <div class="faq">
-      <div class="faq-item">
-        <button class="faq-question">What is $EMAI?</button>
-        <div class="faq-answer">$EMAI is a fusion of artificial intelligence and memecoins. It generates memes and viral content using AI.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">How can I buy $EMAI?</button>
-        <div class="faq-answer">Click the “Buy $EMAI” button and connect your wallet (like MetaMask). $EMAI is available on Uniswap.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Is this a rugpull?</button>
-        <div class="faq-answer">No. The LP will be locked, the contract is public, and the project is fully transparent and community-driven.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">How do devs make money?</button>
-        <div class="faq-answer">A small allocation (e.g., 10% of supply) is reserved for the team. It is sold gradually (1–2% at a time) only when the market is healthy, price is rising, and liquidity is strong — never during a dump. Plus, tax from trading helps fund the project (1% marketing, 1% LP, 1% dev).</div>
-      </div>
-    </div>
-  </div>
-
-  <div id="meme-gen" class="meme-generator">
+  <!-- MEME GENERATOR SECTION -->
+  <section id="meme-gen" class="meme-generator">
     <h2>Generate Your Meme</h2>
-    <input type="file" id="imageUpload" accept="image/*">
-    <input type="text" id="topText" placeholder="Top text">
-    <input type="text" id="bottomText" placeholder="Bottom text">
-    <button onclick="generateMeme()">Generate Meme</button>
-    <button onclick="downloadMeme()">Download Meme</button>
-    <canvas id="memeCanvas" width="500" height="500" style="display:none;"></canvas>
-    <br>
-    <img id="meme-output" alt="Your meme will appear here">
-  </div>
+    <input type="text" id="top-text" placeholder="Top text" />
+    <input type="text" id="bottom-text" placeholder="Bottom text" /><br />
+    <input type="file" id="meme-image" accept="image/*" /><br />
+    <button onclick="generateMeme()">Generate Meme</button><br />
+    <canvas id="meme-canvas" width="400" height="400"></canvas>
+  </section>
 
   <script>
     function generateMeme() {
-      const canvas = document.getElementById('memeCanvas');
-      const ctx = canvas.getContext('2d');
-      const topText = document.getElementById('topText').value;
-      const bottomText = document.getElementById('bottomText').value;
-      const file = document.getElementById('imageUpload').files[0];
+      const canvas = document.getElementById("meme-canvas");
+      const ctx = canvas.getContext("2d");
+      const topText = document.getElementById("top-text").value;
+      const bottomText = document.getElementById("bottom-text").value;
+      const fileInput = document.getElementById("meme-image");
 
-      if (!file) return alert("Please upload an image");
+      if (!fileInput.files[0]) {
+        alert("Upload an image first!");
+        return;
+      }
 
       const reader = new FileReader();
-      reader.onload = function() {
+      reader.onload = function () {
         const img = new Image();
-        img.onload = function() {
+        img.onload = function () {
+          canvas.style.display = 'block';
           canvas.width = img.width;
           canvas.height = img.height;
           ctx.drawImage(img, 0, 0);
 
-          ctx.font = '40px Impact';
-          ctx.fillStyle = 'white';
-          ctx.strokeStyle = 'black';
+          ctx.font = "bold 30px Arial";
+          ctx.fillStyle = "#ffffff";
+          ctx.strokeStyle = "#000000";
           ctx.lineWidth = 2;
-          ctx.textAlign = 'center';
+          ctx.textAlign = "center";
 
-          ctx.fillText(topText, canvas.width / 2, 50);
-          ctx.strokeText(topText, canvas.width / 2, 50);
+          ctx.fillText(topText, canvas.width / 2, 40);
+          ctx.strokeText(topText, canvas.width / 2, 40);
 
           ctx.fillText(bottomText, canvas.width / 2, canvas.height - 20);
           ctx.strokeText(bottomText, canvas.width / 2, canvas.height - 20);
-
-          const output = document.getElementById('meme-output');
-          output.src = canvas.toDataURL('image/png');
-          canvas.style.display = 'none';
-        }
+        };
         img.src = reader.result;
-      }
-      reader.readAsDataURL(file);
+      };
+      reader.readAsDataURL(fileInput.files[0]);
     }
-
-    function downloadMeme() {
-      const canvas = document.getElementById('memeCanvas');
-      const link = document.createElement('a');
-      link.download = 'emai-meme.png';
-      link.href = canvas.toDataURL();
-      link.click();
-    }
-
-    document.querySelectorAll('.faq-question').forEach(button => {
-      button.addEventListener('click', () => {
-        const item = button.parentElement;
-        item.classList.toggle('active');
-      });
-    });
   </script>
+
 </body>
 </html>
