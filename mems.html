@@ -301,8 +301,9 @@ function drawMemeText(ctx, text, x, y, canvasWidth, canvasHeight, position) {
 
           ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-          drawMemeText(ctx, topText, canvas.width / 2, canvas.height * 0.12, canvas.width);
-          drawMemeText(ctx, bottomText, canvas.width / 2, canvas.height * 0.82, canvas.width);
+          drawMemeText(ctx, topText, canvas.width / 2, 0, canvas.width, canvas.height, "top");
+          drawMemeText(ctx, bottomText, canvas.width / 2, 0, canvas.width, canvas.height, "bottom");
+          drawWatermark(ctx, canvas.width, canvas.height);
 
           output.innerHTML = "";
           output.appendChild(canvas);
