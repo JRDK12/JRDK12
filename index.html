@@ -180,8 +180,24 @@ text-decoration:none;
 border-radius:999px;
 box-shadow:0 0 30px rgba(0,234,255,.6);
 transition:.3s;
+overflow:hidden; 
 }
-
+.hero-enter::before{
+content:"";
+position:absolute;
+top:0;
+left:-140%;
+width:70%;
+height:100%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.75),
+transparent
+);
+transform:skewX(-25deg);
+animation:buttonSweep 4s infinite;
+}
 .hero-enter:hover{
 transform:scale(1.05);
 box-shadow:0 0 45px rgba(0,234,255,.9);
@@ -409,6 +425,21 @@ opacity:.9;
 transform:translateY(-520px) scale(1.4);
 opacity:0;
 }
+}
+ @keyframes buttonSweep{
+
+0%{
+left:-140%;
+}
+
+25%{
+left:160%;
+}
+
+100%{
+left:160%;
+}
+
 }   
 </style>
 </head>
