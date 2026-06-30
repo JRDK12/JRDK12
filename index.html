@@ -276,7 +276,37 @@ margin-bottom:25px;
 font-size:1.6rem;
 color:white;
 font-family:monospace;
-}    
+}
+ #boot-log{
+margin-top:28px;
+font-family:monospace;
+font-size:1rem;
+color:#9ffcff;
+text-align:left;
+line-height:1.8;
+text-shadow:0 0 10px #00eaff;
+}
+
+#boot-log div{
+opacity:0;
+animation:bootLine .45s forwards;
+}
+
+#boot-log div:nth-child(1){animation-delay:.3s;}
+#boot-log div:nth-child(2){animation-delay:.8s;}
+#boot-log div:nth-child(3){animation-delay:1.3s;}
+#boot-log div:nth-child(4){animation-delay:1.8s;}
+
+@keyframes bootLine{
+from{
+opacity:0;
+transform:translateY(8px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}   
 </style>
 </head>
 <body>
@@ -289,7 +319,12 @@ INITIALIZING AI...
 <div id="boot-progress">
 0%
 </div>
-
+<div id="boot-log">
+  <div>Connecting to BASE...</div>
+  <div>Loading Meme Engine...</div>
+  <div>Checking Smart Contract...</div>
+  <div>Connecting Community...</div>
+</div>
 </div>
   <img src="logo-emai.png" alt="$EMAI Logo" class="logo" />
 
@@ -403,6 +438,13 @@ const bootInterval = setInterval(() => {
         clearInterval(bootInterval);
 
         bootTitle.textContent = "AI ONLINE";
+      const bootLines = document.querySelectorAll("#boot-log div");
+
+bootLines.forEach((line, index) => {
+    setTimeout(() => {
+        line.style.opacity = "1";
+    }, index * 450);
+});
 
         setTimeout(() => {
             bootScreen.classList.add("hidden");
@@ -411,7 +453,7 @@ const bootInterval = setInterval(() => {
                 bootScreen.remove();
             }, 900);
 
-        }, 700);
+        }, 2200);
     }
 }, 20); 
   </script>
