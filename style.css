@@ -206,6 +206,87 @@ h1, h2, h3, p {
   100% { opacity: 1; }
 }
 
+/* EMAI Meme Generator Mobile Fix */
+
+#meme-generator,
+.meme-generator {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 16px;
+  text-align: center;
+}
+
+#meme-generator input,
+.meme-generator input {
+  width: 100%;
+  max-width: 520px;
+  font-size: 18px;
+  padding: 14px 16px;
+  margin: 10px auto;
+  border-radius: 10px;
+  border: 2px solid #00eaff;
+  display: block;
+}
+
+#meme-generator button,
+.meme-generator button,
+.meme-actions button {
+  background: linear-gradient(135deg, #00eaff, #0077ff);
+  color: #001018;
+  border: none;
+  border-radius: 14px;
+  padding: 14px 22px;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  margin: 10px;
+  box-shadow: 0 0 18px rgba(0, 234, 255, 0.45);
+}
+
+#meme-generator canvas,
+.meme-generator canvas,
+#memeCanvas {
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  display: block;
+  margin: 30px auto;
+  border-radius: 12px;
+}
+
+.meme-actions {
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px auto;
+}
+
+@media (max-width: 768px) {
+  .meme-generator-header,
+  .meme-header,
+  #meme-generator .header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  #meme-generator h1,
+  #meme-generator h2,
+  .meme-generator h1,
+  .meme-generator h2 {
+    font-size: 34px;
+    line-height: 1.1;
+  }
+
+  #meme-generator button,
+  .meme-generator button,
+  .meme-actions button {
+    width: 100%;
+    max-width: 320px;
+    font-size: 17px;
+  }
+}
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
