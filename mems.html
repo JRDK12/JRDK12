@@ -267,7 +267,8 @@ function drawMemeText(ctx, text, x, y, canvasWidth, canvasHeight, position) {
 }
 
 function drawWatermark(ctx, canvasWidth, canvasHeight) {
-  const text = "$EMAI ⚡ • emaitoken.io";
+  const text1 = "$EMAI ⚡ AI Meme Generator";
+  const text2 = "emaitoken.io";
   const fontSize = Math.max(22, canvasWidth * 0.028);
 
   ctx.save();
@@ -281,8 +282,11 @@ function drawWatermark(ctx, canvasWidth, canvasHeight) {
   const x = canvasWidth - canvasWidth * 0.03;
   const y = canvasHeight - canvasHeight * 0.025;
 
-  ctx.strokeText(text, x, y);
-  ctx.fillText(text, x, y);
+  ctx.strokeText(text1, x, y - fontSize * 0.55);
+  ctx.fillText(text1, x, y - fontSize * 0.55);
+
+  ctx.strokeText(text2, x, y + fontSize * 0.45);
+  ctx.fillText(text2, x, y + fontSize * 0.45);
 
   ctx.restore();
 }
