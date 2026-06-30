@@ -1,4 +1,36 @@
 /* style.css - dla emaitoken.io */
+.buy-emai-box {
+  max-width: 720px;
+  margin: 34px auto 0;
+  padding: 24px 18px;
+  background: rgba(0, 234, 255, 0.07);
+  border: 1px solid rgba(0, 234, 255, 0.32);
+  border-radius: 18px;
+  box-shadow: 0 0 25px rgba(0, 234, 255, 0.12);
+}
+
+.buy-emai-box h2 {
+  margin: 0 0 10px;
+  font-size: clamp(1.6rem, 6vw, 2.4rem);
+}
+
+.buy-emai-box p {
+  color: #bffcff;
+  font-size: 1.05rem;
+  margin-bottom: 18px;
+}
+
+.buy-emai-btn {
+  display: inline-block;
+  padding: 16px 28px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #00eaff, #0077ff);
+  color: #001018;
+  font-size: 1.15rem;
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: 0 0 22px rgba(0, 234, 255, 0.5);
+}
 
 body {
   margin: 0;
