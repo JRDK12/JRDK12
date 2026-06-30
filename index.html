@@ -121,7 +121,54 @@
       margin: 0 10px;
       vertical-align: middle;
     }
-  </style>
+  .ai-portal {
+  max-width: 780px;
+  margin: 40px auto;
+  padding: 38px 24px;
+  border: 1px solid rgba(0, 234, 255, 0.45);
+  border-radius: 26px;
+  background: radial-gradient(circle at center, rgba(0, 234, 255, 0.18), rgba(0, 0, 0, 0.45));
+  box-shadow: 0 0 35px rgba(0, 234, 255, 0.35);
+  text-align: center;
+}
+
+.ai-portal h2 {
+  font-size: clamp(2rem, 7vw, 4rem);
+  margin: 0 0 12px;
+  color: #00eaff;
+  text-shadow: 0 0 20px #00eaff;
+}
+
+.portal-text {
+  color: #bffcff;
+  font-size: 1.2rem;
+  margin-bottom: 28px;
+}
+
+.portal-button {
+  display: inline-block;
+  padding: 18px 34px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #00eaff, #0077ff);
+  color: #001018;
+  font-size: 1.2rem;
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: 0 0 28px rgba(0, 234, 255, 0.65);
+  animation: portalPulse 1.8s infinite alternate;
+}
+
+@keyframes portalPulse {
+  from {
+    transform: scale(1);
+    box-shadow: 0 0 18px rgba(0, 234, 255, 0.45);
+  }
+  to {
+    transform: scale(1.04);
+    box-shadow: 0 0 42px rgba(0, 234, 255, 0.9);
+  }
+}
+</style>
 </head>
 <body>
   <img src="logo-emai.png" alt="$EMAI Logo" class="logo" />
@@ -133,7 +180,19 @@
       <p id="dynamic-slogan">Meme Intelligence Awakened</p>
     </div>
   </section>
+  <section class="ai-portal">
 
+<h2>⚡ AI PORTAL ⚡</h2>
+
+<p class="portal-text">
+Enter the future of AI memes.
+</p>
+
+<a href="mems.html" class="portal-button">
+🚀 ENTER AI MEME GENERATOR
+</a>
+
+</section>
   <section id="meme-gen" class="meme-generator">
   <h2>AI Meme Generator</h2>
   <p>Create your meme. Share it. Join the EMAI movement.</p>
