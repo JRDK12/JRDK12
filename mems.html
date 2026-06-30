@@ -222,8 +222,8 @@
 
           ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-          drawMemeText(ctx, topText, canvas.width / 2, 80, canvas.width);
-          drawMemeText(ctx, bottomText, canvas.width / 2, canvas.height - 120, canvas.width);
+          drawMemeText(ctx, topText, canvas.width / 2, canvas.height * 0.12, canvas.width);
+          drawMemeText(ctx, bottomText, canvas.width / 2, canvas.height * 0.82, canvas.width);
 
           output.innerHTML = "";
           output.appendChild(canvas);
