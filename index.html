@@ -184,6 +184,64 @@ transition:.3s;
 .hero-enter:hover{
 transform:scale(1.05);
 box-shadow:0 0 45px rgba(0,234,255,.9);
+} 
+.portal-core{
+position:relative;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+margin-top:18px;
+width:430px;
+height:170px;
+max-width:90vw;
+}
+
+.portal-ring{
+position:absolute;
+width:360px;
+height:120px;
+border:2px solid rgba(0,234,255,.75);
+border-radius:50%;
+box-shadow:0 0 20px rgba(0,234,255,.8), inset 0 0 25px rgba(0,234,255,.45);
+animation:portalSpin 6s linear infinite;
+}
+
+.portal-ring-2{
+width:300px;
+height:92px;
+border-color:rgba(0,119,255,.7);
+animation:portalSpinReverse 4s linear infinite;
+}
+
+.portal-core::before{
+content:"";
+position:absolute;
+width:320px;
+height:95px;
+border-radius:50%;
+background:radial-gradient(circle, rgba(0,234,255,.35), rgba(0,119,255,.12), transparent 70%);
+filter:blur(8px);
+animation:portalBreath 2s infinite alternate;
+}
+
+@keyframes portalSpin{
+from{transform:rotate(0deg);}
+to{transform:rotate(360deg);}
+}
+
+@keyframes portalSpinReverse{
+from{transform:rotate(360deg);}
+to{transform:rotate(0deg);}
+}
+
+@keyframes portalBreath{
+from{transform:scale(.96);opacity:.65;}
+to{transform:scale(1.08);opacity:1;}
+}
+
+.hero-enter{
+position:relative;
+z-index:5;
 }    
 </style>
 </head>
@@ -197,9 +255,14 @@ box-shadow:0 0 45px rgba(0,234,255,.9);
 
   <br><br>
 
-<a href="mems.html" class="hero-enter">
-🚀 ENTER AI MEME GENERATOR
-</a>
+<div class="portal-core">
+  <div class="portal-ring"></div>
+  <div class="portal-ring portal-ring-2"></div>
+
+  <a href="mems.html" class="hero-enter">
+    🚀 ENTER AI MEME GENERATOR
+  </a>
+</div>
     
   </div>
 </section>
