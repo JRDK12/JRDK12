@@ -262,14 +262,6 @@ function drawMemeText(ctx, text, x, y, canvasWidth, canvasHeight, position) {
   });
 }
 
-      lines.push(line.trim());
-
-      lines.forEach((lineText, index) => {
-        const lineY = y + index * fontSize * 1.12;
-        ctx.strokeText(lineText, x, lineY);
-        ctx.fillText(lineText, x, lineY);
-      });
-    }
 function drawWatermark(ctx, canvasWidth, canvasHeight) {
   const text = "EMAI ⚡ • emaitoken.io";
   const fontSize = Math.max(22, canvasWidth * 0.028);
