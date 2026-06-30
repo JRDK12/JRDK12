@@ -141,7 +141,7 @@
     <button onclick="createAnother()">🔄 Create Another</button>
   </div>
 
-  <div class="buy-emai-box">
+  <div class="buy-emai-box" id="buyBox" style="display:none;">
   <h2>🚀 Like the meme?</h2>
   <p>Own the token behind it. Join the EMAI movement on Base.</p>
 
@@ -229,6 +229,7 @@
           output.appendChild(canvas);
 
           document.getElementById("memeActions").style.display = "flex";
+          document.getElementById("buyBox").style.display = "block";
         };
 
         img.src = e.target.result;
@@ -255,18 +256,20 @@
       window.open(`https://twitter.com/intent/tweet?text=${text}`, "_blank");
     }
 
-    function createAnother() {
-      document.getElementById("memeImage").value = "";
-      document.getElementById("topText").value = "";
-      document.getElementById("bottomText").value = "";
-      document.getElementById("output").innerHTML = "<p>Your generated meme will appear here.</p>";
-      document.getElementById("memeActions").style.display = "none";
+function createAnother() {
+    document.getElementById("memeImage").value = "";
+    document.getElementById("topText").value = "";
+    document.getElementById("bottomText").value = "";
+    document.getElementById("output").innerHTML = "<p>Your generated meme will appear here.</p>";
 
-      window.scrollTo({
+    document.getElementById("memeActions").style.display = "none";
+    document.getElementById("buyBox").style.display = "none";
+
+    window.scrollTo({
         top: 0,
         behavior: "smooth"
-      });
-    }
+    });
+}
   </script>
 </body>
 </html>
