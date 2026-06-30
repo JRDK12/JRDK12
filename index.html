@@ -306,7 +306,39 @@ to{
 opacity:1;
 transform:translateY(0);
 }
-}   
+}
+body.glitch{
+    animation:glitchFlash .18s ease;
+}
+
+@keyframes glitchFlash{
+
+0%{
+filter:brightness(1);
+transform:translate(0,0);
+}
+
+20%{
+filter:brightness(2.8);
+transform:translate(-3px,2px);
+}
+
+40%{
+filter:brightness(.7) hue-rotate(18deg);
+transform:translate(4px,-2px);
+}
+
+60%{
+filter:brightness(2.2);
+transform:translate(-2px,1px);
+}
+
+100%{
+filter:brightness(1);
+transform:translate(0,0);
+}
+
+}    
 </style>
 </head>
 <body>
