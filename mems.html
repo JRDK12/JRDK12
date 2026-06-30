@@ -159,12 +159,12 @@
     function drawMemeText(ctx, text, x, y, canvasWidth) {
       if (!text) return;
 
-      const fontSize = Math.max(42, canvasWidth * 0.08);
+      const fontSize = Math.max(80, canvasWidth * 0.12);
       ctx.font = `900 ${fontSize}px Arial`;
       ctx.textAlign = "center";
       ctx.fillStyle = "white";
       ctx.strokeStyle = "black";
-      ctx.lineWidth = fontSize * 0.14;
+      ctx.lineWidth = fontSize * 0.18;
 
       const maxWidth = canvasWidth * 0.88;
       const words = text.toUpperCase().split(" ");
