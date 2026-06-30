@@ -20,6 +20,7 @@
     }
     .hero {
       position: relative;
+      overflow: hidden;
       background: url('hero-bg.jpg') no-repeat center center;
       background-size: cover;
       height: 100vh;
@@ -338,7 +339,77 @@ filter:brightness(1);
 transform:translate(0,0);
 }
 
-}    
+}
+.hero::after{
+content:"";
+position:absolute;
+top:-120px;
+left:0;
+width:100%;
+height:120px;
+background:linear-gradient(
+to bottom,
+transparent,
+rgba(0,234,255,.35),
+transparent
+);
+animation:aiScan 5s infinite;
+pointer-events:none;
+z-index:2;
+}
+
+@keyframes aiScan{
+0%{top:-120px;opacity:0;}
+15%{opacity:1;}
+55%{top:100%;opacity:.85;}
+100%{top:100%;opacity:0;}
+}
+
+.hero-content{
+position:relative;
+z-index:3;
+}
+ .particles{
+position:absolute;
+inset:0;
+overflow:hidden;
+z-index:1;
+pointer-events:none;
+}
+
+.particles span{
+position:absolute;
+width:6px;
+height:6px;
+background:#00eaff;
+border-radius:50%;
+box-shadow:0 0 18px #00eaff;
+opacity:.75;
+animation:particleMove 8s linear infinite;
+}
+
+.particles span:nth-child(1){left:12%;top:80%;animation-delay:0s;}
+.particles span:nth-child(2){left:24%;top:70%;animation-delay:1s;}
+.particles span:nth-child(3){left:38%;top:85%;animation-delay:2s;}
+.particles span:nth-child(4){left:52%;top:75%;animation-delay:.5s;}
+.particles span:nth-child(5){left:66%;top:82%;animation-delay:1.5s;}
+.particles span:nth-child(6){left:78%;top:68%;animation-delay:2.5s;}
+.particles span:nth-child(7){left:88%;top:76%;animation-delay:3s;}
+.particles span:nth-child(8){left:45%;top:90%;animation-delay:3.5s;}
+
+@keyframes particleMove{
+0%{
+transform:translateY(0) scale(.6);
+opacity:0;
+}
+20%{
+opacity:.9;
+}
+100%{
+transform:translateY(-520px) scale(1.4);
+opacity:0;
+}
+}   
 </style>
 </head>
 <body>
@@ -361,6 +432,16 @@ INITIALIZING AI...
   <img src="logo-emai.png" alt="$EMAI Logo" class="logo" />
 
   <section class="hero">
+   <div class="particles">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div> 
   <div class="hero-content">
     <h1>$EMAI</h1>
     <p id="dynamic-slogan">Meme Intelligence Awakened</p>
