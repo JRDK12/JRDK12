@@ -270,7 +270,26 @@ function drawMemeText(ctx, text, x, y, canvasWidth, canvasHeight, position) {
         ctx.fillText(lineText, x, lineY);
       });
     }
+function drawWatermark(ctx, canvasWidth, canvasHeight) {
+  const text = "$EMAI • emaitoken.io";
+  const fontSize = Math.max(22, canvasWidth * 0.028);
 
+  ctx.save();
+
+  ctx.font = `700 ${fontSize}px Arial`;
+  ctx.textAlign = "right";
+  ctx.fillStyle = "rgba(255, 255, 255, 0.55)";
+  ctx.strokeStyle = "rgba(0, 0, 0, 0.55)";
+  ctx.lineWidth = fontSize * 0.12;
+
+  const x = canvasWidth - canvasWidth * 0.03;
+  const y = canvasHeight - canvasHeight * 0.025;
+
+  ctx.strokeText(text, x, y);
+  ctx.fillText(text, x, y);
+
+  ctx.restore();
+}
     function generateMeme() {
       const imgFile = document.getElementById("memeImage").files[0];
       const topText = document.getElementById("topText").value;
