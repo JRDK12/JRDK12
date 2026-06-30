@@ -388,15 +388,17 @@ animation:particleMove 8s linear infinite;
 .particles span:nth-child(8){left:45%;top:90%;animation-delay:3.5s;}
 
 @keyframes particleMove{
-100%{
-transform:translateY(-650px) scale(1.8);
+0%{
+transform:translateY(0) scale(.6);
 opacity:0;
 }
+
 20%{
-opacity:.9;
+opacity:1;
 }
+
 100%{
-transform:translateY(-520px) scale(1.4);
+transform:translateY(-650px) scale(1.8);
 opacity:0;
 }
 }
