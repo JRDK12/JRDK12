@@ -355,32 +355,6 @@ filter:brightness(1);
 transform:translate(0,0);
 }
 
-}
-.hero::after{
-content:"";
-position:absolute;
-top:-120px;
-left:0;
-width:100%;
-height:120px;
-background:linear-gradient(
-to bottom,
-transparent,
-rgba(0,234,255,.35),
-transparent
-);
-animation:aiScan 5s infinite;
-pointer-events:none;
-z-index:2;
-}
-
-@keyframes aiScan{
-0%{top:-120px;opacity:0;}
-15%{opacity:1;}
-55%{top:100%;opacity:.85;}
-100%{top:100%;opacity:0;}
-}
-
 .hero-content{
 position:relative;
 z-index:3;
