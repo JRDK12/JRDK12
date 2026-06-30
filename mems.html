@@ -4,75 +4,254 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Meme Generator | $EMAI</title>
+
   <style>
     body {
-      background: #111;
+      background: radial-gradient(circle at top, #08263a, #050b13 55%, #020509);
       color: #fff;
       font-family: Arial, sans-serif;
-      padding: 2rem;
+      padding: 24px 14px;
       text-align: center;
+      margin: 0;
     }
+
     .headline {
-      font-size: 2.5rem;
+      font-size: clamp(2rem, 8vw, 4rem);
+      margin-bottom: 10px;
       animation: glow 2s infinite alternate;
     }
+
+    .subtitle {
+      color: #bffcff;
+      font-size: 1.15rem;
+      max-width: 680px;
+      margin: 0 auto 28px;
+      line-height: 1.5;
+    }
+
     @keyframes glow {
       0% { text-shadow: 0 0 5px #0ff, 0 0 10px #0ff; }
-      100% { text-shadow: 0 0 20px #00f6ff, 0 0 30px #00f6ff; }
+      100% { text-shadow: 0 0 20px #00f6ff, 0 0 34px #00f6ff; }
     }
+
     .meme-form {
-      margin-top: 2rem;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 24px 16px;
+      background: rgba(0, 234, 255, 0.06);
+      border: 1px solid rgba(0, 234, 255, 0.25);
+      border-radius: 18px;
+      box-shadow: 0 0 25px rgba(0, 234, 255, 0.12);
     }
+
     input, button {
-      padding: 0.7rem;
-      border-radius: 10px;
+      width: 100%;
+      max-width: 520px;
+      box-sizing: border-box;
+      padding: 15px 16px;
+      border-radius: 12px;
       border: none;
-      margin: 0.5rem;
+      margin: 9px auto;
       font-size: 1rem;
+      display: block;
     }
+
+    input {
+      background: #071827;
+      color: white;
+      border: 1px solid #00eaff;
+    }
+
+    button {
+      background: linear-gradient(135deg, #00eaff, #0077ff);
+      color: #001018;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 0 18px rgba(0, 234, 255, 0.45);
+    }
+
     .output {
-      margin-top: 2rem;
-      background: #222;
-      padding: 1rem;
-      border-radius: 10px;
-      min-height: 200px;
+      max-width: 900px;
+      margin: 28px auto 0;
+      background: rgba(255,255,255,0.04);
+      padding: 16px;
+      border-radius: 18px;
+      min-height: 160px;
+    }
+
+    canvas {
+      width: 100%;
+      max-width: 760px;
+      height: auto;
+      border-radius: 14px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .meme-actions {
+      display: none;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .meme-actions button {
+      max-width: 240px;
+      margin: 0;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 18px 10px;
+      }
+
+      .meme-form {
+        padding: 18px 12px;
+      }
+
+      .meme-actions button {
+        max-width: 100%;
+      }
     }
   </style>
 </head>
+
 <body>
   <h1 class="headline">AI Meme Generator 🤖✨</h1>
 
-  <div class="meme-form">
-    <input type="file" id="memeImage" accept="image/*" /> <br/>
-    <input type="text" id="memePrompt" placeholder="Enter your meme text here" /> <br/>
-    <button onclick="generateMeme()">Generate Meme</button>
+  <p class="subtitle">
+    Create your meme. Share it. Help grow the EMAI community.
+  </p>
+
+  <div class="meme-form" id="meme-generator">
+    <input type="file" id="memeImage" accept="image/*" />
+    <input type="text" id="topText" placeholder="Top text" />
+    <input type="text" id="bottomText" placeholder="Bottom text" />
+    <button onclick="generateMeme()">⚡ Generate AI Meme</button>
   </div>
 
   <div class="output" id="output">
-    <!-- Result will appear here -->
+    <p>Your generated meme will appear here.</p>
+  </div>
+
+  <div class="meme-actions" id="memeActions">
+    <button onclick="downloadMeme()">⬇ Download Meme</button>
+    <button onclick="shareOnX()">📤 Share on X</button>
+    <button onclick="createAnother()">🔄 Create Another</button>
   </div>
 
   <script>
+    function drawMemeText(ctx, text, x, y, canvasWidth) {
+      if (!text) return;
+
+      const fontSize = Math.max(42, canvasWidth * 0.08);
+      ctx.font = `900 ${fontSize}px Arial`;
+      ctx.textAlign = "center";
+      ctx.fillStyle = "white";
+      ctx.strokeStyle = "black";
+      ctx.lineWidth = fontSize * 0.14;
+
+      const maxWidth = canvasWidth * 0.88;
+      const words = text.toUpperCase().split(" ");
+      let line = "";
+      const lines = [];
+
+      for (let i = 0; i < words.length; i++) {
+        const testLine = line + words[i] + " ";
+        const metrics = ctx.measureText(testLine);
+
+        if (metrics.width > maxWidth && i > 0) {
+          lines.push(line.trim());
+          line = words[i] + " ";
+        } else {
+          line = testLine;
+        }
+      }
+
+      lines.push(line.trim());
+
+      lines.forEach((lineText, index) => {
+        const lineY = y + index * fontSize * 1.12;
+        ctx.strokeText(lineText, x, lineY);
+        ctx.fillText(lineText, x, lineY);
+      });
+    }
+
     function generateMeme() {
       const imgFile = document.getElementById("memeImage").files[0];
-      const prompt = document.getElementById("memePrompt").value;
+      const topText = document.getElementById("topText").value;
+      const bottomText = document.getElementById("bottomText").value;
       const output = document.getElementById("output");
 
-      if (!imgFile || !prompt) {
-        output.innerHTML = '<p>Please upload an image and enter a caption.</p>';
+      if (!imgFile) {
+        output.innerHTML = "<p>Please upload an image first.</p>";
+        return;
+      }
+
+      if (!topText && !bottomText) {
+        output.innerHTML = "<p>Please enter top or bottom text.</p>";
         return;
       }
 
       const reader = new FileReader();
+
       reader.onload = function(e) {
-        output.innerHTML = `
-          <div>
-            <img src="${e.target.result}" style="max-width:100%; border-radius:10px;" alt="Generated Meme" />
-            <p style="margin-top:1rem; font-size:1.2rem;">💬 ${prompt}</p>
-          </div>
-        `;
+        const img = new Image();
+
+        img.onload = function() {
+          const canvas = document.createElement("canvas");
+          const ctx = canvas.getContext("2d");
+
+          canvas.width = img.width;
+          canvas.height = img.height;
+
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+          drawMemeText(ctx, topText, canvas.width / 2, 80, canvas.width);
+          drawMemeText(ctx, bottomText, canvas.width / 2, canvas.height - 120, canvas.width);
+
+          output.innerHTML = "";
+          output.appendChild(canvas);
+
+          document.getElementById("memeActions").style.display = "flex";
+        };
+
+        img.src = e.target.result;
       };
+
       reader.readAsDataURL(imgFile);
+    }
+
+    function downloadMeme() {
+      const canvas = document.querySelector("#output canvas");
+      if (!canvas) return;
+
+      const link = document.createElement("a");
+      link.download = "emai-meme.png";
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+    }
+
+    function shareOnX() {
+      const text = encodeURIComponent(
+        "I just created an AI meme with $EMAI 🤖🔥\n\nCreate yours here: https://emaitoken.io/mems.html\n\n#EMAI #AI #Memecoin #Base"
+      );
+
+      window.open(`https://twitter.com/intent/tweet?text=${text}`, "_blank");
+    }
+
+    function createAnother() {
+      document.getElementById("memeImage").value = "";
+      document.getElementById("topText").value = "";
+      document.getElementById("bottomText").value = "";
+      document.getElementById("output").innerHTML = "<p>Your generated meme will appear here.</p>";
+      document.getElementById("memeActions").style.display = "none";
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
     }
   </script>
 </body>
