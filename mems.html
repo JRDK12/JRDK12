@@ -198,32 +198,69 @@
   </div>
 
   <script>
-    function drawMemeText(ctx, text, x, y, canvasWidth) {
-      if (!text) return;
+    function wrapText(ctx, text, maxWidth) {
+  const words = text.toUpperCase().split(" ");
+  const lines = [];
+  let line = "";
 
-      const fontSize = Math.max(90, canvasWidth * 0.13);
-      ctx.font = `900 ${fontSize}px Impact, Arial Black, Arial`;
-      ctx.textAlign = "center";
-      ctx.fillStyle = "white";
-      ctx.strokeStyle = "black";
-      ctx.lineWidth = fontSize * 0.18;
+  for (let i = 0; i < words.length; i++) {
+    const testLine = line + words[i] + " ";
 
-      const maxWidth = canvasWidth * 0.88;
-      const words = text.toUpperCase().split(" ");
-      let line = "";
-      const lines = [];
+    if (ctx.measureText(testLine).width > maxWidth && i > 0) {
+      lines.push(line.trim());
+      line = words[i] + " ";
+    } else {
+      line = testLine;
+    }
+  }
 
-      for (let i = 0; i < words.length; i++) {
-        const testLine = line + words[i] + " ";
-        const metrics = ctx.measureText(testLine);
+  lines.push(line.trim());
+  return lines;
+}
 
-        if (metrics.width > maxWidth && i > 0) {
-          lines.push(line.trim());
-          line = words[i] + " ";
-        } else {
-          line = testLine;
-        }
-      }
+function drawMemeText(ctx, text, x, y, canvasWidth, canvasHeight, position) {
+  if (!text) return;
+
+  const maxWidth = canvasWidth * 0.9;
+  const maxTextHeight = canvasHeight * 0.26;
+
+  let fontSize = Math.max(90, canvasWidth * 0.13);
+  let lines = [];
+
+  while (fontSize > 34) {
+    ctx.font = `900 ${fontSize}px Impact, Arial Black, Arial`;
+    lines = wrapText(ctx, text, maxWidth);
+
+    const totalHeight = lines.length * fontSize * 1.08;
+
+    if (totalHeight <= maxTextHeight) break;
+
+    fontSize -= 6;
+  }
+
+  ctx.font = `900 ${fontSize}px Impact, Arial Black, Arial`;
+  ctx.textAlign = "center";
+  ctx.fillStyle = "white";
+  ctx.strokeStyle = "black";
+  ctx.lineWidth = fontSize * 0.18;
+
+  const lineHeight = fontSize * 1.08;
+  const totalHeight = lines.length * lineHeight;
+
+  let startY;
+
+  if (position === "top") {
+    startY = canvasHeight * 0.12;
+  } else {
+    startY = canvasHeight - totalHeight - canvasHeight * 0.05;
+  }
+
+  lines.forEach((lineText, index) => {
+    const lineY = startY + index * lineHeight;
+    ctx.strokeText(lineText, x, lineY);
+    ctx.fillText(lineText, x, lineY);
+  });
+}
 
       lines.push(line.trim());
 
