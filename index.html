@@ -365,15 +365,23 @@ z-index:3;
 
 .particles span{
 position:absolute;
-width:6px;
-height:6px;
-background:#00eaff;
-border-radius:50%;
-box-shadow:0 0 15px #00eaff, 0 0 30px #00eaff;
+width:auto;
+height:auto;
+background:transparent;
+border-radius:0;
+box-shadow:none;
+color:#00eaff;
+font-size:13px;
+font-weight:700;
+line-height:1;
+text-shadow:0 0 8px #00eaff, 0 0 18px #00eaff;
 opacity:.75;
-animation:particleMove 8s linear infinite;
+animation:particleMove 10s linear infinite;
 }
 
+.particles span::before{
+content:"·";
+}
 .particles span:nth-child(1){left:12%;top:80%;animation-delay:0s;}
 .particles span:nth-child(2){left:24%;top:70%;animation-delay:1s;}
 .particles span:nth-child(3){left:38%;top:85%;animation-delay:2s;}
@@ -382,7 +390,19 @@ animation:particleMove 8s linear infinite;
 .particles span:nth-child(6){left:78%;top:68%;animation-delay:2.5s;}
 .particles span:nth-child(7){left:88%;top:76%;animation-delay:3s;}
 .particles span:nth-child(8){left:45%;top:90%;animation-delay:3.5s;}
+.particles span:nth-child(1)::before{content:"·";}
+.particles span:nth-child(2)::before{content:"✦";}
+.particles span:nth-child(3)::before{content:"·";}
+.particles span:nth-child(4)::before{content:"✧";}
+.particles span:nth-child(5)::before{content:"·";}
+.particles span:nth-child(6)::before{content:"✦";}
+.particles span:nth-child(7)::before{content:"·";}
+.particles span:nth-child(8)::before{content:"✧";}
 
+.particles span:nth-child(2){font-size:10px;opacity:.55;}
+.particles span:nth-child(4){font-size:15px;opacity:.85;}
+.particles span:nth-child(6){font-size:11px;opacity:.6;}
+.particles span:nth-child(8){font-size:14px;opacity:.8;}
 
  @keyframes buttonSweep{
 
@@ -428,9 +448,27 @@ animation:particleMove 8s linear infinite;
 .particles span:nth-child(8){left:45%;top:90%;animation-delay:3.5s;}
 
 @keyframes particleMove{
-0%{transform:translateY(0) scale(.6);opacity:0;}
-20%{opacity:1;}
-100%{transform:translateY(-650px) scale(1.8);opacity:0;}
+0%{
+transform:translateY(0) translateX(0) scale(.7);
+opacity:0;
+}
+
+15%{
+opacity:.9;
+}
+
+45%{
+opacity:.65;
+}
+
+75%{
+opacity:.35;
+}
+
+100%{
+transform:translateY(-620px) translateX(28px) scale(1.15);
+opacity:0;
+}
 }   
 </style>
 </head>
