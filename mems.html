@@ -182,6 +182,97 @@ top:100%;
 opacity:0;
 }
 }
+/* AI MEME CONSOLE — form panel polish */
+
+.meme-form{
+position:relative;
+z-index:1;
+max-width:900px;
+margin:32px auto;
+padding:46px 34px 38px;
+border:1px solid rgba(0,234,255,.42);
+border-radius:26px;
+background:
+linear-gradient(180deg, rgba(4,18,34,.82), rgba(2,8,18,.92)),
+radial-gradient(circle at 50% 0%, rgba(0,234,255,.18), transparent 38%);
+box-shadow:
+0 0 28px rgba(0,234,255,.18),
+inset 0 0 28px rgba(0,234,255,.08);
+backdrop-filter:blur(8px);
+overflow:hidden;
+}
+
+.meme-form::before{
+content:"AI MEME CONSOLE";
+position:absolute;
+top:14px;
+left:22px;
+font-family:monospace;
+font-size:.78rem;
+letter-spacing:2px;
+color:rgba(180,252,255,.8);
+text-shadow:0 0 10px rgba(0,234,255,.8);
+}
+
+.meme-form::after{
+content:"";
+position:absolute;
+top:0;
+left:-120%;
+width:70%;
+height:100%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(0,234,255,.10),
+transparent
+);
+transform:skewX(-18deg);
+animation:memePanelSweep 6s ease-in-out infinite;
+pointer-events:none;
+}
+
+.meme-form input[type="text"],
+.meme-form input[type="file"]{
+position:relative;
+z-index:2;
+background:rgba(1,8,18,.72);
+border:1px solid rgba(0,234,255,.65);
+border-radius:14px;
+color:#eaffff;
+box-shadow:
+0 0 14px rgba(0,234,255,.18),
+inset 0 0 12px rgba(0,234,255,.06);
+}
+
+.meme-form input[type="text"]:focus{
+outline:none;
+border-color:#00eaff;
+box-shadow:
+0 0 22px rgba(0,234,255,.42),
+inset 0 0 12px rgba(0,234,255,.10);
+}
+
+@keyframes memePanelSweep{
+0%{
+left:-120%;
+opacity:0;
+}
+
+18%{
+opacity:.9;
+}
+
+42%{
+left:150%;
+opacity:0;
+}
+
+100%{
+left:150%;
+opacity:0;
+}
+}    
   </style>
 </head>
 
