@@ -49,6 +49,7 @@
       width: 220px;
       border-radius: 10px;
       box-shadow: 0 0 20px #0ff;
+      animation:logoPulse 4.5s ease-in-out infinite;
       z-index: 9999;
     }
     .meme-link {
@@ -459,7 +460,20 @@ opacity:.35;
 transform:translateY(-620px) translateX(28px) scale(1.15);
 opacity:0;
 }
-}   
+}
+@keyframes logoPulse{
+0%{
+filter:drop-shadow(0 0 8px rgba(0,234,255,.45));
+}
+
+50%{
+filter:drop-shadow(0 0 18px rgba(0,234,255,.9));
+}
+
+100%{
+filter:drop-shadow(0 0 8px rgba(0,234,255,.45));
+}
+}    
 </style>
 </head>
 <body>
