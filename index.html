@@ -476,6 +476,65 @@ transform:translateY(-620px) translateX(28px) scale(1.15);
 opacity:0;
 }
 }
+.ai-sparks{
+position:absolute;
+inset:0;
+z-index:2;
+pointer-events:none;
+overflow:hidden;
+}
+
+.ai-sparks span{
+position:absolute;
+font-family:monospace;
+font-size:.9rem;
+font-weight:700;
+color:rgba(180,252,255,.85);
+text-shadow:
+0 0 8px rgba(0,234,255,.85),
+0 0 18px rgba(0,234,255,.45);
+opacity:0;
+animation:aiSpark 7s ease-in-out infinite;
+}
+
+.ai-sparks span:nth-child(1){left:18%;top:28%;animation-delay:.4s;}
+.ai-sparks span:nth-child(2){left:72%;top:30%;animation-delay:1.8s;}
+.ai-sparks span:nth-child(3){left:24%;top:66%;animation-delay:3.2s;}
+.ai-sparks span:nth-child(4){left:82%;top:58%;animation-delay:4.6s;}
+.ai-sparks span:nth-child(5){left:64%;top:76%;animation-delay:2.6s;}
+.ai-sparks span:nth-child(6){left:36%;top:42%;animation-delay:5.4s;}
+
+@keyframes aiSpark{
+0%{
+opacity:0;
+transform:translateY(8px) scale(.9);
+filter:blur(1px);
+}
+
+12%{
+opacity:.85;
+filter:blur(0);
+}
+
+22%{
+opacity:.25;
+}
+
+32%{
+opacity:.75;
+}
+
+45%{
+opacity:0;
+transform:translateY(-14px) scale(1.05);
+filter:blur(.5px);
+}
+
+100%{
+opacity:0;
+transform:translateY(-14px) scale(1.05);
+}
+}    
 @keyframes logoPulse{
 0%{
 filter:drop-shadow(0 0 8px rgba(0,234,255,.45));
@@ -521,6 +580,14 @@ INITIALIZING AI...
   <span></span>
   <span></span>
 </div> 
+ <div class="ai-sparks">
+    <span>AI</span>
+    <span>0101</span>
+    <span>&lt;&gt;</span>
+    <span>∞</span>
+    <span>BASE</span>
+    <span>//MEME</span>
+</div>   
   <div class="hero-content">
     <h1>$EMAI</h1>
     <p id="dynamic-slogan">Meme Intelligence Awakened</p>
