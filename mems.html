@@ -328,6 +328,44 @@ border:1px solid rgba(0,234,255,.32);
 box-shadow:
 0 0 26px rgba(0,234,255,.22),
 0 18px 40px rgba(0,0,0,.45);
+}
+/* AI MEME CONSOLE — action buttons responsive fix */
+
+.meme-actions{
+position:relative;
+z-index:2;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+align-items:center;
+gap:14px;
+max-width:960px;
+margin:28px auto 0;
+padding:0 12px;
+}
+
+.meme-actions a{
+text-decoration:none;
+}
+
+.meme-actions button{
+width:auto;
+min-width:180px;
+max-width:240px;
+white-space:nowrap;
+}
+
+@media (max-width:600px){
+.meme-actions{
+gap:10px;
+padding:0;
+}
+
+.meme-actions button{
+width:100%;
+max-width:100%;
+min-width:0;
+}
 }    
   </style>
 </head>
