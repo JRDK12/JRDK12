@@ -18,19 +18,34 @@
       background: #000;
       color: #fff;
     }
-    .hero {
-      position: relative;
-      overflow: hidden;
-      background: url('robot-bg.png') no-repeat center center;
-      background-size: cover;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #0ff;
-      padding: 2rem;
+  .hero {
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.42) 42%,
+      rgba(0, 0, 0, 0.18) 100%
+    ),
+    url('hero-bg.jpg?v=3') no-repeat center center;
+
+  background-size: cover;
+  background-position: center center;
+
+  min-height: 100vh;
+  min-height: 100svh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  color: #0ff;
+  padding: 7rem 2rem 3rem;
+}
     }
     .hero h1 {
       font-size: 5rem;
@@ -718,10 +733,39 @@ filter:drop-shadow(0 0 8px rgba(0,234,255,.45));
 }
 
 @media (max-width: 700px) {
-  .askemai-top-bar {
-    font-size: 0.86rem;
-    padding: 9px 38px;
-  }
+ .askemai-top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  box-sizing: border-box;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0, 10, 25, 0.98),
+    rgba(0, 234, 255, 0.22),
+    rgba(0, 10, 25, 0.98)
+  );
+
+  border-bottom: 1px solid rgba(0, 234, 255, 0.45);
+  box-shadow: 0 0 22px rgba(0, 234, 255, 0.25);
+
+  color: #eaffff;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+
+  padding: 10px 14px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+
+  font-size: clamp(0.78rem, 2.4vw, 1rem);
+  line-height: 1.35;
+
+  white-space: normal;
+  overflow-wrap: break-word;
+}
 
   .logo {
     top: 58px;
@@ -734,13 +778,73 @@ filter:drop-shadow(0 0 8px rgba(0,234,255,.45));
     padding: 10px 14px;
   }
 }
-   
+   @media (max-width: 768px) {
+  .askemai-top-bar {
+    padding: 8px 10px;
+    font-size: 0.82rem;
+    line-height: 1.25;
+  }
+
+  .logo {
+    top: 64px;
+    left: 16px;
+    width: 118px;
+  }
+
+  .hero {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.55) 0%,
+        rgba(0, 0, 0, 0.22) 45%,
+        rgba(0, 0, 0, 0.55) 100%
+      ),
+      url('hero-bg.jpg?v=3') no-repeat center center;
+
+    background-size: cover;
+    background-position: 68% center;
+
+    min-height: 100svh;
+    padding: 8.5rem 1.2rem 2.5rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 18vw, 5rem);
+    line-height: 1;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .portal-core {
+    width: 100%;
+    max-width: 340px;
+    height: 130px;
+  }
+
+  .portal-ring {
+    width: 300px;
+    height: 95px;
+  }
+
+  .portal-ring-2 {
+    width: 245px;
+    height: 76px;
+  }
+
+  .hero-enter {
+    font-size: 1rem;
+    padding: 16px 26px;
+    max-width: 90%;
+  }
+}
 </style>
 </head>
 <body>
   <!-- AskEmai top announcement -->
 <div class="askemai-top-bar" id="askemaiTopBar">
-  🤖 <span>NEW!</span> Meet AskEmai — your new AI meme buddy.
+  🤖 <span>NEW!</span> Meet AskEmai — your AI meme buddy.
 </div>
 
 <!-- AskEmai popup -->
