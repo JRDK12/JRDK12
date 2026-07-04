@@ -738,6 +738,32 @@ filter:drop-shadow(0 0 8px rgba(0,234,255,.45));
 </style>
 </head>
 <body>
+  <!-- AskEmai top announcement -->
+<div class="askemai-top-bar" id="askemaiTopBar">
+  🤖 <span>NEW!</span> Meet AskEmai — your new AI meme buddy.
+</div>
+
+<!-- AskEmai popup -->
+<div class="askemai-modal" id="askemaiModal">
+  <div class="askemai-modal-card">
+    <button class="askemai-close" id="askemaiClose" aria-label="Close AskEmai popup">×</button>
+
+    <div class="askemai-modal-icon">🤖</div>
+
+    <h2>Hi! 👋</h2>
+
+    <p>
+      I'm <strong>AskEmai</strong>.<br><br>
+      I'll help you create memes, make you laugh and guide you through the
+      <strong>EMAI ecosystem</strong>.
+    </p>
+
+    <div class="askemai-modal-actions">
+      <a href="mems.html" class="askemai-modal-btn">Create a Meme</a>
+      <a href="#daily-memes" class="askemai-modal-btn secondary" id="askemaiExplore">Explore Memes</a>
+    </div>
+  </div>
+</div>
   <div id="boot-screen">
 
 <div id="boot-title">
@@ -902,6 +928,33 @@ bootLines.forEach((line, index) => {
         }, 250);
     }
 }, 20); 
+    // AskEmai top bar popup
+const askemaiTopBar = document.getElementById("askemaiTopBar");
+const askemaiModal = document.getElementById("askemaiModal");
+const askemaiClose = document.getElementById("askemaiClose");
+const askemaiExplore = document.getElementById("askemaiExplore");
+
+if (askemaiTopBar && askemaiModal && askemaiClose) {
+  askemaiTopBar.addEventListener("click", () => {
+    askemaiModal.classList.add("active");
+  });
+
+  askemaiClose.addEventListener("click", () => {
+    askemaiModal.classList.remove("active");
+  });
+
+  askemaiModal.addEventListener("click", (event) => {
+    if (event.target === askemaiModal) {
+      askemaiModal.classList.remove("active");
+    }
+  });
+
+  if (askemaiExplore) {
+    askemaiExplore.addEventListener("click", () => {
+      askemaiModal.classList.remove("active");
+    });
+  }
+}
   </script>
 </body>
 </html>
