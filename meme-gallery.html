@@ -43,12 +43,12 @@
       font-size: 1.4rem;
     }
 
-    .brand img {
-      width: 46px;
-      height: 46px;
-      object-fit: contain;
-      filter: drop-shadow(0 0 12px rgba(0, 234, 255, 0.8));
-    }
+  .brand img {
+  width: 90px;
+  height: auto;
+  object-fit: contain;
+  filter: none;
+}
 
     .back-home {
       color: #00eaff;
@@ -143,17 +143,29 @@
       }
     }
 
-    @media (max-width: 560px) {
-      .top-bar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-      }
+  @media (max-width: 560px) {
+  .top-bar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
 
-      .gallery-grid {
-        grid-template-columns: 1fr;
-      }
-    }
+  .brand img {
+    width: 78px;
+    height: auto;
+  }
+
+  .back-home {
+    font-size: 0.95rem;
+    padding: 9px 14px;
+    white-space: nowrap;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
   </style>
 </head>
 
@@ -164,7 +176,7 @@
       <div class="top-bar">
         <a href="index.html" class="brand">
           <img src="cube-logo.png?v=2" alt="$EMAI Logo">
-          <span>$EMAI</span>
+         
         </a>
 
         <a href="index.html" class="back-home">← Back Home</a>
