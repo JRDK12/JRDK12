@@ -1138,7 +1138,7 @@ filter:drop-shadow(0 0 8px rgba(0,234,255,.45));
 .hero-feature strong {
   color: #ffffff !important;
 }
-    /* MOBILE HERO TEXT LAYOUT */
+ /* FINAL MOBILE HERO FIX — keep desktop unchanged */
 @media (max-width: 768px) {
 
   .hero {
@@ -1148,80 +1148,106 @@ filter:drop-shadow(0 0 8px rgba(0,234,255,.45));
     background-image:
       linear-gradient(
         180deg,
-        rgba(0, 0, 0, 0.46) 0%,
-        rgba(0, 0, 0, 0.22) 42%,
+        rgba(0, 0, 0, 0.35) 0%,
+        rgba(0, 0, 0, 0.15) 38%,
         rgba(0, 0, 0, 0.72) 100%
       ),
-      url("robot-bg-mobile.png?v=9") !important;
+      url("robot-bg-mobile.png?v=11") !important;
 
     background-repeat: no-repeat !important;
     background-size: cover !important;
-    background-position: center center !important;
+    background-position: center bottom !important;
+    background-attachment: scroll !important;
 
     display: flex !important;
     align-items: center !important;
     justify-content: flex-start !important;
 
-    padding: 130px 18px 52px !important;
+    padding: 115px 16px 42px !important;
+    box-sizing: border-box !important;
     text-align: center !important;
   }
 
   .hero-panel {
     width: 100% !important;
-    max-width: 370px !important;
+    max-width: 345px !important;
     margin: 0 auto !important;
+    padding: 14px 12px 16px !important;
+
+    border-radius: 22px !important;
+    background: rgba(0, 8, 20, 0.34) !important;
+    border: 1px solid rgba(0, 234, 255, 0.16) !important;
+    backdrop-filter: blur(1.5px) !important;
+
     text-align: center !important;
-
-    padding: 20px 14px 22px !important;
-    border-radius: 26px !important;
-
-    background: rgba(0, 8, 20, 0.28) !important;
-    border: 1px solid rgba(0, 234, 255, 0.18) !important;
-    backdrop-filter: blur(2px) !important;
   }
 
   .hero h1 {
-    font-size: clamp(3.4rem, 18vw, 5rem) !important;
+    font-size: clamp(2.7rem, 14vw, 4rem) !important;
     line-height: 0.95 !important;
-    margin-bottom: 12px !important;
+    margin: 0 0 8px !important;
+    text-align: center !important;
   }
 
   #dynamic-slogan {
-    font-size: 0.95rem !important;
-    line-height: 1.25 !important;
-    padding: 8px 13px !important;
-    margin-bottom: 18px !important;
+    display: inline-block !important;
+    font-size: 0.78rem !important;
+    line-height: 1.2 !important;
+    padding: 6px 10px !important;
+    margin: 0 0 12px !important;
+    max-width: 95% !important;
   }
 
   .hero-description {
-    max-width: 310px !important;
-    margin: 0 auto 22px !important;
+    max-width: 285px !important;
+    margin: 0 auto 16px !important;
 
-    font-size: 0.98rem !important;
-    line-height: 1.55 !important;
+    font-size: 0.78rem !important;
+    line-height: 1.35 !important;
+    color: rgba(223, 252, 255, 0.92) !important;
   }
 
   .portal-core {
     width: 100% !important;
-    max-width: 315px !important;
+    max-width: 285px !important;
+    height: auto !important;
     margin: 0 auto !important;
+  }
+
+  .portal-ring,
+  .portal-ring-2,
+  .portal-core::before {
+    display: none !important;
   }
 
   .hero-enter {
     display: block !important;
     width: 100% !important;
+    max-width: 285px !important;
     min-width: 0 !important;
-    max-width: 315px !important;
 
     margin: 0 auto !important;
-    padding: 15px 16px !important;
+    padding: 13px 14px !important;
 
-    font-size: 0.92rem !important;
-    line-height: 1.25 !important;
+    font-size: 0.82rem !important;
+    line-height: 1.2 !important;
+    border-radius: 999px !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
   }
 
   .hero-features {
     display: none !important;
+  }
+
+  .logo {
+    top: 56px !important;
+    left: 14px !important;
+    width: 82px !important;
+    height: auto !important;
+    box-shadow: none !important;
+    animation: none !important;
+    filter: none !important;
   }
 }
 </style>
