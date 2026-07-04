@@ -548,6 +548,192 @@ filter:drop-shadow(0 0 18px rgba(0,234,255,.9));
 filter:drop-shadow(0 0 8px rgba(0,234,255,.45));
 }
 }
+    /* AskEmai top announcement bar */
+.askemai-top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  background: linear-gradient(90deg, rgba(0, 10, 25, 0.96), rgba(0, 234, 255, 0.22), rgba(0, 10, 25, 0.96));
+  border-bottom: 1px solid rgba(0, 234, 255, 0.45);
+  box-shadow: 0 0 22px rgba(0, 234, 255, 0.25);
+  color: #eaffff;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  padding: 10px 46px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  animation: askemaiBarGlow 2.6s ease-in-out infinite alternate;
+}
+
+.askemai-top-bar span {
+  color: #00eaff;
+  text-shadow: 0 0 12px rgba(0, 234, 255, 0.9);
+}
+
+.askemai-top-bar:hover {
+  background: linear-gradient(90deg, rgba(0, 15, 35, 0.98), rgba(0, 234, 255, 0.34), rgba(0, 15, 35, 0.98));
+}
+
+@keyframes askemaiBarGlow {
+  from {
+    box-shadow: 0 0 14px rgba(0, 234, 255, 0.22);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(0, 234, 255, 0.48);
+  }
+}
+
+/* Push fixed logo/buttons below the top bar */
+.logo {
+  top: 62px;
+}
+
+.meme-link {
+  top: 62px;
+}
+
+/* AskEmai popup */
+.askemai-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10001;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(8px);
+}
+
+.askemai-modal.active {
+  display: flex;
+}
+
+.askemai-modal-card {
+  position: relative;
+  width: min(520px, 92vw);
+  padding: 34px 28px;
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at top right, rgba(0, 234, 255, 0.18), transparent 38%),
+    linear-gradient(180deg, rgba(3, 13, 28, 0.98), rgba(0, 0, 0, 0.96));
+  border: 1px solid rgba(0, 234, 255, 0.52);
+  box-shadow:
+    0 0 35px rgba(0, 234, 255, 0.34),
+    inset 0 0 25px rgba(0, 234, 255, 0.08);
+  text-align: center;
+  color: #fff;
+  animation: askemaiPop 0.28s ease-out;
+}
+
+@keyframes askemaiPop {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.askemai-modal-icon {
+  width: 86px;
+  height: 86px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+  background: rgba(0, 234, 255, 0.12);
+  border: 1px solid rgba(0, 234, 255, 0.5);
+  box-shadow: 0 0 22px rgba(0, 234, 255, 0.35);
+}
+
+.askemai-modal-card h2 {
+  margin: 0 0 14px;
+  font-size: clamp(2rem, 7vw, 3rem);
+  color: #00eaff;
+  text-shadow: 0 0 18px rgba(0, 234, 255, 0.75);
+}
+
+.askemai-modal-card p {
+  margin: 0 auto;
+  max-width: 420px;
+  font-size: 1.12rem;
+  line-height: 1.65;
+  color: #dffcff;
+}
+
+.askemai-modal-card strong {
+  color: #fff;
+}
+
+.askemai-modal-actions {
+  margin-top: 24px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.askemai-modal-btn {
+  display: inline-block;
+  padding: 13px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 234, 255, 0.55);
+  background: linear-gradient(135deg, #00eaff, #0077ff);
+  color: #001018;
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: 0 0 22px rgba(0, 234, 255, 0.45);
+}
+
+.askemai-modal-btn.secondary {
+  background: rgba(0, 20, 35, 0.78);
+  color: #dffcff;
+}
+
+.askemai-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 234, 255, 0.4);
+  background: rgba(0, 10, 22, 0.9);
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.askemai-close:hover {
+  background: #00eaff;
+  color: #001018;
+}
+
+@media (max-width: 700px) {
+  .askemai-top-bar {
+    font-size: 0.86rem;
+    padding: 9px 38px;
+  }
+
+  .logo {
+    top: 58px;
+    width: 150px;
+  }
+
+  .meme-link {
+    top: 58px;
+    font-size: 0.95rem;
+    padding: 10px 14px;
+  }
+}
    
 </style>
 </head>
