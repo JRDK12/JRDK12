@@ -575,6 +575,32 @@ filter:drop-shadow(0 0 18px rgba(0,234,255,.9));
 filter:drop-shadow(0 0 8px rgba(0,234,255,.45));
 }
 }
+<div class="home-actions">
+  <a 
+    href="https://app.uniswap.org/swap?chain=base&outputCurrency=0x93F8E67Af68da54B6e15B352379e4f46B629AE04" 
+    class="emai-btn emai-btn-buy"
+    target="_blank"
+    rel="noopener noreferrer"
+    data-track="buy_emai"
+  >
+    💎 Buy $EMAI
+  </a>
+
+  <a 
+    href="https://www.dextools.io/app/base/pair-explorer/0x5219708907d527c7bf106ce6151d4a3b17b25b46af419703bdb660f8b6f86296" 
+    class="emai-btn emai-btn-chart"
+    target="_blank"
+    rel="noopener noreferrer"
+    data-track="live_chart"
+  >
+    📈 Live Chart
+  </a>
+</div>
+
+<p class="home-actions-note">
+  Trade on Base. Always verify the official contract before buying.
+</p>
+    
     /* AskEmai top announcement bar */
 .askemai-top-bar {
   position: fixed;
@@ -1381,6 +1407,73 @@ filter:drop-shadow(0 0 8px rgba(0,234,255,.45));
     grid-template-columns: repeat(2, 1fr);
   }
 }
+.home-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 5;
+}
+
+.emai-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  padding: 15px 26px;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  text-decoration: none;
+  color: #ffffff;
+  border: 1px solid rgba(0, 234, 255, 0.55);
+  background: linear-gradient(135deg, rgba(0, 234, 255, 0.18), rgba(0, 93, 255, 0.18));
+  box-shadow:
+    0 0 18px rgba(0, 234, 255, 0.25),
+    inset 0 0 18px rgba(0, 234, 255, 0.08);
+  backdrop-filter: blur(8px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.emai-btn:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0, 234, 255, 1);
+  box-shadow:
+    0 0 28px rgba(0, 234, 255, 0.55),
+    0 0 55px rgba(0, 93, 255, 0.25),
+    inset 0 0 22px rgba(0, 234, 255, 0.15);
+}
+
+.emai-btn-buy {
+  background: linear-gradient(135deg, #00eaff, #0066ff);
+  color: #02060d;
+  border-color: rgba(0, 234, 255, 1);
+}
+
+.emai-btn-chart {
+  background: linear-gradient(135deg, rgba(2, 6, 13, 0.9), rgba(0, 102, 255, 0.22));
+}
+
+@media (max-width: 600px) {
+  .home-actions {
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 26px;
+  }
+
+  .emai-btn {
+    width: 100%;
+    max-width: 320px;
+    min-width: unset;
+    font-size: 0.98rem;
+    padding: 14px 22px;
+  }
+}
+    
 </style>
 </head>
 <body>
