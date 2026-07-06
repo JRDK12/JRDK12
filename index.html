@@ -575,31 +575,39 @@ filter:drop-shadow(0 0 18px rgba(0,234,255,.9));
 filter:drop-shadow(0 0 8px rgba(0,234,255,.45));
 }
 }
-<div class="home-actions">
-  <a 
-    href="https://app.uniswap.org/swap?chain=base&outputCurrency=0x93F8E67Af68da54B6e15B352379e4f46B629AE04" 
-    class="emai-btn emai-btn-buy"
-    target="_blank"
-    rel="noopener noreferrer"
-    data-track="buy_emai"
-  >
-    💎 Buy $EMAI
-  </a>
+<section class="trade-actions-section">
+  <h2>Trade $EMAI</h2>
+  <p class="trade-actions-subtitle">
+    Join the Meme Intelligence movement on Base.
+  </p>
 
-  <a 
-    href="https://www.dextools.io/app/base/pair-explorer/0x5219708907d527c7bf106ce6151d4a3b17b25b46af419703bdb660f8b6f86296" 
-    class="emai-btn emai-btn-chart"
-    target="_blank"
-    rel="noopener noreferrer"
-    data-track="live_chart"
-  >
-    📈 Live Chart
-  </a>
-</div>
+    
+  <div class="trade-actions-buttons">
+    <a
+      href="https://app.uniswap.org/swap?chain=base&outputCurrency=0x93F8E67Af68da54B6e15B352379e4f46B629AE04"
+      class="trade-action-btn trade-buy-btn"
+      target="_blank"
+      rel="noopener noreferrer"
+      data-track="buy_emai"
+    >
+      💎 Buy $EMAI
+    </a>
 
-<p class="home-actions-note">
-  Trade on Base. Always verify the official contract before buying.
-</p>
+    <a
+      href="https://www.dextools.io/app/base/pair-explorer/0x5219708907d527c7bf106ce6151d4a3b17b25b46af419703bdb660f8b6f86296"
+      class="trade-action-btn trade-chart-btn"
+      target="_blank"
+      rel="noopener noreferrer"
+      data-track="live_chart"
+    >
+      📈 Live Chart
+    </a>
+  </div>
+
+  <p class="trade-actions-note">
+    Always verify the official contract before trading.
+  </p>
+</section>
     
     /* AskEmai top announcement bar */
 .askemai-top-bar {
@@ -1473,7 +1481,107 @@ filter:drop-shadow(0 0 8px rgba(0,234,255,.45));
     padding: 14px 22px;
   }
 }
-    
+    .trade-actions-section {
+  max-width: 760px;
+  margin: 55px auto 45px;
+  padding: 28px 24px;
+  text-align: center;
+  border: 1px solid rgba(0, 234, 255, 0.28);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at top, rgba(0, 234, 255, 0.14), transparent 45%),
+    linear-gradient(180deg, rgba(0, 25, 35, 0.92), rgba(0, 8, 14, 0.96));
+  box-shadow:
+    0 0 28px rgba(0, 234, 255, 0.12),
+    inset 0 0 22px rgba(0, 234, 255, 0.04);
+  position: relative;
+  z-index: 5;
+}
+
+.trade-actions-section h2 {
+  margin: 0;
+  color: #00eaff;
+  font-size: 2rem;
+  font-weight: 900;
+  text-shadow: 0 0 18px rgba(0, 234, 255, 0.45);
+}
+
+.trade-actions-subtitle {
+  margin: 10px 0 22px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.98rem;
+}
+
+.trade-actions-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.trade-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 185px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 900;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  border: 1px solid rgba(0, 234, 255, 0.85);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.trade-buy-btn {
+  color: #02060d;
+  background: linear-gradient(135deg, #00eaff, #0077ff);
+  box-shadow: 0 0 24px rgba(0, 234, 255, 0.42);
+}
+
+.trade-chart-btn {
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(0, 16, 28, 0.96), rgba(0, 78, 150, 0.55));
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.24);
+}
+
+.trade-action-btn:hover {
+  transform: translateY(-3px);
+  border-color: #00eaff;
+  box-shadow:
+    0 0 30px rgba(0, 234, 255, 0.55),
+    0 0 55px rgba(0, 102, 255, 0.25);
+}
+
+.trade-actions-note {
+  margin: 18px 0 0;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 650px) {
+  .trade-actions-section {
+    margin: 36px 16px 34px;
+    padding: 24px 16px;
+  }
+
+  .trade-actions-section h2 {
+    font-size: 1.65rem;
+  }
+
+  .trade-actions-buttons {
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .trade-action-btn {
+    width: 100%;
+    max-width: 310px;
+    min-width: unset;
+  }
+}
 </style>
 </head>
 <body>
