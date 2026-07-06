@@ -1550,6 +1550,98 @@ filter:drop-shadow(0 0 8px rgba(0,234,255,.45));
     min-width: unset;
   }
 }
+/* FINAL MOBILE FIX FOR TRADE BUTTONS */
+
+.trade-actions-section,
+.trade-actions-section * {
+  box-sizing: border-box;
+}
+
+.trade-actions-section {
+  width: min(760px, calc(100% - 32px)) !important;
+  max-width: 760px !important;
+  margin: 42px auto 38px !important;
+  padding: 26px 18px !important;
+  overflow: hidden !important;
+}
+
+.trade-actions-buttons {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 14px !important;
+  flex-wrap: wrap !important;
+}
+
+.trade-action-btn {
+  box-sizing: border-box !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 650px) {
+  .trade-actions-section {
+    width: calc(100% - 28px) !important;
+    margin: 34px auto 34px !important;
+    padding: 24px 14px !important;
+    border-radius: 22px !important;
+  }
+
+  .trade-actions-section h2 {
+    font-size: 1.75rem !important;
+    line-height: 1.15 !important;
+  }
+
+  .trade-actions-subtitle {
+    font-size: 0.95rem !important;
+    line-height: 1.35 !important;
+    margin: 10px auto 20px !important;
+    max-width: 280px !important;
+  }
+
+  .trade-actions-buttons {
+    flex-direction: column !important;
+    gap: 14px !important;
+    width: 100% !important;
+  }
+
+  .trade-action-btn {
+    width: 100% !important;
+    max-width: 280px !important;
+    min-width: 0 !important;
+    padding: 15px 14px !important;
+    font-size: 1rem !important;
+    line-height: 1.2 !important;
+    margin: 0 auto !important;
+  }
+
+  .trade-actions-note {
+    max-width: 280px !important;
+    margin: 18px auto 0 !important;
+    font-size: 0.78rem !important;
+    line-height: 1.45 !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .trade-actions-section {
+    width: calc(100% - 22px) !important;
+    padding: 22px 12px !important;
+  }
+
+  .trade-action-btn {
+    max-width: 250px !important;
+    font-size: 0.92rem !important;
+    padding: 14px 12px !important;
+  }
+
+  .trade-actions-note {
+    max-width: 250px !important;
+  }
+}
+    
 </style>
 </head>
 <body>
