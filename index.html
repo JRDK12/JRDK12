@@ -1641,6 +1641,79 @@ filter:drop-shadow(0 0 8px rgba(0,234,255,.45));
     max-width: 250px !important;
   }
 }
+/* ROLLERCOIN PARTNER SECTION */
+.partner-section {
+  width: min(calc(100% - 32px), 1000px);
+  margin: 42px auto 28px;
+  padding: 20px 16px;
+  text-align: center;
+  background: rgba(4, 12, 24, 0.78);
+  border: 1px solid rgba(0, 234, 255, 0.28);
+  border-radius: 18px;
+  box-sizing: border-box;
+}
+
+.partner-label {
+  margin-bottom: 12px;
+  color: #9ab7c7;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.rollercoin-banner {
+  display: block;
+  width: 100%;
+  max-width: 970px;
+  margin: 0 auto;
+  line-height: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rollercoin-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 970px;
+  margin: 0 auto;
+}
+
+.rollercoin-banner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px rgba(0, 234, 255, 0.25);
+}
+
+.partner-description {
+  margin: 12px 0 0;
+  color: #cdeaff;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .partner-section {
+    width: calc(100% - 24px);
+    margin: 30px auto 22px;
+    padding: 14px 10px;
+    border-radius: 14px;
+  }
+
+  .partner-label {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .partner-description {
+    font-size: 13px;
+    margin-top: 10px;
+  }
+
+  .rollercoin-banner {
+    border-radius: 8px;
+  }
+}    
     
 </style>
 </head>
@@ -1878,6 +1951,31 @@ INITIALIZING AI...
       </div>
     </div>
   </section>
+  
+  <!-- ROLLERCOIN PARTNER SECTION -->
+<section class="partner-section">
+  <div class="partner-label">Community Partner</div>
+
+  <a
+    href="https://rollercoin.com/?r=kux0ajwq"
+    target="_blank"
+    rel="noopener noreferrer sponsored"
+    class="rollercoin-banner"
+    id="rollercoin-partner-link"
+    aria-label="Play RollerCoin and support EMAI"
+  >
+    <img
+      src="https://static.rollercoin.com/static/img/ref/gen2/w970h250.gif"
+      alt="Play RollerCoin and mine crypto"
+      loading="lazy"
+    >
+  </a>
+
+  <p class="partner-description">
+    Play RollerCoin and support the development of $EMAI 💙
+  </p>
+</section>
+<!-- END ROLLERCOIN PARTNER SECTION -->
 
   <footer class="footer">
     <p>Contact us: <a href="mailto:contact@emaitoken.io">contact@emaitoken.io</a></p>
@@ -1996,5 +2094,22 @@ if (askemaiTopBar && askemaiModal && askemaiClose) {
   }
 }
   </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const rollercoinLink = document.getElementById('rollercoin-partner-link');
+
+    if (!rollercoinLink) return;
+
+    rollercoinLink.addEventListener('click', function () {
+      if (typeof gtag === 'function') {
+        gtag('event', 'partner_click', {
+          partner_name: 'RollerCoin',
+          placement: 'footer_partner_banner',
+          link_url: rollercoinLink.href
+        });
+      }
+    });
+  });
+</script>
 </body>
 </html>
