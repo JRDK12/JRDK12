@@ -3,8 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Meme Generator | $EMAI</title>
+  
+<title>AskEmai Meme Generator | $EMAI</title>
+  <meta name="description" content="Create your own AskEmai meme. Upload an image, add your text, download it and share it with the $EMAI community.">
 
+<link rel="canonical" href="https://emaitoken.io/mems.html">
+
+<meta property="og:title" content="AskEmai Meme Generator | $EMAI">
+<meta property="og:description" content="Create, download and share your own AskEmai meme.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://emaitoken.io/mems.html">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AskEmai Meme Generator | $EMAI">
+<meta name="twitter:description" content="Create, download and share your own AskEmai meme.">
   <style>
     body {
       background: radial-gradient(circle at top, #08263a, #050b13 55%, #020509);
@@ -203,7 +215,7 @@ overflow:hidden;
 }
 
 .meme-form::before{
-content:"AI MEME CONSOLE";
+content:"ASKEMAI MEME CONSOLE";
 position:absolute;
 top:14px;
 left:22px;
@@ -231,7 +243,15 @@ transform:skewX(-18deg);
 animation:memePanelSweep 6s ease-in-out infinite;
 pointer-events:none;
 }
-
+.upload-label{
+  position:relative;
+  z-index:2;
+  display:block;
+  margin:0 auto 12px;
+  color:#bffcff;
+  font-size:1rem;
+  font-weight:700;
+}
 .meme-form input[type="text"],
 .meme-form input[type="file"]{
 position:relative;
@@ -376,17 +396,18 @@ display:none !important;
 </head>
 
 <body>
-  <h1 class="headline">AI Meme Generator 🤖✨</h1>
+  <h1 class="headline">AskEmai Meme Generator 🤖✨</h1>
 
   <p class="subtitle">
     Create your meme. Share it. Help grow the EMAI community.
   </p>
 
   <div class="meme-form" id="meme-generator">
+<label for="memeImage" class="upload-label">📷 Upload your image</label>
     <input type="file" id="memeImage" accept="image/*" />
     <input type="text" id="topText" placeholder="Top text" />
     <input type="text" id="bottomText" placeholder="Bottom text" />
-    <button onclick="generateMeme()">⚡ Generate AI Meme</button>
+<button onclick="generateMeme()">⚡ Create Meme</button>
   </div>
 
   <div class="output" id="output">
@@ -405,7 +426,7 @@ display:none !important;
         <button>💎 Buy $EMAI</button>
     </a>
 
-    <a href="https://www.dextools.io/app/en/base/pair-explorer/0x5219708907d527c7bf106ce6151d4a3b17b25b46af419703bdb660f8b6f86296"
+    <a href="https://www.dextools.io/app/en/base/pair-explorer/0x3c3b81ea14adcf41d8533de176cc9e0dfac133af"
        target="_blank">
         <button>📈 Live Chart</button>
     </a>
@@ -421,11 +442,11 @@ display:none !important;
 
   <h2>🎉 YOUR MEME IS READY!</h2> 
 
-  <p>
+<p>
   🔥 Share it.<br>
-  🚀 Trade it.<br>
-  💎 Join the EMAI movement.
-  </p>
+  🆕 Create another.<br>
+  💙 Join the EMAI community.
+</p>
 
   <div class="action-buttons">
 
@@ -450,7 +471,7 @@ display:none !important;
 
   <a
   class="buy-emai-btn"
-  href="https://www.dextools.io/app/base/pair-explorer/0x5219708907d527c7bf106ce6151d4a3b17b25b46af419703bdb660f8b6f86296"
+  href="https://www.dextools.io/app/base/pair-explorer/0x3c3b81ea14adcf41d8533de176cc9e0dfac133af"
   target="_blank">
   📈 Live Chart
   </a>
@@ -605,9 +626,9 @@ function drawWatermark(ctx, canvasWidth, canvasHeight) {
       link.click();
     }
 
-    function shareOnX() {
-      const text = encodeURIComponent(
-      "I just created an AI meme with $EMAI 🤖🔥\n\nCreate yours here: https://emaitoken.io/mems.html\n\n#EMAI #AI #Memecoin #Base"
+  function shareOnX() {
+  const text = encodeURIComponent(
+    "I just created an AskEmai meme with $EMAI 🤖🔥\n\nCreate yours here: https://emaitoken.io/mems.html\n\n#EMAI #AskEmai #Memecoin #Base"
   );
 
   window.open(`https://twitter.com/intent/tweet?text=${text}`, "_blank");
