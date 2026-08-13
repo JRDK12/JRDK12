@@ -17,6 +17,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>$EMAI - Meme Intelligence Awakened</title>
+  <meta name="description" content="$EMAI is a community-driven token on Base built around AskEmai, meme culture, creative tools and community participation. Create memes, explore AskEmai and verify official $EMAI trading information.">
+
+<link rel="canonical" href="https://emaitoken.io/">
+
+<meta property="og:title" content="$EMAI - Meme Intelligence Awakened">
+<meta property="og:description" content="Explore AskEmai, create memes and discover the $EMAI community on Base.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://emaitoken.io/">
+<meta property="og:image" content="https://emaitoken.io/robot-bg-desktop.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="$EMAI - Meme Intelligence Awakened">
+<meta name="twitter:description" content="Explore AskEmai, create memes and discover the $EMAI community on Base.">
+<meta name="twitter:image" content="https://emaitoken.io/robot-bg-desktop.png">
   <link rel="stylesheet" href="style.css">
   <style>
     html {
@@ -56,7 +70,7 @@
   color: #0ff;
   padding: 7rem 2rem 3rem;
 }
-    }
+    
     .hero h1 {
       font-size: 5rem;
       text-shadow: 0 0 20px #0ff;
@@ -424,7 +438,6 @@ animation:particleMove 10s linear infinite;
 
 .particles span::before{
 content:"✦";
-}
 }
 .particles span:nth-child(1){left:12%;top:80%;animation-delay:0s;}
 .particles span:nth-child(2){left:24%;top:70%;animation-delay:1s;}
@@ -1720,7 +1733,7 @@ filter:drop-shadow(0 0 8px rgba(0,234,255,.45));
 <body>
   <!-- AskEmai top announcement -->
 <div class="askemai-top-bar" id="askemaiTopBar">
-  🤖 <span>NEW!</span> Meet AskEmai — your AI meme buddy.
+  🤖 <span>NEW!</span> Meet AskEmai — your meme buddy.
 </div>
 
 <!-- AskEmai popup -->
@@ -1747,7 +1760,7 @@ filter:drop-shadow(0 0 8px rgba(0,234,255,.45));
   <div id="boot-screen">
 
 <div id="boot-title">
-INITIALIZING AI...
+INITIALIZING ASKEMAI...
 </div>
 
 <div id="boot-progress">
@@ -1790,20 +1803,20 @@ INITIALIZING AI...
   </p>
 
   <p class="hero-description">
-    EMAI is where artificial intelligence meets meme culture.
-    Generate, share and evolve memes with the power of AI.
+    EMAI is where AI-inspired creativity meets meme culture.
+    Create, share and evolve memes with AskEmai.
   </p>
 
   <div class="portal-core">
-    <a href="mems.html" class="hero-enter">
-      🚀 ENTER AI MEME GENERATOR
+   <a href="mems.html" class="hero-enter">
+    🚀 ENTER ASKEMAI MEME GENERATOR
     </a>
   </div>
 
   <div class="hero-features">
     <div class="hero-feature">
       <span>⬡</span>
-      <p><strong>AI-Powered</strong><br>Meme generation</p>
+      <p><strong>Creative Tools</strong><br>Meme creation</p>
     </div>
 
     <div class="hero-feature">
@@ -1989,7 +2002,7 @@ INITIALIZING AI...
   
   <!-- ROLLERCOIN PARTNER SECTION -->
 <section class="partner-section">
-  <div class="partner-label">Featured Partner</div>
+  <div class="partner-label">Advertisement · Affiliate Partner</div>
 
   <a
     href="https://rollercoin.com/?r=kux0ajwq"
@@ -1997,7 +2010,7 @@ INITIALIZING AI...
     rel="noopener noreferrer sponsored"
     class="rollercoin-banner"
     id="rollercoin-partner-link"
-    aria-label="Play RollerCoin and support EMAI"
+    aria-label="Open RollerCoin affiliate partner link"
   >
     <img
       src="https://static.rollercoin.com/static/img/ref/gen2/w970h250.gif"
@@ -2006,9 +2019,9 @@ INITIALIZING AI...
     >
   </a>
 
-  <p class="partner-description">
-    Enjoy RollerCoin. Your activity helps support AskEmai 💙
-  </p>
+<p class="partner-description">
+  RollerCoin is an affiliate partner. If you join through this link and take part in eligible activity, AskEmai may receive a commission at no additional cost to you.
+</p>
 </section>
 <!-- END ROLLERCOIN PARTNER SECTION -->
 
@@ -2024,43 +2037,7 @@ INITIALIZING AI...
   </footer>
 
   <script>
-    function generateMeme() {
-      const canvas = document.getElementById("meme-canvas");
-      const ctx = canvas.getContext("2d");
-      const topText = document.getElementById("top-text").value;
-      const bottomText = document.getElementById("bottom-text").value;
-      const fileInput = document.getElementById("meme-image");
 
-      if (!fileInput.files[0]) {
-        alert("Upload an image first!");
-        return;
-      }
-
-      const reader = new FileReader();
-      reader.onload = function () {
-        const img = new Image();
-        img.onload = function () {
-          canvas.style.display = 'block';
-          canvas.width = img.width;
-          canvas.height = img.height;
-          ctx.drawImage(img, 0, 0);
-
-          ctx.font = "bold 60px Impact, Arial";
-          ctx.fillStyle = "#ffffff";
-          ctx.strokeStyle = "#000000";
-          ctx.lineWidth = 4;
-          ctx.textAlign = "center";
-
-          ctx.fillText(topText, canvas.width / 2, 80);
-          ctx.strokeText(topText, canvas.width / 2, 80);
-
-          ctx.fillText(bottomText, canvas.width / 2, canvas.height - 40);
-          ctx.strokeText(bottomText, canvas.width / 2, canvas.height - 40);
-        };
-        img.src = reader.result;
-      };
-      reader.readAsDataURL(fileInput.files[0]);
-    }
 
     
     document.querySelectorAll('.faq-question').forEach(button => {
@@ -2082,7 +2059,7 @@ const bootInterval = setInterval(() => {
     if (percent >= 100) {
         clearInterval(bootInterval);
 
-        bootTitle.textContent = "⚡ AI ONLINE";
+       bootTitle.textContent = "⚡ ASKEMAI ONLINE";
       const bootLines = document.querySelectorAll("#boot-log div");
 
 bootLines.forEach((line, index) => {
