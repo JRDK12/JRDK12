@@ -2138,5 +2138,11 @@ if (askemaiTopBar && askemaiModal && askemaiClose) {
     });
   });
 </script>
+  <script>
+  // Redirect old #meme-gen links to the new Meme Generator page
+  if (window.location.hash === '#meme-gen') {
+    window.location.replace('mems.html');
+  }
+</script>
 </body>
 </html>
