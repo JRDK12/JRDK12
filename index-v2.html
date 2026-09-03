@@ -1929,6 +1929,24 @@ gap:24px;
   transition:.2s ease;
 }
 
+
+/* DESKTOP — KEEP ALL 3 HERO BUTTONS IN ONE ROW */
+@media (min-width:851px){
+
+  .v2-actions{
+    flex-wrap:nowrap;
+    gap:10px;
+    width:100%;
+  }
+
+  .v2-btn{
+    padding:0 16px;
+    white-space:nowrap;
+    font-size:.93rem;
+  }
+
+}
+
 .v2-btn-primary{
   background:linear-gradient(135deg,var(--v2-cyan),var(--v2-blue));
   color:#001018;
