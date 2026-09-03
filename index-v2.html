@@ -4126,6 +4126,96 @@ gap:24px;
   text-shadow:
     0 0 12px rgba(0,234,255,.30);
 }
+    /* =========================================================
+   FAQ FINAL ANSWER FIX
+   ========================================================= */
+
+.v2-faq-section .faq-answer{
+  display:none !important;
+
+  margin:0 !important;
+  padding:0 24px 24px 76px !important;
+
+  background:transparent !important;
+  background-color:transparent !important;
+
+  border:none !important;
+  border-top:none !important;
+  border-radius:0 !important;
+
+  box-shadow:none !important;
+
+  color:#8faab8 !important;
+
+  text-align:left !important;
+
+  font-size:.92rem !important;
+  line-height:1.75 !important;
+
+  overflow-wrap:anywhere;
+}
+
+
+/* OPEN ANSWER */
+
+.v2-faq-section .faq-item.active .faq-answer{
+  display:block !important;
+
+  background:transparent !important;
+  border:none !important;
+  box-shadow:none !important;
+}
+
+
+/* SMALL TURQUOISE ACCENT ONLY */
+
+.v2-faq-section .faq-item.active .faq-answer::before{
+  content:"";
+
+  display:block;
+
+  width:38px;
+  height:2px;
+
+  margin:0 0 15px 0;
+
+  border-radius:999px;
+
+  background:linear-gradient(
+    90deg,
+    #00eaff 0%,
+    rgba(0,234,255,.25) 65%,
+    transparent 100%
+  );
+}
+
+
+/* KEEP WHOLE OPEN CARD CONSISTENT */
+
+.v2-faq-section .faq-item.active{
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(0,234,255,.065),
+      transparent 38%
+    ),
+    rgba(4,17,31,.92) !important;
+
+  border-color:rgba(0,234,255,.28) !important;
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+  .v2-faq-section .faq-answer{
+    padding:0 16px 20px 60px !important;
+
+    font-size:.84rem !important;
+  }
+
+}
 </style>
 </head>
 <body>
