@@ -1857,12 +1857,21 @@ body{
 }
 
 .v2-hero-visual img{
-  width:min(100%, 520px);
+  width:min(100%, 580px);
   height:auto;
   display:block;
-  filter: drop-shadow(0 0 34px rgba(0,234,255,.15));
+  object-fit:contain;
+  filter:
+    drop-shadow(0 0 28px rgba(0,234,255,.18))
+    drop-shadow(0 0 60px rgba(0,119,255,.12));
 }
-.v2-eyebrow{
+.v2-hero-visual{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-width:0;
+}
+    .v2-eyebrow{
   display:inline-flex;
   align-items:center;
   gap:8px;
@@ -2199,7 +2208,7 @@ INITIALIZING ASKEMAI...
 
     <a href="#" class="v2-brand">
   <img src="emai-logo-header.png" alt="EMAI Logo">
-      <span>ASKEMAI</span>
+<!-- <span>ASKEMAI</span> -->
     </a>
 
     <div class="v2-nav-links">
@@ -2246,40 +2255,39 @@ INITIALIZING ASKEMAI...
         designed to grow through real interaction — not empty promises.
       </p>
 
-      <div class="v2-actions">
+   <div class="v2-actions">
 
-        <a
-          href="https://app.uniswap.org/swap?chain=base&outputCurrency=0x93F8E67Af68da54B6e15B352379e4f46B629AE04"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="v2-btn v2-btn-primary"
-          data-track="buy_emai"
-        >
-          💎 Buy $EMAI
-        </a>
+  <a
+    href="https://app.uniswap.org/swap?chain=base&outputCurrency=0x93F8E67Af68da54B6e15B352379e4f46B629AE04"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="v2-btn v2-btn-primary"
+    data-track="buy_emai"
+  >
+    💎 Buy $EMAI
+  </a>
 
-        <a
-          href="https://www.dextools.io/app/base/pair-explorer/0x3c3b81ea14adcf41d8533de176cc9e0dfac133af"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="v2-btn v2-btn-secondary"
-          data-track="live_chart"
-        >
-          📈 Live Chart
-        </a>
+  <a
+    href="https://www.dextools.io/app/base/pair-explorer/0x3c3b81ea14adcf41d8533de176cc9e0dfac133af"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="v2-btn v2-btn-secondary"
+    data-track="live_chart"
+  >
+    📈 Live Chart
+  </a>
 
-        <a
-          href="mems.html"
-          class="v2-btn v2-btn-generator"
-        >
-          🤖 Open Meme Generator
-        </a>
-    <div class="v2-hero-visual">
-  <img src="askemai-hero-desktop.png" alt="AskEmai Robot">
-    </div>
-      </div>
+  <a
+    href="mems.html"
+    class="v2-btn v2-btn-generator"
+  >
+    🤖 Open Meme Generator
+  </a>
 
-      <div class="v2-feature-row">
+</div>
+
+<div class="v2-feature-row">
+
 
         <div class="v2-feature">
           <strong>✨ Creative Tools</strong>
@@ -2298,6 +2306,10 @@ INITIALIZING ASKEMAI...
 
       </div>
 
+    </div>
+
+    <div class="v2-hero-visual">
+      <img src="askemai-hero-desktop.png" alt="AskEmai Robot">
     </div>
 
   </div>
