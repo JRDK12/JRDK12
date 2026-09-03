@@ -2457,6 +2457,517 @@ gap:24px;
   }
 
 }
+    /* =========================================================
+   ASKEMAI CRYPTO PULSE
+   ========================================================= */
+
+.crypto-pulse-section{
+  position:relative;
+  padding:85px 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(0,234,255,.08),
+      transparent 38%
+    ),
+    linear-gradient(
+      180deg,
+      #020b16 0%,
+      #020711 100%
+    );
+
+  border-top:1px solid rgba(0,234,255,.10);
+  border-bottom:1px solid rgba(0,234,255,.12);
+
+  overflow:hidden;
+}
+
+.crypto-pulse-wrap{
+  width:min(1180px,92%);
+  margin:0 auto;
+}
+
+
+/* ---------- HEADER ---------- */
+
+.crypto-pulse-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:30px;
+
+  margin-bottom:34px;
+}
+
+.crypto-pulse-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  color:#00eaff;
+
+  font-size:.78rem;
+  font-weight:900;
+
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.crypto-pulse-live-dot{
+  width:8px;
+  height:8px;
+
+  border-radius:50%;
+
+  background:#00eaff;
+
+  box-shadow:
+    0 0 8px rgba(0,234,255,.9),
+    0 0 18px rgba(0,234,255,.45);
+
+  animation:cryptoPulseDot 1.8s ease-in-out infinite;
+}
+
+@keyframes cryptoPulseDot{
+
+  0%,
+  100%{
+    opacity:.45;
+    transform:scale(.85);
+  }
+
+  50%{
+    opacity:1;
+    transform:scale(1.15);
+  }
+
+}
+
+.crypto-pulse-title{
+  margin:10px 0 8px;
+
+  color:#fff;
+
+  font-size:clamp(2rem,4vw,3.15rem);
+  line-height:1.05;
+}
+
+.crypto-pulse-title span{
+  color:#00eaff;
+}
+
+.crypto-pulse-subtitle{
+  margin:0;
+
+  color:#91adbd;
+
+  font-size:1rem;
+  line-height:1.6;
+}
+
+.crypto-pulse-updated{
+  flex-shrink:0;
+
+  padding:9px 14px;
+
+  border-radius:999px;
+  border:1px solid rgba(0,234,255,.18);
+
+  background:rgba(0,234,255,.05);
+
+  color:#9ed6df;
+
+  font-size:.78rem;
+  white-space:nowrap;
+}
+
+
+/* ---------- MAIN MARKET CARDS ---------- */
+
+.crypto-pulse-grid{
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  gap:14px;
+}
+
+.crypto-market-card{
+  position:relative;
+
+  min-height:155px;
+
+  padding:22px;
+
+  border-radius:20px;
+
+  border:1px solid rgba(0,234,255,.16);
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(0,234,255,.09),
+      transparent 40%
+    ),
+    rgba(5,17,31,.76);
+
+  box-shadow:
+    0 0 28px rgba(0,234,255,.06);
+
+  overflow:hidden;
+
+  transition:
+    transform .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease;
+}
+
+.crypto-market-card:hover{
+  transform:translateY(-3px);
+
+  border-color:rgba(0,234,255,.35);
+
+  box-shadow:
+    0 0 32px rgba(0,234,255,.12);
+}
+
+.crypto-market-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  gap:10px;
+}
+
+.crypto-market-name{
+  display:flex;
+  align-items:center;
+
+  gap:10px;
+
+  color:#fff;
+
+  font-weight:900;
+}
+
+.crypto-market-symbol{
+  color:#7795a7;
+
+  font-size:.78rem;
+  font-weight:800;
+
+  letter-spacing:.7px;
+}
+
+.crypto-market-icon{
+  width:34px;
+  height:34px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:rgba(0,234,255,.08);
+  border:1px solid rgba(0,234,255,.18);
+
+  font-size:1.08rem;
+}
+
+.crypto-market-value{
+  margin-top:25px;
+
+  color:#fff;
+
+  font-size:clamp(1.45rem,2.1vw,2rem);
+  font-weight:900;
+
+  letter-spacing:-.5px;
+}
+
+.crypto-market-meta{
+  margin-top:8px;
+
+  color:#7796a8;
+
+  font-size:.82rem;
+}
+
+.crypto-change{
+  display:inline-flex;
+  align-items:center;
+
+  margin-top:8px;
+
+  font-size:.86rem;
+  font-weight:900;
+}
+
+.crypto-positive{
+  color:#55e6a5;
+}
+
+.crypto-negative{
+  color:#ff7185;
+}
+
+.crypto-neutral{
+  color:#9eb5c2;
+}
+
+
+/* ---------- TOP MOVERS ---------- */
+
+.crypto-movers-panel{
+  margin-top:16px;
+
+  padding:22px;
+
+  border-radius:20px;
+
+  border:1px solid rgba(0,234,255,.15);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0,234,255,.055),
+      rgba(0,119,255,.025)
+    ),
+    rgba(4,14,27,.78);
+}
+
+.crypto-movers-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:20px;
+
+  margin-bottom:16px;
+}
+
+.crypto-movers-head h3{
+  margin:0;
+
+  color:#fff;
+
+  font-size:1.05rem;
+}
+
+.crypto-movers-head span{
+  color:#718f9f;
+
+  font-size:.76rem;
+}
+
+.crypto-movers-grid{
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:10px;
+}
+
+.crypto-mover{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:12px;
+
+  padding:14px 16px;
+
+  border-radius:14px;
+
+  border:1px solid rgba(0,234,255,.10);
+
+  background:rgba(2,10,20,.62);
+}
+
+.crypto-mover-left{
+  min-width:0;
+}
+
+.crypto-mover-name{
+  color:#fff;
+
+  font-size:.92rem;
+  font-weight:900;
+
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.crypto-mover-symbol{
+  margin-top:3px;
+
+  color:#728d9c;
+
+  font-size:.72rem;
+  font-weight:800;
+}
+
+.crypto-mover-right{
+  text-align:right;
+}
+
+.crypto-mover-price{
+  color:#d9f7ff;
+
+  font-size:.82rem;
+  white-space:nowrap;
+}
+
+.crypto-mover-change{
+  margin-top:3px;
+
+  font-size:.86rem;
+  font-weight:900;
+}
+
+
+/* ---------- FOOTER ---------- */
+
+.crypto-pulse-footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  gap:20px;
+
+  margin-top:17px;
+
+  color:#607e90;
+
+  font-size:.74rem;
+}
+
+.crypto-pulse-status{
+  display:flex;
+  align-items:center;
+
+  gap:7px;
+}
+
+.crypto-pulse-status-dot{
+  width:6px;
+  height:6px;
+
+  border-radius:50%;
+
+  background:#00eaff;
+
+  box-shadow:0 0 8px rgba(0,234,255,.7);
+}
+
+
+/* ---------- LOADING ---------- */
+
+.crypto-loading{
+  color:#688a9d;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:900px){
+
+  .crypto-pulse-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .crypto-movers-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+
+@media(max-width:600px){
+
+  .crypto-pulse-section{
+    padding:60px 0;
+  }
+
+  .crypto-pulse-header{
+    align-items:flex-start;
+    flex-direction:column;
+
+    gap:14px;
+  }
+
+  .crypto-pulse-grid{
+    grid-template-columns:1fr 1fr;
+
+    gap:10px;
+  }
+
+  .crypto-market-card{
+    min-height:135px;
+
+    padding:16px;
+  }
+
+  .crypto-market-value{
+    margin-top:18px;
+
+    font-size:1.25rem;
+  }
+
+  .crypto-market-name{
+    font-size:.85rem;
+  }
+
+  .crypto-market-icon{
+    width:29px;
+    height:29px;
+
+    font-size:.95rem;
+  }
+
+  .crypto-market-meta{
+    font-size:.72rem;
+  }
+
+  .crypto-change{
+    font-size:.76rem;
+  }
+
+  .crypto-movers-panel{
+    padding:16px;
+  }
+
+  .crypto-pulse-footer{
+    flex-direction:column;
+    align-items:flex-start;
+
+    gap:7px;
+  }
+
+}
+
+
+@media(max-width:390px){
+
+  .crypto-pulse-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+
+/* REDUCED MOTION */
+
+@media(prefers-reduced-motion:reduce){
+
+  .crypto-pulse-live-dot{
+    animation:none !important;
+  }
+
+}
 </style>
 </head>
 <body>
@@ -2517,9 +3028,10 @@ INITIALIZING ASKEMAI...
     </a>
 
     <div class="v2-nav-links">
-      <a href="#project-snapshot">Project</a>
-      <a href="#daily-memes">Memes</a>
-      <a href="mems.html">Meme Generator</a>
+     <a href="#project-snapshot">Project</a>
+<a href="#crypto-pulse">Crypto Pulse</a>
+<a href="#daily-memes">Memes</a>
+<a href="mems.html">Meme Generator</a>
 
       <a
         href="https://app.uniswap.org/swap?chain=base&outputCurrency=0x93F8E67Af68da54B6e15B352379e4f46B629AE04"
@@ -2726,7 +3238,263 @@ INITIALIZING ASKEMAI...
 
   </div>
 </section>
+<!-- =======================================================
+     ASKEMAI CRYPTO PULSE
+     ======================================================= -->
 
+<section class="crypto-pulse-section" id="crypto-pulse">
+
+  <div class="crypto-pulse-wrap">
+
+
+    <!-- HEADER -->
+
+    <div class="crypto-pulse-header">
+
+      <div>
+
+        <div class="crypto-pulse-kicker">
+          <span class="crypto-pulse-live-dot"></span>
+          LIVE MARKET DATA
+        </div>
+
+        <h2 class="crypto-pulse-title">
+          AskEmai <span>Crypto Pulse</span>
+        </h2>
+
+        <p class="crypto-pulse-subtitle">
+          The crypto market in 30 seconds.
+          Prices, market direction and the biggest moves that matter.
+        </p>
+
+      </div>
+
+      <div
+        class="crypto-pulse-updated"
+        id="crypto-pulse-updated"
+      >
+        Connecting to market...
+      </div>
+
+    </div>
+
+
+    <!-- MAIN MARKET CARDS -->
+
+    <div class="crypto-pulse-grid">
+
+
+      <!-- BITCOIN -->
+
+      <div class="crypto-market-card">
+
+        <div class="crypto-market-top">
+
+          <div class="crypto-market-name">
+
+            <div class="crypto-market-icon">
+              ₿
+            </div>
+
+            <div>
+              Bitcoin
+              <div class="crypto-market-symbol">
+                BTC
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div
+          class="crypto-market-value crypto-loading"
+          id="pulse-btc-price"
+        >
+          Loading...
+        </div>
+
+        <div
+          class="crypto-change crypto-neutral"
+          id="pulse-btc-change"
+        >
+          24h —
+        </div>
+
+      </div>
+
+
+      <!-- ETHEREUM -->
+
+      <div class="crypto-market-card">
+
+        <div class="crypto-market-top">
+
+          <div class="crypto-market-name">
+
+            <div class="crypto-market-icon">
+              ◆
+            </div>
+
+            <div>
+              Ethereum
+              <div class="crypto-market-symbol">
+                ETH
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div
+          class="crypto-market-value crypto-loading"
+          id="pulse-eth-price"
+        >
+          Loading...
+        </div>
+
+        <div
+          class="crypto-change crypto-neutral"
+          id="pulse-eth-change"
+        >
+          24h —
+        </div>
+
+      </div>
+
+
+      <!-- GLOBAL MARKET CAP -->
+
+      <div class="crypto-market-card">
+
+        <div class="crypto-market-top">
+
+          <div class="crypto-market-name">
+
+            <div class="crypto-market-icon">
+              ◉
+            </div>
+
+            <div>
+              Crypto Market
+              <div class="crypto-market-symbol">
+                TOTAL CAP
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div
+          class="crypto-market-value crypto-loading"
+          id="pulse-market-cap"
+        >
+          Loading...
+        </div>
+
+        <div
+          class="crypto-change crypto-neutral"
+          id="pulse-market-change"
+        >
+          24h —
+        </div>
+
+      </div>
+
+
+      <!-- BTC DOMINANCE -->
+
+      <div class="crypto-market-card">
+
+        <div class="crypto-market-top">
+
+          <div class="crypto-market-name">
+
+            <div class="crypto-market-icon">
+              ₿
+            </div>
+
+            <div>
+              BTC Dominance
+              <div class="crypto-market-symbol">
+                MARKET SHARE
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div
+          class="crypto-market-value crypto-loading"
+          id="pulse-btc-dominance"
+        >
+          Loading...
+        </div>
+
+        <div class="crypto-market-meta">
+          Bitcoin share of total crypto market cap
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <!-- TOP MOVERS -->
+
+    <div class="crypto-movers-panel">
+
+      <div class="crypto-movers-head">
+
+        <h3>
+          ⚡ Top Movers
+        </h3>
+
+        <span>
+          Top 100 assets · 24h
+        </span>
+
+      </div>
+
+      <div
+        class="crypto-movers-grid"
+        id="crypto-movers-grid"
+      >
+
+        <div class="crypto-mover">
+          <div class="crypto-loading">
+            Loading market movers...
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div class="crypto-pulse-footer">
+
+      <div class="crypto-pulse-status">
+        <span class="crypto-pulse-status-dot"></span>
+        Automatically refreshed market data
+      </div>
+
+      <div>
+        Market data: CoinPaprika · Not financial advice
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
 <section class="daily-memes-section" id="daily-memes">
   <div class="daily-memes-wrap">
 
@@ -2976,6 +3744,633 @@ if (askemaiTopBar && askemaiModal && askemaiClose) {
   if (window.location.hash === '#meme-gen') {
     window.location.replace('mems.html');
   }
+</script>
+  <script>
+/* =========================================================
+   ASKEMAI CRYPTO PULSE
+   Market data powered by CoinPaprika
+   ========================================================= */
+
+(function () {
+
+  const API_BASE = 'https://api.coinpaprika.com/v1';
+
+  let cryptoPulseLastUpdated = null;
+
+
+  /* ---------------------------------------------------------
+     HELPERS
+     --------------------------------------------------------- */
+
+  function formatPrice(value) {
+
+    if (!Number.isFinite(value)) {
+      return '—';
+    }
+
+    if (value >= 1000) {
+
+      return '$' + value.toLocaleString('en-US', {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+      });
+
+    }
+
+    if (value >= 1) {
+
+      return '$' + value.toLocaleString('en-US', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+
+    }
+
+    if (value >= 0.01) {
+
+      return '$' + value.toLocaleString('en-US', {
+        minimumFractionDigits: 3,
+        maximumFractionDigits: 4
+      });
+
+    }
+
+    return '$' + value.toLocaleString('en-US', {
+      minimumFractionDigits: 4,
+      maximumFractionDigits: 8
+    });
+
+  }
+
+
+  function formatLargeUSD(value) {
+
+    if (!Number.isFinite(value)) {
+      return '—';
+    }
+
+    if (value >= 1e12) {
+      return '$' + (value / 1e12).toFixed(2) + 'T';
+    }
+
+    if (value >= 1e9) {
+      return '$' + (value / 1e9).toFixed(2) + 'B';
+    }
+
+    if (value >= 1e6) {
+      return '$' + (value / 1e6).toFixed(2) + 'M';
+    }
+
+    return formatPrice(value);
+
+  }
+
+
+  function formatPercentage(value) {
+
+    if (!Number.isFinite(value)) {
+      return '—';
+    }
+
+    const sign = value > 0 ? '+' : '';
+
+    return sign + value.toFixed(2) + '%';
+
+  }
+
+
+  function setChangeElement(element, value) {
+
+    if (!element) return;
+
+    element.classList.remove(
+      'crypto-positive',
+      'crypto-negative',
+      'crypto-neutral'
+    );
+
+    if (!Number.isFinite(value)) {
+
+      element.classList.add('crypto-neutral');
+      element.textContent = '24h —';
+
+      return;
+
+    }
+
+    if (value > 0) {
+
+      element.classList.add('crypto-positive');
+
+      element.textContent =
+        '▲ ' + formatPercentage(value) + ' · 24h';
+
+    }
+
+    else if (value < 0) {
+
+      element.classList.add('crypto-negative');
+
+      element.textContent =
+        '▼ ' + formatPercentage(value) + ' · 24h';
+
+    }
+
+    else {
+
+      element.classList.add('crypto-neutral');
+
+      element.textContent =
+        '• 0.00% · 24h';
+
+    }
+
+  }
+
+
+  async function fetchJSON(url) {
+
+    const response = await fetch(url, {
+      method: 'GET',
+      cache: 'no-store'
+    });
+
+    if (!response.ok) {
+
+      throw new Error(
+        'Crypto API returned HTTP ' + response.status
+      );
+
+    }
+
+    return response.json();
+
+  }
+
+
+  /* ---------------------------------------------------------
+     UPDATED X MIN AGO
+     --------------------------------------------------------- */
+
+  function updateTimeLabel() {
+
+    const label =
+      document.getElementById('crypto-pulse-updated');
+
+    if (!label) return;
+
+
+    if (!cryptoPulseLastUpdated) {
+
+      label.textContent =
+        'Connecting to market...';
+
+      return;
+
+    }
+
+
+    const now = Date.now();
+
+    const difference =
+      Math.max(
+        0,
+        now - cryptoPulseLastUpdated.getTime()
+      );
+
+    const minutes =
+      Math.floor(
+        difference / 60000
+      );
+
+
+    if (minutes < 1) {
+
+      label.textContent =
+        'Updated just now';
+
+    }
+
+    else if (minutes === 1) {
+
+      label.textContent =
+        'Updated 1 min ago';
+
+    }
+
+    else {
+
+      label.textContent =
+        'Updated ' + minutes + ' min ago';
+
+    }
+
+  }
+
+
+  /* ---------------------------------------------------------
+     TOP MOVERS
+     --------------------------------------------------------- */
+
+  function renderMovers(tickers) {
+
+    const grid =
+      document.getElementById('crypto-movers-grid');
+
+    if (!grid) return;
+
+
+    const excludedStablecoins = new Set([
+      'USDT',
+      'USDC',
+      'DAI',
+      'FDUSD',
+      'TUSD',
+      'USDE',
+      'USDS',
+      'PYUSD'
+    ]);
+
+
+    const top100 =
+      tickers
+        .filter(coin => {
+
+          const change =
+            coin?.quotes?.USD?.percent_change_24h;
+
+          return (
+            Number.isFinite(coin.rank) &&
+            coin.rank > 0 &&
+            coin.rank <= 100 &&
+            Number.isFinite(change) &&
+            !excludedStablecoins.has(
+              String(coin.symbol).toUpperCase()
+            )
+          );
+
+        })
+        .sort((a, b) => {
+
+          const changeA =
+            Math.abs(
+              a.quotes.USD.percent_change_24h
+            );
+
+          const changeB =
+            Math.abs(
+              b.quotes.USD.percent_change_24h
+            );
+
+          return changeB - changeA;
+
+        })
+        .slice(0, 3);
+
+
+    if (!top100.length) {
+
+      grid.innerHTML =
+        '<div class="crypto-mover">' +
+        '<div class="crypto-loading">' +
+        'Market mover data unavailable.' +
+        '</div>' +
+        '</div>';
+
+      return;
+
+    }
+
+
+    grid.innerHTML =
+      top100.map(coin => {
+
+        const change =
+          coin.quotes.USD.percent_change_24h;
+
+        const changeClass =
+          change > 0
+            ? 'crypto-positive'
+            : change < 0
+              ? 'crypto-negative'
+              : 'crypto-neutral';
+
+        const direction =
+          change > 0
+            ? '▲'
+            : change < 0
+              ? '▼'
+              : '•';
+
+
+        return `
+
+          <div class="crypto-mover">
+
+            <div class="crypto-mover-left">
+
+              <div class="crypto-mover-name">
+                ${coin.name}
+              </div>
+
+              <div class="crypto-mover-symbol">
+                ${coin.symbol} · #${coin.rank}
+              </div>
+
+            </div>
+
+            <div class="crypto-mover-right">
+
+              <div class="crypto-mover-price">
+                ${formatPrice(
+                  coin.quotes.USD.price
+                )}
+              </div>
+
+              <div
+                class="
+                  crypto-mover-change
+                  ${changeClass}
+                "
+              >
+                ${direction}
+                ${formatPercentage(change)}
+              </div>
+
+            </div>
+
+          </div>
+
+        `;
+
+      }).join('');
+
+  }
+
+
+  /* ---------------------------------------------------------
+     LOAD MARKET DATA
+     --------------------------------------------------------- */
+
+  async function loadCryptoPulse() {
+
+    try {
+
+      const [
+
+        globalData,
+        bitcoinData,
+        ethereumData,
+        tickerData
+
+      ] = await Promise.all([
+
+        fetchJSON(
+          API_BASE + '/global'
+        ),
+
+        fetchJSON(
+          API_BASE + '/tickers/btc-bitcoin'
+        ),
+
+        fetchJSON(
+          API_BASE + '/tickers/eth-ethereum'
+        ),
+
+        fetchJSON(
+          API_BASE + '/tickers?quotes=USD'
+        )
+
+      ]);
+
+
+      /* BTC */
+
+      const btcPrice =
+        bitcoinData?.quotes?.USD?.price;
+
+      const btcChange =
+        bitcoinData?.quotes?.USD
+          ?.percent_change_24h;
+
+
+      document.getElementById(
+        'pulse-btc-price'
+      ).textContent =
+        formatPrice(btcPrice);
+
+
+      document.getElementById(
+        'pulse-btc-price'
+      ).classList.remove(
+        'crypto-loading'
+      );
+
+
+      setChangeElement(
+        document.getElementById(
+          'pulse-btc-change'
+        ),
+        btcChange
+      );
+
+
+      /* ETH */
+
+      const ethPrice =
+        ethereumData?.quotes?.USD?.price;
+
+      const ethChange =
+        ethereumData?.quotes?.USD
+          ?.percent_change_24h;
+
+
+      document.getElementById(
+        'pulse-eth-price'
+      ).textContent =
+        formatPrice(ethPrice);
+
+
+      document.getElementById(
+        'pulse-eth-price'
+      ).classList.remove(
+        'crypto-loading'
+      );
+
+
+      setChangeElement(
+        document.getElementById(
+          'pulse-eth-change'
+        ),
+        ethChange
+      );
+
+
+      /* TOTAL MARKET CAP */
+
+      document.getElementById(
+        'pulse-market-cap'
+      ).textContent =
+        formatLargeUSD(
+          globalData.market_cap_usd
+        );
+
+
+      document.getElementById(
+        'pulse-market-cap'
+      ).classList.remove(
+        'crypto-loading'
+      );
+
+
+      setChangeElement(
+        document.getElementById(
+          'pulse-market-change'
+        ),
+        globalData.market_cap_change_24h
+      );
+
+
+      /* BTC DOMINANCE */
+
+      const dominance =
+        globalData.bitcoin_dominance_percentage;
+
+
+      document.getElementById(
+        'pulse-btc-dominance'
+      ).textContent =
+        Number.isFinite(dominance)
+          ? dominance.toFixed(2) + '%'
+          : '—';
+
+
+      document.getElementById(
+        'pulse-btc-dominance'
+      ).classList.remove(
+        'crypto-loading'
+      );
+
+
+      /* MOVERS */
+
+      renderMovers(tickerData);
+
+
+      /* UPDATE TIME */
+
+      if (
+        Number.isFinite(
+          globalData.last_updated
+        )
+      ) {
+
+        cryptoPulseLastUpdated =
+          new Date(
+            globalData.last_updated * 1000
+          );
+
+      }
+
+      else {
+
+        cryptoPulseLastUpdated =
+          new Date();
+
+      }
+
+
+      updateTimeLabel();
+
+
+    }
+
+    catch (error) {
+
+      console.error(
+        'AskEmai Crypto Pulse error:',
+        error
+      );
+
+
+      const updated =
+        document.getElementById(
+          'crypto-pulse-updated'
+        );
+
+
+      if (updated) {
+
+        updated.textContent =
+          'Market data temporarily unavailable';
+
+      }
+
+
+      const movers =
+        document.getElementById(
+          'crypto-movers-grid'
+        );
+
+
+      if (movers) {
+
+        movers.innerHTML = `
+
+          <div class="crypto-mover">
+
+            <div class="crypto-loading">
+
+              Market data is temporarily unavailable.
+              Please check again shortly.
+
+            </div>
+
+          </div>
+
+        `;
+
+      }
+
+    }
+
+  }
+
+
+  /* ---------------------------------------------------------
+     START
+     --------------------------------------------------------- */
+
+  document.addEventListener(
+    'DOMContentLoaded',
+    function () {
+
+      loadCryptoPulse();
+
+      /*
+        Data refresh every 5 minutes.
+      */
+
+      setInterval(
+        loadCryptoPulse,
+        5 * 60 * 1000
+      );
+
+
+      /*
+        Update "X min ago" without
+        making another API request.
+      */
+
+      setInterval(
+        updateTimeLabel,
+        60 * 1000
+      );
+
+    }
+  );
+
+})();
 </script>
 </body>
 </html>
