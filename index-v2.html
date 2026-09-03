@@ -4216,6 +4216,343 @@ gap:24px;
   }
 
 }
+    /* =========================================================
+   ASKEMAI V2 FOOTER
+   ========================================================= */
+
+.v2-footer{
+  position:relative;
+
+  padding:55px 0 24px;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(0,234,255,.055),
+      transparent 32%
+    ),
+    #01060d;
+
+  border-top:1px solid rgba(0,234,255,.11);
+
+  color:#8ba7b6;
+}
+
+
+.v2-footer-wrap{
+  width:min(1180px,92%);
+  margin:0 auto;
+}
+
+
+/* =========================================================
+   MAIN ROW
+   ========================================================= */
+
+.v2-footer-main{
+  display:grid;
+
+  grid-template-columns:
+    1.25fr
+    .75fr
+    1fr;
+
+  gap:50px;
+
+  align-items:center;
+
+  padding-bottom:35px;
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.v2-footer-brand{
+  display:flex;
+  align-items:center;
+
+  gap:17px;
+}
+
+
+.v2-footer-logo{
+  flex:0 0 auto;
+
+  width:76px;
+  height:auto;
+
+  display:block;
+}
+
+
+.v2-footer-brand-copy{
+  display:flex;
+  flex-direction:column;
+
+  gap:6px;
+}
+
+
+.v2-footer-brand-copy strong{
+  color:#ffffff;
+
+  font-size:1rem;
+  font-weight:900;
+}
+
+
+.v2-footer-brand-copy span{
+  max-width:330px;
+
+  color:#718d9d;
+
+  font-size:.79rem;
+  line-height:1.55;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.v2-footer-nav{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:11px 22px;
+}
+
+
+.v2-footer-nav a{
+  color:#89a5b5;
+
+  text-decoration:none;
+
+  font-size:.82rem;
+  font-weight:700;
+
+  transition:
+    color .2s ease,
+    transform .2s ease;
+}
+
+
+.v2-footer-nav a:hover{
+  color:#00eaff;
+
+  transform:translateX(2px);
+}
+
+
+/* =========================================================
+   CONNECT
+   ========================================================= */
+
+.v2-footer-connect{
+  display:flex;
+  flex-direction:column;
+
+  align-items:flex-start;
+
+  gap:9px;
+}
+
+
+.v2-footer-connect-label{
+  color:#557585;
+
+  font-size:.66rem;
+  font-weight:900;
+
+  letter-spacing:1.5px;
+}
+
+
+.v2-footer-email{
+  color:#00eaff;
+
+  text-decoration:none;
+
+  font-size:.88rem;
+  font-weight:800;
+
+  transition:
+    color .2s ease,
+    text-shadow .2s ease;
+}
+
+
+.v2-footer-email:hover{
+  color:#a8ffff;
+
+  text-shadow:
+    0 0 12px rgba(0,234,255,.24);
+}
+
+
+/* =========================================================
+   SOCIAL BUTTONS
+   ========================================================= */
+
+.v2-footer-socials{
+  display:flex;
+
+  gap:9px;
+
+  margin-top:5px;
+}
+
+
+.v2-footer-socials a{
+  width:39px;
+  height:39px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:11px;
+
+  border:1px solid rgba(0,234,255,.14);
+
+  background:rgba(0,234,255,.035);
+
+  transition:
+    transform .2s ease,
+    border-color .2s ease,
+    background .2s ease,
+    box-shadow .2s ease;
+}
+
+
+.v2-footer-socials a:hover{
+  transform:translateY(-2px);
+
+  border-color:rgba(0,234,255,.32);
+
+  background:rgba(0,234,255,.075);
+
+  box-shadow:
+    0 0 18px rgba(0,234,255,.07);
+}
+
+
+.v2-footer-socials img{
+  width:22px !important;
+  height:22px !important;
+
+  margin:0 !important;
+
+  object-fit:contain;
+
+  opacity:.9;
+
+  transition:
+    opacity .2s ease,
+    transform .2s ease;
+}
+
+
+.v2-footer-socials a:hover img{
+  opacity:1;
+
+  transform:scale(1.05);
+}
+
+
+/* =========================================================
+   BOTTOM BAR
+   ========================================================= */
+
+.v2-footer-bottom{
+  display:flex;
+
+  justify-content:space-between;
+  align-items:center;
+
+  gap:20px;
+
+  padding-top:20px;
+
+  border-top:1px solid rgba(0,234,255,.075);
+
+  color:#536f7e;
+
+  font-size:.68rem;
+  line-height:1.5;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:900px){
+
+  .v2-footer-main{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .v2-footer-brand{
+    grid-column:1 / -1;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:600px){
+
+  .v2-footer{
+    padding:45px 0 22px;
+  }
+
+
+  .v2-footer-main{
+    grid-template-columns:1fr;
+
+    gap:30px;
+  }
+
+
+  .v2-footer-brand{
+    grid-column:auto;
+
+    align-items:flex-start;
+  }
+
+
+  .v2-footer-logo{
+    width:64px;
+  }
+
+
+  .v2-footer-nav{
+    grid-template-columns:1fr 1fr;
+
+    max-width:280px;
+  }
+
+
+  .v2-footer-connect{
+    align-items:flex-start;
+  }
+
+
+  .v2-footer-bottom{
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:6px;
+  }
+
+}
 </style>
 </head>
 <body>
@@ -5233,16 +5570,163 @@ Enjoy RollerCoin. Your activity helps support AskEmai 💙
 </section>
 <!-- END ROLLERCOIN PARTNER SECTION -->
 
-  <footer class="footer">
-    <p>Contact us: <a href="mailto:contact@emaitoken.io">contact@emaitoken.io</a></p>
-    <div class="social-icons">
-      <a href="https://x.com/Emai_token?t=EvnKR-L3z6UK6bH4zhpr6Q&s=09" target="_blank"><img src="x-icon.png" alt="X" /></a>
-      <a href="https://instagram.com/emai_token" target="_blank"><img src="instagram-icon.png" alt="Instagram" /></a>
-      <a href="https://t.me/emaitoken" target="_blank"><img src="telegram-icon.png" alt="Telegram" /></a>
-      <a href="https://www.tiktok.com/@askemai" target="_blank"><img src="tiktokicon.png" alt="TikTok" /></a>
-     
+ <!-- =======================================================
+     ASKEMAI V2 FOOTER
+     ======================================================= -->
+
+<footer class="v2-footer">
+
+  <div class="v2-footer-wrap">
+
+    <div class="v2-footer-main">
+
+
+      <!-- BRAND -->
+
+      <div class="v2-footer-brand">
+
+        <img
+          src="emai-logo-header.png"
+          alt="EMAI Logo"
+          class="v2-footer-logo"
+        >
+
+        <div class="v2-footer-brand-copy">
+
+          <strong>
+            Meme Intelligence Awakened.
+          </strong>
+
+          <span>
+            AI creativity, memes and community —
+            built on Base.
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- NAVIGATION -->
+
+      <nav
+        class="v2-footer-nav"
+        aria-label="Footer navigation"
+      >
+
+        <a href="#project-snapshot">
+          Project
+        </a>
+
+        <a href="#crypto-pulse">
+          Crypto Pulse
+        </a>
+
+        <a href="#daily-memes">
+          Memes
+        </a>
+
+        <a href="#faq">
+          FAQ
+        </a>
+
+      </nav>
+
+
+      <!-- CONTACT -->
+
+      <div class="v2-footer-connect">
+
+        <span class="v2-footer-connect-label">
+          CONNECT WITH ASKEMAI
+        </span>
+
+        <a
+          href="mailto:contact@emaitoken.io"
+          class="v2-footer-email"
+        >
+          contact@emaitoken.io
+        </a>
+
+
+        <div class="v2-footer-socials">
+
+          <a
+            href="https://x.com/Emai_token?t=EvnKR-L3z6UK6bH4zhpr6Q&s=09"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="AskEmai on X"
+          >
+            <img
+              src="x-icon.png"
+              alt=""
+            >
+          </a>
+
+
+          <a
+            href="https://instagram.com/emai_token"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="AskEmai on Instagram"
+          >
+            <img
+              src="instagram-icon.png"
+              alt=""
+            >
+          </a>
+
+
+          <a
+            href="https://t.me/emaitoken"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="AskEmai on Telegram"
+          >
+            <img
+              src="telegram-icon.png"
+              alt=""
+            >
+          </a>
+
+
+          <a
+            href="https://www.tiktok.com/@askemai"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="AskEmai on TikTok"
+          >
+            <img
+              src="tiktokicon.png"
+              alt=""
+            >
+          </a>
+
+        </div>
+
+      </div>
+
+
     </div>
-  </footer>
+
+
+    <!-- BOTTOM -->
+
+    <div class="v2-footer-bottom">
+
+      <span>
+        © 2026 AskEmai · $EMAI
+      </span>
+
+      <span>
+        Built in public · Always DYOR
+      </span>
+
+    </div>
+
+  </div>
+
+</footer>
 
   <script>
 
