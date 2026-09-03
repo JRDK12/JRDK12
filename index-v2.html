@@ -1,0 +1,2132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ETJ92QSHTG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ETJ92QSHTG');
+</script>
+  
+<!-- w <head> jako jedna z pierwszych metatagów -->
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>$EMAI - Meme Intelligence Awakened</title>
+  <meta name="description" content="$EMAI is a community-driven token on Base built around AskEmai, meme culture, creative tools and community participation. Create memes, explore AskEmai and verify official $EMAI trading information.">
+
+<link rel="canonical" href="https://emaitoken.io/">
+
+<meta property="og:title" content="$EMAI - Meme Intelligence Awakened">
+<meta property="og:description" content="Explore AskEmai, create memes and discover the $EMAI community on Base.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://emaitoken.io/">
+<meta property="og:image" content="https://emaitoken.io/robot-bg-desktop.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="$EMAI - Meme Intelligence Awakened">
+<meta name="twitter:description" content="Explore AskEmai, create memes and discover the $EMAI community on Base.">
+<meta name="twitter:image" content="https://emaitoken.io/robot-bg-desktop.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #000;
+      color: #fff;
+    }
+ .hero {
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.78) 0%,
+      rgba(0, 0, 0, 0.46) 42%,
+      rgba(0, 0, 0, 0.12) 100%
+    ),
+    url('robot-bg-desktop.png?v=1') no-repeat right center;
+
+  background-size: cover;
+  background-position: right center;
+
+  min-height: 100vh;
+  min-height: 100svh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  color: #0ff;
+  padding: 7rem 2rem 3rem;
+}
+    
+    .hero h1 {
+      font-size: 5rem;
+      text-shadow: 0 0 20px #0ff;
+      margin-bottom: 0.5rem;
+    }
+    .hero p {
+      font-size: 1.6rem;
+      color: #0ff;
+      font-style: italic;
+    }
+    #dynamic-slogan{
+    display:inline-block;
+    padding:8px 18px;
+    border-radius:999px;
+    background:rgba(0,10,25,.28);
+    border:1px solid rgba(0,234,255,.25);
+    color:#bffcff;
+    text-shadow:
+    0 0 8px rgba(0,234,255,.9),
+    0 0 18px rgba(0,234,255,.65);
+    box-shadow:
+    0 0 18px rgba(0,234,255,.18),
+    inset 0 0 18px rgba(0,234,255,.12);
+    backdrop-filter:blur(2px);
+    }
+   .logo {
+  position: fixed;
+  top: 58px;
+  left: 20px;
+  width: 170px;
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
+  animation: none;
+  filter: none;
+  z-index: 9999;
+}
+    .meme-link {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #00ccff;
+      color: #000;
+      padding: 14px 22px;
+      border-radius: 12px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 0 10px #0ff;
+      font-size: 1.2rem;
+      z-index: 9999;
+    }
+    .meme-link:hover {
+      background: #0ff;
+    }
+    .section {
+      padding: 2rem;
+      background: #111;
+    }
+    .faq-question {
+      background: #0ff;
+      color: #000;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      font-weight: bold;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    .faq-answer {
+      padding: 10px;
+      display: none;
+      color: #fff;
+      background: #222;
+      border-radius: 10px;
+    }
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+    .meme-generator {
+      padding: 2rem;
+      background: #111;
+      text-align: center;
+      scroll-margin-top: 120px;
+    }
+    .meme-generator input,
+    .meme-generator button {
+      padding: 10px;
+      margin: 5px;
+      border-radius: 5px;
+    }
+    #meme-canvas {
+      display: none;
+      margin-top: 1rem;
+      max-width: 100%;
+    }
+    .footer {
+      background: #000;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+    .social-icons img {
+      width: 32px;
+      margin: 0 10px;
+      vertical-align: middle;
+    }
+  .ai-portal {
+  max-width: 780px;
+  margin: 40px auto;
+  padding: 38px 24px;
+  border: 1px solid rgba(0, 234, 255, 0.45);
+  border-radius: 26px;
+  background: radial-gradient(circle at center, rgba(0, 234, 255, 0.18), rgba(0, 0, 0, 0.45));
+  box-shadow: 0 0 35px rgba(0, 234, 255, 0.35);
+  text-align: center;
+}
+
+.ai-portal h2 {
+  font-size: clamp(2rem, 7vw, 4rem);
+  margin: 0 0 12px;
+  color: #00eaff;
+  text-shadow: 0 0 20px #00eaff;
+}
+
+.portal-text {
+  color: #bffcff;
+  font-size: 1.2rem;
+  margin-bottom: 28px;
+}
+
+.portal-button {
+  display: inline-block;
+  padding: 18px 34px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #00eaff, #0077ff);
+  color: #001018;
+  font-size: 1.2rem;
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: 0 0 28px rgba(0, 234, 255, 0.65);
+  animation: portalPulse 1.8s infinite alternate;
+}
+
+@keyframes portalPulse {
+  from {
+    transform: scale(1);
+    box-shadow: 0 0 18px rgba(0, 234, 255, 0.45);
+  }
+  to {
+    transform: scale(1.04);
+    box-shadow: 0 0 42px rgba(0, 234, 255, 0.9);
+  }
+}
+.hero-enter{
+position:relative;  
+display:inline-block;
+padding:18px 40px;
+background:linear-gradient(135deg,#00eaff,#0077ff);
+color:#001018;
+font-size:1.2rem;
+font-weight:700;
+text-decoration:none;
+border-radius:999px;
+box-shadow:0 0 30px rgba(0,234,255,.6);
+transition:.3s;
+overflow:hidden; 
+}
+.hero-enter::before{
+content:"";
+position:absolute;
+top:0;
+left:-140%;
+width:70%;
+height:100%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.75),
+transparent
+);
+transform:skewX(-25deg);
+animation:buttonSweep 4s infinite;
+}
+.hero-enter:hover{
+transform:scale(1.05);
+box-shadow:0 0 45px rgba(0,234,255,.9);
+} 
+.portal-core{
+position:relative;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+margin-top:18px;
+width:430px;
+height:170px;
+max-width:90vw;
+}
+
+.portal-ring{
+position:absolute;
+width:360px;
+height:120px;
+border:2px solid rgba(0,234,255,.75);
+border-radius:50%;
+box-shadow:0 0 20px rgba(0,234,255,.8), inset 0 0 25px rgba(0,234,255,.45);
+animation:portalSpin 6s linear infinite;
+}
+
+.portal-ring-2{
+width:300px;
+height:92px;
+border-color:rgba(0,119,255,.7);
+animation:portalSpinReverse 4s linear infinite;
+}
+
+.portal-core::before{
+content:"";
+position:absolute;
+width:320px;
+height:95px;
+border-radius:50%;
+background:radial-gradient(circle, rgba(0,234,255,.35), rgba(0,119,255,.12), transparent 70%);
+filter:blur(8px);
+animation:portalBreath 2s infinite alternate;
+}
+
+@keyframes portalSpin{
+from{transform:rotate(0deg);}
+to{transform:rotate(360deg);}
+}
+
+@keyframes portalSpinReverse{
+from{transform:rotate(360deg);}
+to{transform:rotate(0deg);}
+}
+
+@keyframes portalBreath{
+from{transform:scale(.96);opacity:.65;}
+to{transform:scale(1.08);opacity:1;}
+}
+
+.hero-enter{
+position:relative;
+z-index:5;
+} 
+#boot-screen{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#02060d;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:99999;
+transition:opacity .8s;
+}
+
+#boot-screen.hidden{
+opacity:0;
+pointer-events:none;
+}
+
+#boot-title{
+font-size:2rem;
+color:#00eaff;
+font-weight:bold;
+letter-spacing:4px;
+text-shadow:0 0 20px #00eaff;
+margin-bottom:25px;
+}
+
+#boot-progress{
+font-size:1.6rem;
+color:white;
+font-family:monospace;
+}
+ #boot-log{
+margin-top:28px;
+font-family:monospace;
+font-size:1rem;
+color:#9ffcff;
+text-align:left;
+line-height:1.8;
+text-shadow:0 0 10px #00eaff;
+}
+
+#boot-log div{
+opacity:0;
+animation:bootLine .45s forwards;
+}
+
+#boot-log div:nth-child(1){animation-delay:.3s;}
+#boot-log div:nth-child(2){animation-delay:.8s;}
+#boot-log div:nth-child(3){animation-delay:1.3s;}
+#boot-log div:nth-child(4){animation-delay:1.8s;}
+
+@keyframes bootLine{
+from{
+opacity:0;
+transform:translateY(8px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+body.glitch{
+    animation:glitchFlash .18s ease;
+}
+
+@keyframes glitchFlash{
+
+0%{
+filter:brightness(1);
+transform:translate(0,0);
+}
+
+20%{
+filter:brightness(2.8);
+transform:translate(-3px,2px);
+}
+
+40%{
+filter:brightness(.7) hue-rotate(18deg);
+transform:translate(4px,-2px);
+}
+
+60%{
+filter:brightness(2.2);
+transform:translate(-2px,1px);
+}
+
+100%{
+filter:brightness(1);
+transform:translate(0,0);
+}
+
+} 
+
+.hero-content{
+position:relative;
+z-index:3;
+}
+
+.particles span{
+position:absolute;
+width:auto;
+height:auto;
+background:transparent;
+border-radius:0;
+box-shadow:none;
+color:#00eaff;
+font-size:13px;
+font-weight:700;
+line-height:1;
+text-shadow:0 0 8px #00eaff, 0 0 18px #00eaff;
+opacity:.75;
+animation:particleMove 10s linear infinite;
+}
+
+.particles span::before{
+content:"✦";
+}
+.particles span:nth-child(1){left:12%;top:80%;animation-delay:0s;}
+.particles span:nth-child(2){left:24%;top:70%;animation-delay:1s;}
+.particles span:nth-child(3){left:38%;top:85%;animation-delay:2s;}
+.particles span:nth-child(4){left:52%;top:75%;animation-delay:.5s;}
+.particles span:nth-child(5){left:66%;top:82%;animation-delay:1.5s;}
+.particles span:nth-child(6){left:78%;top:68%;animation-delay:2.5s;}
+.particles span:nth-child(7){left:88%;top:76%;animation-delay:3s;}
+.particles span:nth-child(8){left:45%;top:90%;animation-delay:3.5s;}
+.particles span:nth-child(1)::before{content:"✦";}
+.particles span:nth-child(2)::before{content:"✧";}
+.particles span:nth-child(3)::before{content:"✦";}
+.particles span:nth-child(4)::before{content:"✧";}
+.particles span:nth-child(5)::before{content:"✦";}
+.particles span:nth-child(6)::before{content:"✧";}
+.particles span:nth-child(7)::before{content:"✦";}
+.particles span:nth-child(8)::before{content:"✧";}
+
+.particles span:nth-child(2){font-size:10px;opacity:.55;}
+.particles span:nth-child(4){font-size:15px;opacity:.85;}
+.particles span:nth-child(6){font-size:11px;opacity:.6;}
+.particles span:nth-child(8){font-size:14px;opacity:.8;}
+
+ @keyframes buttonSweep{
+
+0%{
+left:-140%;
+}
+
+25%{
+left:160%;
+}
+
+100%{
+left:160%;
+}
+
+}
+ .particles{
+position:absolute;
+inset:0;
+overflow:hidden;
+z-index:2;
+pointer-events:none;
+}
+
+.particles span:nth-child(1){left:12%;top:80%;animation-delay:0s;}
+.particles span:nth-child(2){left:24%;top:70%;animation-delay:1s;}
+.particles span:nth-child(3){left:38%;top:85%;animation-delay:2s;}
+.particles span:nth-child(4){left:52%;top:75%;animation-delay:.5s;}
+.particles span:nth-child(5){left:66%;top:82%;animation-delay:1.5s;}
+.particles span:nth-child(6){left:78%;top:68%;animation-delay:2.5s;}
+.particles span:nth-child(7){left:88%;top:76%;animation-delay:3s;}
+.particles span:nth-child(8){left:45%;top:90%;animation-delay:3.5s;}
+
+@keyframes particleMove{
+0%{
+transform:translateY(0) translateX(0) scale(.7);
+opacity:0;
+}
+
+15%{
+opacity:.9;
+}
+
+45%{
+opacity:.65;
+}
+
+75%{
+opacity:.35;
+}
+
+100%{
+transform:translateY(-620px) translateX(28px) scale(1.15);
+opacity:0;
+}
+}
+.ai-sparks{
+position:absolute;
+inset:0;
+z-index:2;
+pointer-events:none;
+overflow:hidden;
+}
+
+.ai-sparks span{
+position:absolute;
+font-family:monospace;
+font-size:.9rem;
+font-weight:700;
+color:rgba(180,252,255,.85);
+text-shadow:
+0 0 8px rgba(0,234,255,.85),
+0 0 18px rgba(0,234,255,.45);
+opacity:0;
+animation:aiSpark 7s ease-in-out infinite;
+}
+
+.ai-sparks span:nth-child(1){left:18%;top:28%;animation-delay:.4s;}
+.ai-sparks span:nth-child(2){left:72%;top:30%;animation-delay:1.8s;}
+.ai-sparks span:nth-child(3){left:24%;top:66%;animation-delay:3.2s;}
+.ai-sparks span:nth-child(4){left:82%;top:58%;animation-delay:4.6s;}
+.ai-sparks span:nth-child(5){left:64%;top:76%;animation-delay:2.6s;}
+.ai-sparks span:nth-child(6){left:36%;top:42%;animation-delay:5.4s;}
+
+@keyframes aiSpark{
+0%{
+opacity:0;
+transform:translateY(8px) scale(.9);
+filter:blur(1px);
+}
+
+12%{
+opacity:.85;
+filter:blur(0);
+}
+
+22%{
+opacity:.25;
+}
+
+32%{
+opacity:.75;
+}
+
+45%{
+opacity:0;
+transform:translateY(-14px) scale(1.05);
+filter:blur(.5px);
+}
+
+100%{
+opacity:0;
+transform:translateY(-14px) scale(1.05);
+}
+}    
+@keyframes logoPulse{
+0%{
+filter:drop-shadow(0 0 8px rgba(0,234,255,.45));
+}
+
+50%{
+filter:drop-shadow(0 0 18px rgba(0,234,255,.9));
+}
+
+100%{
+filter:drop-shadow(0 0 8px rgba(0,234,255,.45));
+}
+}
+
+    
+    /* AskEmai top announcement bar */
+.askemai-top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  background: linear-gradient(90deg, rgba(0, 10, 25, 0.96), rgba(0, 234, 255, 0.22), rgba(0, 10, 25, 0.96));
+  border-bottom: 1px solid rgba(0, 234, 255, 0.45);
+  box-shadow: 0 0 22px rgba(0, 234, 255, 0.25);
+  color: #eaffff;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  padding: 10px 46px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  animation: askemaiBarGlow 2.6s ease-in-out infinite alternate;
+}
+
+.askemai-top-bar span {
+  color: #00eaff;
+  text-shadow: 0 0 12px rgba(0, 234, 255, 0.9);
+}
+
+.askemai-top-bar:hover {
+  background: linear-gradient(90deg, rgba(0, 15, 35, 0.98), rgba(0, 234, 255, 0.34), rgba(0, 15, 35, 0.98));
+}
+
+@keyframes askemaiBarGlow {
+  from {
+    box-shadow: 0 0 14px rgba(0, 234, 255, 0.22);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(0, 234, 255, 0.48);
+  }
+}
+
+/* Push fixed logo/buttons below the top bar */
+.logo {
+  top: 62px;
+}
+
+.meme-link {
+  top: 62px;
+}
+
+/* AskEmai popup */
+.askemai-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10001;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(8px);
+}
+
+.askemai-modal.active {
+  display: flex;
+}
+
+.askemai-modal-card {
+  position: relative;
+  width: min(520px, 92vw);
+  padding: 34px 28px;
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at top right, rgba(0, 234, 255, 0.18), transparent 38%),
+    linear-gradient(180deg, rgba(3, 13, 28, 0.98), rgba(0, 0, 0, 0.96));
+  border: 1px solid rgba(0, 234, 255, 0.52);
+  box-shadow:
+    0 0 35px rgba(0, 234, 255, 0.34),
+    inset 0 0 25px rgba(0, 234, 255, 0.08);
+  text-align: center;
+  color: #fff;
+  animation: askemaiPop 0.28s ease-out;
+}
+
+@keyframes askemaiPop {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.askemai-modal-icon {
+  width: 86px;
+  height: 86px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+  background: rgba(0, 234, 255, 0.12);
+  border: 1px solid rgba(0, 234, 255, 0.5);
+  box-shadow: 0 0 22px rgba(0, 234, 255, 0.35);
+}
+
+.askemai-modal-card h2 {
+  margin: 0 0 14px;
+  font-size: clamp(2rem, 7vw, 3rem);
+  color: #00eaff;
+  text-shadow: 0 0 18px rgba(0, 234, 255, 0.75);
+}
+
+.askemai-modal-card p {
+  margin: 0 auto;
+  max-width: 420px;
+  font-size: 1.12rem;
+  line-height: 1.65;
+  color: #dffcff;
+}
+
+.askemai-modal-card strong {
+  color: #fff;
+}
+
+.askemai-modal-actions {
+  margin-top: 24px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.askemai-modal-btn {
+  display: inline-block;
+  padding: 13px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 234, 255, 0.55);
+  background: linear-gradient(135deg, #00eaff, #0077ff);
+  color: #001018;
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: 0 0 22px rgba(0, 234, 255, 0.45);
+}
+
+.askemai-modal-btn.secondary {
+  background: rgba(0, 20, 35, 0.78);
+  color: #dffcff;
+}
+
+.askemai-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 234, 255, 0.4);
+  background: rgba(0, 10, 22, 0.9);
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.askemai-close:hover {
+  background: #00eaff;
+  color: #001018;
+}
+
+@media (max-width: 700px) {
+ .askemai-top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  box-sizing: border-box;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0, 10, 25, 0.98),
+    rgba(0, 234, 255, 0.22),
+    rgba(0, 10, 25, 0.98)
+  );
+
+  border-bottom: 1px solid rgba(0, 234, 255, 0.45);
+  box-shadow: 0 0 22px rgba(0, 234, 255, 0.25);
+
+  color: #eaffff;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+
+  padding: 10px 14px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+
+  font-size: clamp(0.78rem, 2.4vw, 1rem);
+  line-height: 1.35;
+
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+  .logo {
+    top: 58px;
+    width: 150px;
+  }
+
+  .meme-link {
+    top: 58px;
+    font-size: 0.95rem;
+    padding: 10px 14px;
+  }
+}
+   @media (max-width: 768px) {
+  .askemai-top-bar {
+    padding: 8px 10px;
+    font-size: 0.82rem;
+    line-height: 1.25;
+  }
+
+  .logo {
+    top: 64px;
+    left: 16px;
+    width: 118px;
+  }
+
+ .hero {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.58) 0%,
+      rgba(0, 0, 0, 0.28) 45%,
+      rgba(0, 0, 0, 0.68) 100%
+    ),
+    url('robot-bg-mobile.png?v=1') no-repeat center center;
+
+  background-size: cover;
+  background-position: center center;
+
+  min-height: 100vh;
+  min-height: 100svh;
+
+  padding: 8.5rem 1.1rem 2.5rem;
+}
+
+  .hero h1 {
+    font-size: clamp(3rem, 18vw, 5rem);
+    line-height: 1;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .portal-core {
+    width: 100%;
+    max-width: 340px;
+    height: 130px;
+  }
+
+  .portal-ring {
+    width: 300px;
+    height: 95px;
+  }
+
+  .portal-ring-2 {
+    width: 245px;
+    height: 76px;
+  }
+
+  .hero-enter {
+    font-size: 1rem;
+    padding: 16px 26px;
+    max-width: 90%;
+  }
+}
+    /* FINAL MOBILE + DESKTOP HERO BACKGROUND FIX */
+
+.hero {
+  position: relative !important;
+  overflow: hidden !important;
+
+  min-height: 100vh !important;
+  min-height: 100svh !important;
+  height: auto !important;
+
+  background-color: #02060d !important;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.82) 0%,
+      rgba(0, 0, 0, 0.48) 42%,
+      rgba(0, 0, 0, 0.18) 100%
+    ),
+    url("robot-bg-desktop.png?v=7") !important;
+
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: right center !important;
+  background-attachment: scroll !important;
+
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+
+  padding: 140px 6vw 80px !important;
+  box-sizing: border-box !important;
+}
+
+.hero-content {
+  position: relative !important;
+  z-index: 5 !important;
+  width: min(620px, 92vw) !important;
+  margin: 0 auto 0 0 !important;
+  text-align: left !important;
+}
+
+.hero h1 {
+  display: block !important;
+  margin: 0 0 16px !important;
+  font-size: clamp(4rem, 9vw, 7rem) !important;
+  line-height: 0.9 !important;
+  color: #00eaff !important;
+  text-shadow: 0 0 22px rgba(0, 234, 255, 0.9) !important;
+}
+
+#dynamic-slogan {
+  display: inline-block !important;
+  margin: 0 0 34px !important;
+}
+
+.portal-core {
+  position: relative !important;
+  z-index: 6 !important;
+  width: auto !important;
+  height: auto !important;
+  margin-top: 0 !important;
+  display: block !important;
+}
+
+.portal-ring,
+.portal-ring-2,
+.portal-core::before {
+  display: none !important;
+}
+
+.hero-enter {
+  display: inline-block !important;
+  width: auto !important;
+  max-width: 100% !important;
+  padding: 18px 38px !important;
+  border-radius: 999px !important;
+  font-size: 1.1rem !important;
+  line-height: 1.25 !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+}
+
+
+/* MOBILE HERO FIX */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100vh !important;
+    min-height: 100svh !important;
+
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.42) 0%,
+        rgba(0, 0, 0, 0.18) 42%,
+        rgba(0, 0, 0, 0.72) 100%
+      ),
+      url("robot-bg-mobile.png?v=7") !important;
+
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center top !important;
+    background-attachment: scroll !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+
+    padding: 120px 18px 60px !important;
+  }
+
+  .hero-content {
+    width: 100% !important;
+    max-width: 360px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+
+    padding: 18px 14px 22px !important;
+    border-radius: 24px !important;
+
+    background: rgba(0, 8, 20, 0.26) !important;
+    border: 1px solid rgba(0, 234, 255, 0.16) !important;
+    backdrop-filter: blur(2px) !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 17vw, 4.7rem) !important;
+    line-height: 0.95 !important;
+    margin-bottom: 12px !important;
+  }
+
+  #dynamic-slogan {
+    font-size: 0.92rem !important;
+    line-height: 1.25 !important;
+    padding: 8px 12px !important;
+    margin-bottom: 22px !important;
+  }
+
+  .portal-core {
+    width: 100% !important;
+    max-width: 310px !important;
+    margin: 0 auto !important;
+  }
+
+  .hero-enter {
+    display: block !important;
+    width: 100% !important;
+    max-width: 310px !important;
+    margin: 0 auto !important;
+    padding: 15px 16px !important;
+    font-size: 0.92rem !important;
+    line-height: 1.25 !important;
+    border-radius: 999px !important;
+  }
+}
+    /* FINAL HERO TEXT LAYOUT */
+
+.hero {
+  position: relative !important;
+  overflow: hidden !important;
+
+  min-height: 100vh !important;
+  min-height: 100svh !important;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.82) 0%,
+      rgba(0, 0, 0, 0.48) 42%,
+      rgba(0, 0, 0, 0.14) 100%
+    ),
+    url("robot-bg-desktop.png?v=9") !important;
+
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: right center !important;
+
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+
+  padding: 150px 6vw 70px !important;
+  box-sizing: border-box !important;
+  text-align: left !important;
+}
+
+.hero-panel {
+  position: relative !important;
+  z-index: 5 !important;
+
+  width: min(620px, 46vw) !important;
+  margin: 0 auto 0 0 !important;
+  text-align: left !important;
+}
+
+.hero h1 {
+  margin: 0 0 16px !important;
+  font-size: clamp(4.8rem, 8vw, 8rem) !important;
+  line-height: 0.9 !important;
+  color: #00eaff !important;
+  text-shadow:
+    0 0 18px rgba(0, 234, 255, 0.95),
+    0 0 44px rgba(0, 119, 255, 0.65) !important;
+}
+
+#dynamic-slogan {
+  display: inline-block !important;
+  margin: 0 0 28px !important;
+  padding: 9px 22px !important;
+  border-radius: 999px !important;
+
+  color: #ffffff !important;
+  font-size: clamp(1.1rem, 1.6vw, 1.45rem) !important;
+  font-style: italic !important;
+
+  background: rgba(0, 12, 28, 0.62) !important;
+  border: 1px solid rgba(0, 234, 255, 0.55) !important;
+  box-shadow: 0 0 22px rgba(0, 234, 255, 0.28) !important;
+}
+
+.hero-description {
+  max-width: 560px !important;
+  margin: 0 0 32px !important;
+
+  color: #d8faff !important;
+  font-size: clamp(1.05rem, 1.5vw, 1.35rem) !important;
+  line-height: 1.65 !important;
+}
+
+.portal-core {
+  position: relative !important;
+  z-index: 6 !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 0 34px !important;
+  display: block !important;
+}
+
+.portal-ring,
+.portal-ring-2,
+.portal-core::before {
+  display: none !important;
+}
+
+.hero-enter {
+  display: inline-block !important;
+  width: auto !important;
+  min-width: 360px !important;
+  max-width: 100% !important;
+
+  padding: 18px 40px !important;
+  border-radius: 999px !important;
+
+  font-size: 1.1rem !important;
+  line-height: 1.2 !important;
+  text-align: center !important;
+
+  background: linear-gradient(135deg, #bffcff, #00eaff, #0077ff) !important;
+  color: #001018 !important;
+
+  box-shadow:
+    0 0 25px rgba(0, 234, 255, 0.55),
+    inset 0 0 10px rgba(255, 255, 255, 0.45) !important;
+}
+
+.hero-features {
+  display: flex !important;
+  gap: 24px !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+}
+
+.hero-feature {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+
+  color: #dffcff !important;
+  font-size: 0.95rem !important;
+}
+
+.hero-feature span {
+  color: #00eaff !important;
+  font-size: 1.7rem !important;
+  text-shadow: 0 0 14px rgba(0, 234, 255, 0.85) !important;
+}
+
+.hero-feature p {
+  margin: 0 !important;
+  color: #dffcff !important;
+  line-height: 1.35 !important;
+}
+
+.hero-feature strong {
+  color: #ffffff !important;
+}
+ /* FINAL MOBILE HERO FIX — keep desktop unchanged */
+@media (max-width: 768px) {
+
+  .hero {
+    min-height: 100vh !important;
+    min-height: 100svh !important;
+
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.35) 0%,
+        rgba(0, 0, 0, 0.15) 38%,
+        rgba(0, 0, 0, 0.72) 100%
+      ),
+      url("robot-bg-mobile.png?v=11") !important;
+
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center bottom !important;
+    background-attachment: scroll !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+
+    padding: 115px 16px 42px !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+
+  .hero-panel {
+    width: 100% !important;
+    max-width: 345px !important;
+    margin: 0 auto !important;
+    padding: 14px 12px 16px !important;
+
+    border-radius: 22px !important;
+    background: rgba(0, 8, 20, 0.34) !important;
+    border: 1px solid rgba(0, 234, 255, 0.16) !important;
+    backdrop-filter: blur(1.5px) !important;
+
+    text-align: center !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.7rem, 14vw, 4rem) !important;
+    line-height: 0.95 !important;
+    margin: 0 0 8px !important;
+    text-align: center !important;
+  }
+
+  #dynamic-slogan {
+    display: inline-block !important;
+    font-size: 0.78rem !important;
+    line-height: 1.2 !important;
+    padding: 6px 10px !important;
+    margin: 0 0 12px !important;
+    max-width: 95% !important;
+  }
+
+  .hero-description {
+    max-width: 285px !important;
+    margin: 0 auto 16px !important;
+
+    font-size: 0.78rem !important;
+    line-height: 1.35 !important;
+    color: rgba(223, 252, 255, 0.92) !important;
+  }
+
+  .portal-core {
+    width: 100% !important;
+    max-width: 285px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+  }
+
+  .portal-ring,
+  .portal-ring-2,
+  .portal-core::before {
+    display: none !important;
+  }
+
+  .hero-enter {
+    display: block !important;
+    width: 100% !important;
+    max-width: 285px !important;
+    min-width: 0 !important;
+
+    margin: 0 auto !important;
+    padding: 13px 14px !important;
+
+    font-size: 0.82rem !important;
+    line-height: 1.2 !important;
+    border-radius: 999px !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+
+  .hero-features {
+    display: none !important;
+  }
+
+  .logo {
+    top: 56px !important;
+    left: 14px !important;
+    width: 82px !important;
+    height: auto !important;
+    box-shadow: none !important;
+    animation: none !important;
+    filter: none !important;
+  }
+}
+    .daily-memes-section {
+  padding: 3rem 2rem;
+  background: radial-gradient(circle at top, rgba(0, 234, 255, 0.12), #05080d 70%);
+  border-top: 1px solid rgba(0, 234, 255, 0.25);
+}
+
+.daily-memes-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.daily-memes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.daily-memes-header h2 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: #fff;
+  text-shadow: 0 0 18px rgba(0, 234, 255, 0.65);
+}
+
+.daily-memes-header h2 span {
+  color: #00eaff;
+}
+
+.view-all-memes {
+  padding: 12px 20px;
+  border: 1px solid #00eaff;
+  border-radius: 12px;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 0 18px rgba(0, 234, 255, 0.35);
+  transition: 0.3s;
+}
+
+.view-all-memes:hover {
+  background: #00eaff;
+  color: #001018;
+}
+
+.meme-category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.meme-category-tabs span {
+  padding: 9px 15px;
+  border: 1px solid rgba(0, 234, 255, 0.35);
+  border-radius: 999px;
+  color: #bffcff;
+  background: rgba(0, 20, 35, 0.7);
+  font-size: 0.95rem;
+}
+
+.meme-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 14px;
+}
+
+.meme-card {
+  background: rgba(0, 15, 28, 0.9);
+  border: 1px solid rgba(0, 234, 255, 0.25);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.12);
+  transition: 0.3s;
+}
+
+.meme-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 28px rgba(0, 234, 255, 0.35);
+}
+
+.meme-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.meme-card-content {
+  padding: 12px;
+}
+
+.meme-card-content h3 {
+  margin: 0 0 6px;
+  color: #00eaff;
+  font-size: 1rem;
+}
+
+.meme-card-content p {
+  margin: 0;
+  color: #d8faff;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 1100px) {
+  .meme-preview-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .daily-memes-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .meme-preview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.home-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 5;
+}
+
+.emai-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  padding: 15px 26px;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  text-decoration: none;
+  color: #ffffff;
+  border: 1px solid rgba(0, 234, 255, 0.55);
+  background: linear-gradient(135deg, rgba(0, 234, 255, 0.18), rgba(0, 93, 255, 0.18));
+  box-shadow:
+    0 0 18px rgba(0, 234, 255, 0.25),
+    inset 0 0 18px rgba(0, 234, 255, 0.08);
+  backdrop-filter: blur(8px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.emai-btn:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0, 234, 255, 1);
+  box-shadow:
+    0 0 28px rgba(0, 234, 255, 0.55),
+    0 0 55px rgba(0, 93, 255, 0.25),
+    inset 0 0 22px rgba(0, 234, 255, 0.15);
+}
+
+.emai-btn-buy {
+  background: linear-gradient(135deg, #00eaff, #0066ff);
+  color: #02060d;
+  border-color: rgba(0, 234, 255, 1);
+}
+
+.emai-btn-chart {
+  background: linear-gradient(135deg, rgba(2, 6, 13, 0.9), rgba(0, 102, 255, 0.22));
+}
+
+@media (max-width: 600px) {
+  .home-actions {
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 26px;
+  }
+
+  .emai-btn {
+    width: 100%;
+    max-width: 320px;
+    min-width: unset;
+    font-size: 0.98rem;
+    padding: 14px 22px;
+  }
+}
+    .trade-actions-section {
+  max-width: 760px;
+  margin: 55px auto 45px;
+  padding: 28px 24px;
+  text-align: center;
+  border: 1px solid rgba(0, 234, 255, 0.28);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at top, rgba(0, 234, 255, 0.14), transparent 45%),
+    linear-gradient(180deg, rgba(0, 25, 35, 0.92), rgba(0, 8, 14, 0.96));
+  box-shadow:
+    0 0 28px rgba(0, 234, 255, 0.12),
+    inset 0 0 22px rgba(0, 234, 255, 0.04);
+  position: relative;
+  z-index: 5;
+}
+
+.trade-actions-section h2 {
+  margin: 0;
+  color: #00eaff;
+  font-size: 2rem;
+  font-weight: 900;
+  text-shadow: 0 0 18px rgba(0, 234, 255, 0.45);
+}
+
+.trade-actions-subtitle {
+  margin: 10px 0 22px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.98rem;
+}
+
+.trade-actions-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.trade-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 185px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 900;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  border: 1px solid rgba(0, 234, 255, 0.85);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.trade-buy-btn {
+  color: #02060d;
+  background: linear-gradient(135deg, #00eaff, #0077ff);
+  box-shadow: 0 0 24px rgba(0, 234, 255, 0.42);
+}
+
+.trade-chart-btn {
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(0, 16, 28, 0.96), rgba(0, 78, 150, 0.55));
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.24);
+}
+
+.trade-action-btn:hover {
+  transform: translateY(-3px);
+  border-color: #00eaff;
+  box-shadow:
+    0 0 30px rgba(0, 234, 255, 0.55),
+    0 0 55px rgba(0, 102, 255, 0.25);
+}
+
+.trade-actions-note {
+  margin: 18px 0 0;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 650px) {
+  .trade-actions-section {
+    margin: 36px 16px 34px;
+    padding: 24px 16px;
+  }
+
+  .trade-actions-section h2 {
+    font-size: 1.65rem;
+  }
+
+  .trade-actions-buttons {
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .trade-action-btn {
+    width: 100%;
+    max-width: 310px;
+    min-width: unset;
+  }
+}
+/* FINAL MOBILE FIX FOR TRADE BUTTONS */
+
+.trade-actions-section,
+.trade-actions-section * {
+  box-sizing: border-box;
+}
+
+.trade-actions-section {
+  width: min(760px, calc(100% - 32px)) !important;
+  max-width: 760px !important;
+  margin: 42px auto 38px !important;
+  padding: 26px 18px !important;
+  overflow: hidden !important;
+}
+
+.trade-actions-buttons {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 14px !important;
+  flex-wrap: wrap !important;
+}
+
+.trade-action-btn {
+  box-sizing: border-box !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 650px) {
+  .trade-actions-section {
+    width: calc(100% - 28px) !important;
+    margin: 34px auto 34px !important;
+    padding: 24px 14px !important;
+    border-radius: 22px !important;
+  }
+
+  .trade-actions-section h2 {
+    font-size: 1.75rem !important;
+    line-height: 1.15 !important;
+  }
+
+  .trade-actions-subtitle {
+    font-size: 0.95rem !important;
+    line-height: 1.35 !important;
+    margin: 10px auto 20px !important;
+    max-width: 280px !important;
+  }
+
+  .trade-actions-buttons {
+    flex-direction: column !important;
+    gap: 14px !important;
+    width: 100% !important;
+  }
+
+  .trade-action-btn {
+    width: 100% !important;
+    max-width: 280px !important;
+    min-width: 0 !important;
+    padding: 15px 14px !important;
+    font-size: 1rem !important;
+    line-height: 1.2 !important;
+    margin: 0 auto !important;
+  }
+
+  .trade-actions-note {
+    max-width: 280px !important;
+    margin: 18px auto 0 !important;
+    font-size: 0.78rem !important;
+    line-height: 1.45 !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .trade-actions-section {
+    width: calc(100% - 22px) !important;
+    padding: 22px 12px !important;
+  }
+
+  .trade-action-btn {
+    max-width: 250px !important;
+    font-size: 0.92rem !important;
+    padding: 14px 12px !important;
+  }
+
+  .trade-actions-note {
+    max-width: 250px !important;
+  }
+}
+/* ROLLERCOIN PARTNER SECTION */
+.partner-section {
+  width: min(calc(100% - 32px), 1000px);
+  margin: 42px auto 28px;
+  padding: 20px 16px;
+  text-align: center;
+  background: rgba(4, 12, 24, 0.78);
+  border: 1px solid rgba(0, 234, 255, 0.28);
+  border-radius: 18px;
+  box-sizing: border-box;
+}
+
+.partner-label {
+  margin-bottom: 12px;
+  color: #9ab7c7;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.rollercoin-banner {
+  display: block;
+  width: 100%;
+  max-width: 970px;
+  margin: 0 auto;
+  line-height: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rollercoin-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 970px;
+  margin: 0 auto;
+}
+
+.rollercoin-banner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px rgba(0, 234, 255, 0.25);
+}
+
+.partner-description {
+  margin: 12px 0 0;
+  color: #cdeaff;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .partner-section {
+    width: calc(100% - 24px);
+    margin: 30px auto 22px;
+    padding: 14px 10px;
+    border-radius: 14px;
+  }
+
+  .partner-label {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .partner-description {
+    font-size: 13px;
+    margin-top: 10px;
+  }
+
+  .rollercoin-banner {
+    border-radius: 8px;
+  }
+}    
+    
+</style>
+</head>
+<body>
+  <!-- AskEmai top announcement -->
+<div class="askemai-top-bar" id="askemaiTopBar">
+  🤖 <span>NEW!</span> Meet AskEmai — your meme buddy.
+</div>
+
+<!-- AskEmai popup -->
+<div class="askemai-modal" id="askemaiModal">
+  <div class="askemai-modal-card">
+    <button class="askemai-close" id="askemaiClose" aria-label="Close AskEmai popup">×</button>
+
+    <div class="askemai-modal-icon">🤖</div>
+
+    <h2>Hi! 👋</h2>
+
+    <p>
+      I'm <strong>AskEmai</strong>.<br><br>
+      I'll help you create memes, make you laugh and guide you through the
+      <strong>EMAI ecosystem</strong>.
+    </p>
+
+    <div class="askemai-modal-actions">
+      <a href="mems.html" class="askemai-modal-btn">Create a Meme</a>
+      <a href="#daily-memes" class="askemai-modal-btn secondary" id="askemaiExplore">Explore Memes</a>
+    </div>
+  </div>
+</div>
+  <div id="boot-screen">
+
+<div id="boot-title">
+INITIALIZING ASKEMAI...
+</div>
+
+<div id="boot-progress">
+0%
+</div>
+<div id="boot-log">
+  <div>Connecting to BASE...</div>
+  <div>Loading Meme Engine...</div>
+  <div>Checking Smart Contract...</div>
+  <div>Connecting Community...</div>
+</div>
+</div>
+  <img src="cube-logo.png" alt="$EMAI Logo" class="logo" />
+
+  <section class="hero">
+   <div class="particles">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div> 
+ <div class="ai-sparks">
+    <span>AI</span>
+    <span>0101</span>
+    <span>&lt;&gt;</span>
+    <span>∞</span>
+    <span>BASE</span>
+    <span>//MEME</span>
+</div>   
+ <div class="hero-content hero-panel">
+
+  <h1>$EMAI</h1>
+
+  <p id="dynamic-slogan">
+    Meme Intelligence Awakened
+  </p>
+
+  <p class="hero-description">
+    EMAI is where AI-inspired creativity meets meme culture.
+    Create, share and evolve memes with AskEmai.
+  </p>
+
+  <div class="portal-core">
+   <a href="mems.html" class="hero-enter">
+    🚀 ENTER ASKEMAI MEME GENERATOR
+    </a>
+  </div>
+
+  <div class="hero-features">
+    <div class="hero-feature">
+      <span>⬡</span>
+      <p><strong>Creative Tools</strong><br>Meme creation</p>
+    </div>
+
+    <div class="hero-feature">
+      <span>👥</span>
+      <p><strong>Community First</strong><br>Built by memes</p>
+    </div>
+
+    <div class="hero-feature">
+      <span>⚡</span>
+      <p><strong>Always Evolving</strong><br>New ideas daily</p>
+    </div>
+  </div>
+
+</div>
+</section>
+
+
+<section class="trade-actions-section">
+  <h2>Trade $EMAI</h2>
+  <p class="trade-actions-subtitle">
+    Buy, track and verify $EMAI on Base.
+  </p>
+
+  <div class="trade-actions-buttons">
+    <a
+      href="https://app.uniswap.org/swap?chain=base&outputCurrency=0x93F8E67Af68da54B6e15B352379e4f46B629AE04"
+      class="trade-action-btn trade-buy-btn"
+      target="_blank"
+      rel="noopener noreferrer"
+      data-track="buy_emai"
+    >
+      💎 Buy $EMAI
+    </a>
+
+    <a
+      href="https://www.dextools.io/app/base/pair-explorer/0x3c3b81ea14adcf41d8533de176cc9e0dfac133af"
+      class="trade-action-btn trade-chart-btn"
+      target="_blank"
+      rel="noopener noreferrer"
+      data-track="live_chart"
+    >
+      📈 Live Chart
+    </a>
+  </div>
+
+<p class="trade-actions-note">
+  Official $EMAI contract on Base:<br>
+  <strong>0x93F8E67Af68da54B6e15B352379e4f46B629AE04</strong><br>
+  <a
+    href="https://basescan.org/token/0x93F8E67Af68da54B6e15B352379e4f46B629AE04"
+    target="_blank"
+    rel="noopener noreferrer"
+    style="color:#00eaff; text-decoration:none;"
+  >
+    Verify on BaseScan ↗
+  </a>
+  <br>
+  Always verify the contract before trading.
+</p>
+</section>
+
+<section class="daily-memes-section" id="daily-memes">
+  <div class="daily-memes-wrap">
+
+    <div class="daily-memes-header">
+      <h2>AskEmai <span>Daily Memes</span></h2>
+      <a href="meme-gallery.html" class="view-all-memes">View All Memes</a>
+    </div>
+
+    <div class="meme-category-tabs">
+      <span>☕ Coffee</span>
+      <span>💪 Gym</span>
+      <span>🌧 Rain</span>
+      <span>🚽 Toilet Thoughts</span>
+      <span>🤣 Everyday Life</span>
+      <span>💼 Work</span>
+    <!-- <span>🚗 Driving</span> -->
+<!-- <span>❤️ Relationships</span> -->
+    </div>
+
+    <div class="meme-preview-grid">
+
+      <article class="meme-card">
+        <img src="meme-001-coffee.png" alt="AskEmai Coffee Meme">
+        <div class="meme-card-content">
+          <h3>☕ Coffee</h3>
+          <p>Digital coffee first. Charts, memes and chaos later.</p>
+        </div>
+      </article>
+
+      <article class="meme-card">
+        <img src="meme-002-gym.png" alt="AskEmai Gym Meme">
+        <div class="meme-card-content">
+          <h3>💪 Gym</h3>
+          <p>AskEmai doesn’t skip meme day.</p>
+        </div>
+      </article>
+
+      <article class="meme-card">
+        <img src="meme-003-rain.png" alt="AskEmai Rain Meme">
+        <div class="meme-card-content">
+          <h3>🌧 Rain</h3>
+          <p>Rainy day? Perfect meme weather.</p>
+        </div>
+      </article>
+
+      <article class="meme-card">
+        <img src="meme-004-toilet.png" alt="AskEmai Toilet Thoughts Meme">
+        <div class="meme-card-content">
+          <h3>🚽 Toilet Thoughts</h3>
+          <p>Some ideas need silence, WiFi and questionable timing.</p>
+        </div>
+      </article>
+
+      <article class="meme-card">
+        <img src="meme-005-life.png" alt="AskEmai Everyday Life Meme">
+        <div class="meme-card-content">
+          <h3>🤣 Everyday Life</h3>
+          <p>Everyday chaos. AI meme energy.</p>
+        </div>
+      </article>
+
+      <article class="meme-card">
+        <img src="meme-006-work.png" alt="AskEmai Work Meme">
+        <div class="meme-card-content">
+          <h3>💼 Work</h3>
+          <p>Overworked, overpowered, still making memes.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+  
+  <section class="section">
+   <h2>FAQ – Frequently Asked Questions</h2>
+<div class="faq">
+
+  <div class="faq-item">
+    <button class="faq-question">What is $EMAI?</button>
+    <div class="faq-answer">
+      $EMAI is a community-driven token on Base combining meme culture, AI-inspired creativity and the growing AskEmai ecosystem.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">How do I buy $EMAI?</button>
+    <div class="faq-answer">
+      $EMAI is live on Base and can be traded through Uniswap. Always verify the official contract address before trading: 0x93F8E67Af68da54B6e15B352379e4f46B629AE04
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Where is $EMAI trading?</button>
+    <div class="faq-answer">
+      $EMAI is currently trading on Uniswap V3 on the Base network. Official trading and chart links are available on this website.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Is the liquidity locked?</button>
+    <div class="faq-answer">
+      Yes. 99.99% of the Uniswap V3 WETH/EMAI liquidity is locked via FlokiFi until 25 January 2027. The token contract and holder balances were not changed by the liquidity lock.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">What is the $EMAI transaction tax used for?</button>
+    <div class="faq-answer">
+      $EMAI has a 0.3% transaction tax intended to support the future development of the AskEmai ecosystem.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Where can I verify $EMAI information?</button>
+    <div class="faq-answer">
+      Always use the official $EMAI website and verify the contract address, Uniswap pool, liquidity lock and blockchain data before trading. Always DYOR.
+    </div>
+  </div>
+
+</div>
+</section>
+  
+  <!-- ROLLERCOIN PARTNER SECTION -->
+<section class="partner-section">
+  <div class="partner-label">Advertisement · Affiliate Partner</div>
+
+  <a
+    href="https://rollercoin.com/?r=kux0ajwq"
+    target="_blank"
+    rel="noopener noreferrer sponsored"
+    class="rollercoin-banner"
+    id="rollercoin-partner-link"
+aria-label="Play RollerCoin and support EMAI"  >
+    <img
+      src="https://static.rollercoin.com/static/img/ref/gen2/w970h250.gif"
+      alt="Play RollerCoin and mine crypto"
+      loading="lazy"
+    >
+  </a>
+
+<p class="partner-description">
+Enjoy RollerCoin. Your activity helps support AskEmai 💙
+</p>
+</section>
+<!-- END ROLLERCOIN PARTNER SECTION -->
+
+  <footer class="footer">
+    <p>Contact us: <a href="mailto:contact@emaitoken.io">contact@emaitoken.io</a></p>
+    <div class="social-icons">
+      <a href="https://x.com/Emai_token?t=EvnKR-L3z6UK6bH4zhpr6Q&s=09" target="_blank"><img src="x-icon.png" alt="X" /></a>
+      <a href="https://instagram.com/emai_token" target="_blank"><img src="instagram-icon.png" alt="Instagram" /></a>
+      <a href="https://t.me/emaitoken" target="_blank"><img src="telegram-icon.png" alt="Telegram" /></a>
+      <a href="https://www.tiktok.com/@askemai" target="_blank"><img src="tiktokicon.png" alt="TikTok" /></a>
+     
+    </div>
+  </footer>
+
+  <script>
+
+
+    
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+const bootScreen = document.getElementById("boot-screen");
+const bootTitle = document.getElementById("boot-title");
+const bootProgress = document.getElementById("boot-progress");
+
+let percent = 0;
+
+const bootInterval = setInterval(() => {
+    percent++;
+    bootProgress.textContent = percent + "%";
+
+    if (percent >= 100) {
+        clearInterval(bootInterval);
+
+       bootTitle.textContent = "⚡ ASKEMAI ONLINE";
+      const bootLines = document.querySelectorAll("#boot-log div");
+
+bootLines.forEach((line, index) => {
+    setTimeout(() => {
+        line.style.opacity = "1";
+    }, index * 450);
+});
+
+        setTimeout(() => {
+            bootScreen.classList.add("hidden");
+
+            setTimeout(() => {
+                bootScreen.remove();
+            }, 900);
+
+        }, 250);
+    }
+}, 20); 
+    // AskEmai top bar popup
+const askemaiTopBar = document.getElementById("askemaiTopBar");
+const askemaiModal = document.getElementById("askemaiModal");
+const askemaiClose = document.getElementById("askemaiClose");
+const askemaiExplore = document.getElementById("askemaiExplore");
+
+if (askemaiTopBar && askemaiModal && askemaiClose) {
+  askemaiTopBar.addEventListener("click", () => {
+    askemaiModal.classList.add("active");
+  });
+
+  askemaiClose.addEventListener("click", () => {
+    askemaiModal.classList.remove("active");
+  });
+
+  askemaiModal.addEventListener("click", (event) => {
+    if (event.target === askemaiModal) {
+      askemaiModal.classList.remove("active");
+    }
+  });
+
+  if (askemaiExplore) {
+    askemaiExplore.addEventListener("click", () => {
+      askemaiModal.classList.remove("active");
+    });
+  }
+}
+  </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const rollercoinLink = document.getElementById('rollercoin-partner-link');
+
+    if (!rollercoinLink) return;
+
+    rollercoinLink.addEventListener('click', function () {
+      if (typeof gtag === 'function') {
+        gtag('event', 'partner_click', {
+          partner_name: 'RollerCoin',
+          placement: 'footer_partner_banner',
+          link_url: rollercoinLink.href
+        });
+      }
+    });
+  });
+</script>
+  
+<script>
+  if (window.location.hash === '#meme-gen') {
+    window.location.replace('mems.html');
+  }
+</script>
+</body>
+</html>
