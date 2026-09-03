@@ -2968,6 +2968,441 @@ gap:24px;
   }
 
 }
+    /* =========================================================
+   TODAY IN CRYPTO — 60 SECONDS
+   ========================================================= */
+
+.crypto-60-section{
+  position:relative;
+  padding:80px 0 85px;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(0,234,255,.06),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 70%,
+      rgba(20,135,255,.05),
+      transparent 32%
+    ),
+    #020711;
+
+  border-bottom:1px solid rgba(0,234,255,.10);
+}
+
+.crypto-60-wrap{
+  width:min(1180px,92%);
+  margin:0 auto;
+}
+
+
+/* HEADER */
+
+.crypto-60-header{
+  max-width:760px;
+  margin-bottom:30px;
+}
+
+.crypto-60-kicker{
+  color:#00eaff;
+
+  font-size:.78rem;
+  font-weight:900;
+
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.crypto-60-title{
+  margin:10px 0 10px;
+
+  color:#fff;
+
+  font-size:clamp(2rem,4vw,3.15rem);
+  line-height:1.06;
+}
+
+.crypto-60-title span{
+  color:#00eaff;
+}
+
+.crypto-60-intro{
+  margin:0;
+
+  max-width:680px;
+
+  color:#8faaba;
+
+  font-size:1rem;
+  line-height:1.65;
+}
+
+
+/* 3 BRIEF CARDS */
+
+.crypto-60-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+
+  gap:14px;
+}
+
+.crypto-60-card{
+  position:relative;
+
+  min-height:220px;
+
+  padding:23px;
+
+  border-radius:20px;
+
+  border:1px solid rgba(0,234,255,.15);
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(0,234,255,.075),
+      transparent 40%
+    ),
+    rgba(5,17,31,.72);
+
+  box-shadow:
+    0 0 26px rgba(0,234,255,.045);
+}
+
+.crypto-60-card-number{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  width:34px;
+  height:34px;
+
+  margin-bottom:22px;
+
+  border-radius:10px;
+
+  border:1px solid rgba(0,234,255,.20);
+
+  background:rgba(0,234,255,.06);
+
+  color:#00eaff;
+
+  font-size:.76rem;
+  font-weight:900;
+}
+
+.crypto-60-card-label{
+  color:#7896a8;
+
+  font-size:.73rem;
+  font-weight:800;
+
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+.crypto-60-card h3{
+  margin:8px 0 11px;
+
+  color:#fff;
+
+  font-size:1.18rem;
+  line-height:1.3;
+}
+
+.crypto-60-card p{
+  margin:0;
+
+  color:#9bb2c0;
+
+  font-size:.91rem;
+  line-height:1.65;
+}
+
+
+/* ASKEMAI TAKE */
+
+.crypto-60-take{
+  display:flex;
+  align-items:center;
+
+  gap:16px;
+
+  margin-top:14px;
+
+  padding:18px 20px;
+
+  border-radius:17px;
+
+  border:1px solid rgba(0,234,255,.16);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,234,255,.065),
+      rgba(20,135,255,.025)
+    );
+}
+
+.crypto-60-take-icon{
+  flex:0 0 auto;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  width:42px;
+  height:42px;
+
+  border-radius:50%;
+
+  background:rgba(0,234,255,.08);
+
+  border:1px solid rgba(0,234,255,.18);
+
+  font-size:1.2rem;
+}
+
+.crypto-60-take-copy strong{
+  display:block;
+
+  margin-bottom:4px;
+
+  color:#00eaff;
+
+  font-size:.78rem;
+
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+.crypto-60-take-copy span{
+  color:#c0d6e1;
+
+  font-size:.91rem;
+  line-height:1.55;
+}
+
+
+/* =========================================================
+   NEWSLETTER
+   ========================================================= */
+
+.pulse-newsletter{
+  margin-top:30px;
+
+  display:grid;
+
+  grid-template-columns:1.05fr .95fr;
+
+  gap:35px;
+
+  align-items:center;
+
+  padding:34px;
+
+  border-radius:24px;
+
+  border:1px solid rgba(0,234,255,.20);
+
+  background:
+    radial-gradient(
+      circle at right center,
+      rgba(0,234,255,.10),
+      transparent 42%
+    ),
+    rgba(5,17,31,.82);
+
+  box-shadow:
+    0 0 35px rgba(0,234,255,.065);
+}
+
+.pulse-newsletter-tag{
+  display:inline-block;
+
+  margin-bottom:11px;
+
+  color:#00eaff;
+
+  font-size:.74rem;
+  font-weight:900;
+
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+
+.pulse-newsletter h3{
+  margin:0 0 10px;
+
+  color:#fff;
+
+  font-size:clamp(1.6rem,3vw,2.35rem);
+}
+
+.pulse-newsletter-copy{
+  margin:0;
+
+  max-width:520px;
+
+  color:#93adbd;
+
+  line-height:1.65;
+}
+
+.pulse-newsletter-form{
+  width:100%;
+}
+
+.pulse-newsletter-input-row{
+  display:flex;
+
+  gap:9px;
+}
+
+.pulse-newsletter-input{
+  flex:1;
+
+  min-width:0;
+  min-height:52px;
+
+  padding:0 17px;
+
+  border-radius:13px;
+
+  border:1px solid rgba(0,234,255,.20);
+
+  outline:none;
+
+  background:#020a14;
+
+  color:#fff;
+
+  font-family:inherit;
+  font-size:.94rem;
+
+  transition:
+    border-color .2s ease,
+    box-shadow .2s ease;
+}
+
+.pulse-newsletter-input::placeholder{
+  color:#5e7888;
+}
+
+.pulse-newsletter-input:focus{
+  border-color:rgba(0,234,255,.55);
+
+  box-shadow:
+    0 0 18px rgba(0,234,255,.10);
+}
+
+.pulse-newsletter-button{
+  min-height:52px;
+
+  padding:0 20px;
+
+  border:none;
+  border-radius:13px;
+
+  cursor:pointer;
+
+  background:
+    linear-gradient(
+      135deg,
+      #00eaff,
+      #1487ff
+    );
+
+  color:#001018;
+
+  font-family:inherit;
+
+  font-size:.88rem;
+  font-weight:900;
+
+  white-space:nowrap;
+}
+
+.pulse-newsletter-button:hover{
+  filter:brightness(1.08);
+}
+
+.pulse-newsletter-consent{
+  display:flex;
+  align-items:flex-start;
+
+  gap:8px;
+
+  margin-top:11px;
+
+  color:#688696;
+
+  font-size:.7rem;
+  line-height:1.45;
+}
+
+.pulse-newsletter-consent input{
+  margin-top:2px;
+
+  accent-color:#00eaff;
+}
+
+.pulse-newsletter-status{
+  min-height:18px;
+
+  margin-top:9px;
+
+  color:#89b4c6;
+
+  font-size:.74rem;
+}
+
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+  .crypto-60-grid{
+    grid-template-columns:1fr;
+  }
+
+  .crypto-60-card{
+    min-height:auto;
+  }
+
+  .pulse-newsletter{
+    grid-template-columns:1fr;
+  }
+
+}
+
+
+@media(max-width:600px){
+
+  .crypto-60-section{
+    padding:60px 0;
+  }
+
+  .crypto-60-take{
+    align-items:flex-start;
+  }
+
+  .pulse-newsletter{
+    padding:22px 18px;
+  }
+
+  .pulse-newsletter-input-row{
+    flex-direction:column;
+  }
+
+  .pulse-newsletter-button{
+    width:100%;
+  }
+
+}
 </style>
 </head>
 <body>
@@ -3488,6 +3923,214 @@ INITIALIZING ASKEMAI...
       <div>
         Market data: CoinPaprika · Not financial advice
       </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+  <!-- =======================================================
+     TODAY IN CRYPTO — 60 SECONDS
+     ======================================================= -->
+
+<section class="crypto-60-section" id="today-in-crypto">
+
+  <div class="crypto-60-wrap">
+
+
+    <div class="crypto-60-header">
+
+      <div class="crypto-60-kicker">
+        ASKEMAI DAILY BRIEF
+      </div>
+
+      <h2 class="crypto-60-title">
+        Today in Crypto —
+        <span>60 seconds.</span>
+      </h2>
+
+      <p class="crypto-60-intro">
+        Three signals from today's market.
+        No noise, no hype — just a fast snapshot
+        of what is actually moving.
+      </p>
+
+    </div>
+
+
+    <div class="crypto-60-grid">
+
+
+      <!-- MARKET -->
+
+      <article class="crypto-60-card">
+
+        <div class="crypto-60-card-number">
+          01
+        </div>
+
+        <div class="crypto-60-card-label">
+          Market Direction
+        </div>
+
+        <h3 id="crypto-60-market-title">
+          Reading the market...
+        </h3>
+
+        <p id="crypto-60-market-text">
+          AskEmai is analysing today's market data.
+        </p>
+
+      </article>
+
+
+      <!-- BITCOIN -->
+
+      <article class="crypto-60-card">
+
+        <div class="crypto-60-card-number">
+          02
+        </div>
+
+        <div class="crypto-60-card-label">
+          Bitcoin Watch
+        </div>
+
+        <h3 id="crypto-60-btc-title">
+          Checking Bitcoin...
+        </h3>
+
+        <p id="crypto-60-btc-text">
+          Loading Bitcoin direction and market dominance.
+        </p>
+
+      </article>
+
+
+      <!-- MOVER -->
+
+      <article class="crypto-60-card">
+
+        <div class="crypto-60-card-number">
+          03
+        </div>
+
+        <div class="crypto-60-card-label">
+          Market Mover
+        </div>
+
+        <h3 id="crypto-60-mover-title">
+          Scanning Top 100...
+        </h3>
+
+        <p id="crypto-60-mover-text">
+          Looking for today's strongest market move.
+        </p>
+
+      </article>
+
+
+    </div>
+
+
+    <!-- ASKEMAI TAKE -->
+
+    <div class="crypto-60-take">
+
+      <div class="crypto-60-take-icon">
+        🤖
+      </div>
+
+      <div class="crypto-60-take-copy">
+
+        <strong>
+          AskEmai Take
+        </strong>
+
+        <span id="crypto-60-take-text">
+          Reading today's market mood...
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- NEWSLETTER -->
+
+    <div class="pulse-newsletter">
+
+      <div>
+
+        <span class="pulse-newsletter-tag">
+          THE DAILY PULSE
+        </span>
+
+        <h3>
+          Get the 60-second Crypto Pulse.
+        </h3>
+
+        <p class="pulse-newsletter-copy">
+          One short email with the market signals worth knowing.
+          No endless feeds. No fake promises. Unsubscribe anytime.
+        </p>
+
+      </div>
+
+
+      <form
+        class="pulse-newsletter-form"
+        id="pulse-newsletter-form"
+        data-endpoint=""
+      >
+
+        <div class="pulse-newsletter-input-row">
+
+          <input
+            class="pulse-newsletter-input"
+            id="pulse-newsletter-email"
+            type="email"
+            name="email"
+            autocomplete="email"
+            placeholder="Your email address"
+            required
+          >
+
+          <button
+            class="pulse-newsletter-button"
+            type="submit"
+          >
+            Join the Pulse
+          </button>
+
+        </div>
+
+
+        <label class="pulse-newsletter-consent">
+
+          <input
+            type="checkbox"
+            id="pulse-newsletter-consent"
+            required
+          >
+
+          <span>
+            I agree to receive AskEmai updates by email.
+            I can unsubscribe at any time.
+          </span>
+
+        </label>
+
+
+        <div
+          class="pulse-newsletter-status"
+          id="pulse-newsletter-status"
+          aria-live="polite"
+        ></div>
+
+
+      </form>
 
     </div>
 
@@ -4106,7 +4749,327 @@ if (askemaiTopBar && askemaiModal && askemaiClose) {
       }).join('');
 
   }
+/* ---------------------------------------------------------
+   TODAY IN CRYPTO — 60 SECOND BRIEF
+   --------------------------------------------------------- */
 
+function renderTodayInCrypto(
+  globalData,
+  bitcoinData,
+  ethereumData,
+  tickerData
+) {
+
+  const marketChange =
+    Number(globalData?.market_cap_change_24h);
+
+  const btcChange =
+    Number(
+      bitcoinData?.quotes?.USD?.percent_change_24h
+    );
+
+  const ethChange =
+    Number(
+      ethereumData?.quotes?.USD?.percent_change_24h
+    );
+
+  const btcDominance =
+    Number(
+      globalData?.bitcoin_dominance_percentage
+    );
+
+
+  /* ---------------- MARKET DIRECTION ---------------- */
+
+  const marketTitle =
+    document.getElementById(
+      'crypto-60-market-title'
+    );
+
+  const marketText =
+    document.getElementById(
+      'crypto-60-market-text'
+    );
+
+
+  if (
+    marketTitle &&
+    marketText &&
+    Number.isFinite(marketChange)
+  ) {
+
+    if (marketChange >= 2) {
+
+      marketTitle.textContent =
+        'Risk appetite is strong.';
+
+      marketText.textContent =
+        'Total crypto market cap is up ' +
+        Math.abs(marketChange).toFixed(2) +
+        '% over the last 24 hours. Buyers currently have the advantage.';
+
+    }
+
+    else if (marketChange > 0) {
+
+      marketTitle.textContent =
+        'The market is leaning positive.';
+
+      marketText.textContent =
+        'Total crypto market cap is up ' +
+        marketChange.toFixed(2) +
+        '% over 24 hours. The move is positive, but still measured.';
+
+    }
+
+    else if (marketChange <= -2) {
+
+      marketTitle.textContent =
+        'Risk appetite is under pressure.';
+
+      marketText.textContent =
+        'Total crypto market cap is down ' +
+        Math.abs(marketChange).toFixed(2) +
+        '% over the last 24 hours. Selling pressure is elevated.';
+
+    }
+
+    else {
+
+      marketTitle.textContent =
+        'The market is slightly defensive.';
+
+      marketText.textContent =
+        'Total crypto market cap is down ' +
+        Math.abs(marketChange).toFixed(2) +
+        '% over 24 hours. The move remains relatively contained.';
+
+    }
+
+  }
+
+
+  /* ---------------- BITCOIN ---------------- */
+
+  const btcTitle =
+    document.getElementById(
+      'crypto-60-btc-title'
+    );
+
+  const btcText =
+    document.getElementById(
+      'crypto-60-btc-text'
+    );
+
+
+  if (
+    btcTitle &&
+    btcText &&
+    Number.isFinite(btcChange)
+  ) {
+
+    if (btcChange >= 0) {
+
+      btcTitle.textContent =
+        'Bitcoin is holding positive momentum.';
+
+    }
+
+    else {
+
+      btcTitle.textContent =
+        'Bitcoin is trading under pressure.';
+
+    }
+
+
+    let dominanceCopy = '';
+
+    if (Number.isFinite(btcDominance)) {
+
+      dominanceCopy =
+        ' BTC dominance is ' +
+        btcDominance.toFixed(2) +
+        '%.';
+
+    }
+
+
+    btcText.textContent =
+      'BTC is ' +
+      (
+        btcChange >= 0
+          ? 'up '
+          : 'down '
+      ) +
+      Math.abs(btcChange).toFixed(2) +
+      '% over 24 hours.' +
+      dominanceCopy;
+
+  }
+
+
+  /* ---------------- TOP MOVER ---------------- */
+
+  const excludedStablecoins =
+    new Set([
+      'USDT',
+      'USDC',
+      'DAI',
+      'FDUSD',
+      'TUSD',
+      'USDE',
+      'USDS',
+      'PYUSD'
+    ]);
+
+
+  const eligibleMovers =
+    tickerData
+      .filter(coin => {
+
+        const change =
+          Number(
+            coin?.quotes?.USD?.percent_change_24h
+          );
+
+        return (
+          Number.isFinite(coin.rank) &&
+          coin.rank > 0 &&
+          coin.rank <= 100 &&
+          Number.isFinite(change) &&
+          !excludedStablecoins.has(
+            String(coin.symbol).toUpperCase()
+          )
+        );
+
+      })
+      .sort((a, b) => {
+
+        const changeA =
+          Math.abs(
+            a.quotes.USD.percent_change_24h
+          );
+
+        const changeB =
+          Math.abs(
+            b.quotes.USD.percent_change_24h
+          );
+
+        return changeB - changeA;
+
+      });
+
+
+  const mover =
+    eligibleMovers[0];
+
+
+  const moverTitle =
+    document.getElementById(
+      'crypto-60-mover-title'
+    );
+
+  const moverText =
+    document.getElementById(
+      'crypto-60-mover-text'
+    );
+
+
+  if (
+    mover &&
+    moverTitle &&
+    moverText
+  ) {
+
+    const change =
+      Number(
+        mover.quotes.USD.percent_change_24h
+      );
+
+
+    moverTitle.textContent =
+      mover.name +
+      ' is making the biggest move.';
+
+
+    moverText.textContent =
+      mover.symbol +
+      ' is ' +
+      (
+        change >= 0
+          ? 'up '
+          : 'down '
+      ) +
+      Math.abs(change).toFixed(2) +
+      '% over 24 hours and currently ranks #' +
+      mover.rank +
+      ' by market cap.';
+
+  }
+
+
+  /* ---------------- ASKEMAI TAKE ---------------- */
+
+  const take =
+    document.getElementById(
+      'crypto-60-take-text'
+    );
+
+
+  if (!take) return;
+
+
+  if (
+    marketChange > 1 &&
+    btcChange > 0 &&
+    ethChange > 0
+  ) {
+
+    take.textContent =
+      'Broad market strength is visible today: total market cap, Bitcoin and Ethereum are all moving in the same direction.';
+
+  }
+
+  else if (
+    marketChange < -1 &&
+    btcChange < 0 &&
+    ethChange < 0
+  ) {
+
+    take.textContent =
+      'The market has a defensive tone today. Bitcoin, Ethereum and total market cap are all under pressure.';
+
+  }
+
+  else if (
+    btcChange > 0 &&
+    ethChange < 0
+  ) {
+
+    take.textContent =
+      'Bitcoin is showing more relative strength than Ethereum today. The market picture remains mixed.';
+
+  }
+
+  else if (
+    btcChange < 0 &&
+    ethChange > 0
+  ) {
+
+    take.textContent =
+      'Ethereum is showing more relative strength than Bitcoin today, while the wider market remains mixed.';
+
+  }
+
+  else {
+
+    take.textContent =
+      'The market is mixed rather than one-directional today. Watch the broader trend instead of reacting to one isolated move.';
+
+  }
+
+}
 
   /* ---------------------------------------------------------
      LOAD MARKET DATA
@@ -4255,7 +5218,13 @@ if (askemaiTopBar && askemaiModal && askemaiClose) {
       /* MOVERS */
 
       renderMovers(tickerData);
-
+      
+renderTodayInCrypto(
+  globalData,
+  bitcoinData,
+  ethereumData,
+  tickerData
+);
 
       /* UPDATE TIME */
 
