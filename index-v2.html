@@ -1850,21 +1850,294 @@ gap:24px;
 .v2-hero-content{
   width:min(650px,100%);
 }
+/* =========================================================
+   ASKEMAI HERO — ANIMATED DESKTOP VISUAL
+   ========================================================= */
+
 .v2-hero-visual{
+  position:relative;
+
   display:flex;
   justify-content:center;
   align-items:center;
+
+  min-width:0;
+  min-height:560px;
+
+  isolation:isolate;
 }
 
-.v2-hero-visual img{
+
+/* ROBOT */
+
+.v2-hero-robot{
+  position:relative;
+  z-index:5;
+
   width:min(100%, 575px);
   height:auto;
+
   display:block;
   object-fit:contain;
 
   filter:
-    drop-shadow(0 0 26px rgba(0,234,255,.16))
-    drop-shadow(0 0 55px rgba(0,119,255,.10));
+    drop-shadow(0 0 24px rgba(0,234,255,.14))
+    drop-shadow(0 0 55px rgba(0,119,255,.08));
+
+  animation:v2RobotFloat 5.5s ease-in-out infinite;
+}
+
+
+/* WHOLE FX LAYER */
+
+.v2-hero-fx{
+  position:absolute;
+
+  width:92%;
+  height:92%;
+
+  left:50%;
+  top:50%;
+
+  transform:translate(-50%,-50%);
+
+  z-index:1;
+  pointer-events:none;
+}
+
+
+/* SOFT CYAN GLOW */
+
+.v2-hero-glow{
+  position:absolute;
+
+  width:72%;
+  aspect-ratio:1 / 1;
+
+  left:50%;
+  top:50%;
+
+  transform:translate(-50%,-50%);
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0,234,255,.15) 0%,
+      rgba(0,174,255,.07) 37%,
+      rgba(0,119,255,.025) 58%,
+      transparent 72%
+    );
+
+  filter:blur(12px);
+
+  animation:v2GlowPulse 4.5s ease-in-out infinite;
+}
+
+
+/* ORBIT RINGS */
+
+.v2-orbit{
+  position:absolute;
+
+  left:50%;
+  top:50%;
+
+  border-radius:50%;
+
+  border:1px solid rgba(0,234,255,.25);
+
+  box-shadow:
+    0 0 12px rgba(0,234,255,.10),
+    inset 0 0 12px rgba(0,234,255,.04);
+}
+
+
+.v2-orbit-one{
+  width:82%;
+  height:39%;
+
+  transform:
+    translate(-50%,-50%)
+    rotate(-18deg);
+
+  animation:v2OrbitOne 18s linear infinite;
+}
+
+
+.v2-orbit-two{
+  width:68%;
+  height:31%;
+
+  border-color:rgba(65,192,255,.18);
+
+  transform:
+    translate(-50%,-50%)
+    rotate(24deg);
+
+  animation:v2OrbitTwo 24s linear infinite reverse;
+}
+
+
+/* FLOATING HEXAGONS */
+
+.v2-hex{
+  position:absolute;
+
+  color:rgba(0,234,255,.38);
+
+  font-size:42px;
+  line-height:1;
+
+  text-shadow:
+    0 0 10px rgba(0,234,255,.18),
+    0 0 24px rgba(0,150,255,.10);
+
+  opacity:.65;
+
+  animation:v2HexFloat 6s ease-in-out infinite;
+}
+
+
+.v2-hex-1{
+  left:8%;
+  top:22%;
+
+  font-size:35px;
+  animation-delay:-1s;
+}
+
+
+.v2-hex-2{
+  right:5%;
+  top:28%;
+
+  font-size:44px;
+  animation-delay:-3.2s;
+}
+
+
+.v2-hex-3{
+  left:13%;
+  bottom:20%;
+
+  font-size:28px;
+  animation-delay:-4.5s;
+}
+
+
+.v2-hex-4{
+  right:10%;
+  bottom:25%;
+
+  font-size:32px;
+  animation-delay:-2.1s;
+}
+
+
+.v2-hex-5{
+  right:20%;
+  top:10%;
+
+  font-size:21px;
+  opacity:.42;
+
+  animation-delay:-5.2s;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes v2RobotFloat{
+
+  0%,
+  100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-6px);
+  }
+
+}
+
+
+@keyframes v2GlowPulse{
+
+  0%,
+  100%{
+    opacity:.65;
+    transform:
+      translate(-50%,-50%)
+      scale(.96);
+  }
+
+  50%{
+    opacity:1;
+    transform:
+      translate(-50%,-50%)
+      scale(1.05);
+  }
+
+}
+
+
+@keyframes v2OrbitOne{
+
+  from{
+    transform:
+      translate(-50%,-50%)
+      rotate(-18deg);
+  }
+
+  to{
+    transform:
+      translate(-50%,-50%)
+      rotate(342deg);
+  }
+
+}
+
+
+@keyframes v2OrbitTwo{
+
+  from{
+    transform:
+      translate(-50%,-50%)
+      rotate(24deg);
+  }
+
+  to{
+    transform:
+      translate(-50%,-50%)
+      rotate(384deg);
+  }
+
+}
+
+
+@keyframes v2HexFloat{
+
+  0%,
+  100%{
+    transform:
+      translateY(0)
+      rotate(0deg);
+
+    opacity:.40;
+  }
+
+  50%{
+    transform:
+      translateY(-13px)
+      rotate(8deg);
+
+    opacity:.75;
+  }
+
 }
 .v2-hero-visual{
   display:flex;
@@ -2171,6 +2444,19 @@ gap:24px;
   width:min(100%, 320px);
 }
 } 
+    /* Accessibility — respect reduced motion */
+
+@media (prefers-reduced-motion: reduce){
+
+  .v2-hero-robot,
+  .v2-hero-glow,
+  .v2-orbit-one,
+  .v2-orbit-two,
+  .v2-hex{
+    animation:none !important;
+  }
+
+}
 </style>
 </head>
 <body>
@@ -2327,9 +2613,30 @@ INITIALIZING ASKEMAI...
 
     </div>
 
-    <div class="v2-hero-visual">
-      <img src="askemai-hero-desktop_2.png" alt="AskEmai Robot">
-    </div>
+<div class="v2-hero-visual">
+
+  <div class="v2-hero-fx" aria-hidden="true">
+
+    <div class="v2-hero-glow"></div>
+
+    <div class="v2-orbit v2-orbit-one"></div>
+    <div class="v2-orbit v2-orbit-two"></div>
+
+    <span class="v2-hex v2-hex-1">⬡</span>
+    <span class="v2-hex v2-hex-2">⬡</span>
+    <span class="v2-hex v2-hex-3">⬡</span>
+    <span class="v2-hex v2-hex-4">⬡</span>
+    <span class="v2-hex v2-hex-5">⬡</span>
+
+  </div>
+
+  <img
+    src="askemai-hero-desktop.png"
+    alt="AskEmai Robot"
+    class="v2-hero-robot"
+  >
+
+</div>
 
   </div>
 
