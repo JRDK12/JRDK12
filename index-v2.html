@@ -1727,7 +1727,415 @@ filter:drop-shadow(0 0 8px rgba(0,234,255,.45));
     border-radius: 8px;
   }
 }    
-    
+   /* =========================================================
+   ASKEMAI V2 — NEW DESIGN SYSTEM
+   ========================================================= */
+
+:root{
+  --v2-bg:#020711;
+  --v2-bg-soft:#06111f;
+  --v2-card:rgba(6,19,35,.78);
+  --v2-card-strong:#071525;
+  --v2-cyan:#00eaff;
+  --v2-blue:#1487ff;
+  --v2-text:#f4fdff;
+  --v2-muted:#9bb7c9;
+  --v2-border:rgba(0,234,255,.22);
+  --v2-glow:0 0 32px rgba(0,234,255,.16);
+}
+
+/* V2 does not use old intro elements */
+#boot-screen,
+.askemai-top-bar,
+.askemai-modal,
+body > .logo{
+  display:none !important;
+}
+
+body{
+  background:
+    radial-gradient(circle at 80% 10%, rgba(0,119,255,.10), transparent 30%),
+    radial-gradient(circle at 20% 35%, rgba(0,234,255,.06), transparent 30%),
+    var(--v2-bg);
+  color:var(--v2-text);
+}
+
+/* NAVIGATION */
+
+.v2-nav{
+  position:sticky;
+  top:0;
+  z-index:999;
+  height:72px;
+  display:flex;
+  align-items:center;
+  background:rgba(2,7,17,.86);
+  border-bottom:1px solid rgba(0,234,255,.13);
+  backdrop-filter:blur(18px);
+}
+
+.v2-nav-inner{
+  width:min(1180px,92%);
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+
+.v2-brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  color:#fff;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.v2-brand img{
+  width:42px;
+  height:auto;
+}
+
+.v2-nav-links{
+  display:flex;
+  align-items:center;
+  gap:26px;
+}
+
+.v2-nav-links a{
+  color:#b9d6e6;
+  text-decoration:none;
+  font-size:.95rem;
+}
+
+.v2-nav-links a:hover{
+  color:var(--v2-cyan);
+}
+
+.v2-nav-buy{
+  padding:11px 18px;
+  border-radius:999px;
+  background:linear-gradient(135deg,var(--v2-cyan),var(--v2-blue));
+  color:#001018 !important;
+  font-weight:900;
+}
+
+/* HERO */
+
+.v2-hero{
+  min-height:720px;
+  display:flex;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(2,7,17,.98) 0%,
+      rgba(2,7,17,.91) 40%,
+      rgba(2,7,17,.42) 67%,
+      rgba(2,7,17,.16) 100%
+    ),
+    url("robot-bg-desktop.png?v=7");
+
+  background-size:cover;
+  background-position:right center;
+  border-bottom:1px solid rgba(0,234,255,.12);
+}
+
+.v2-hero-inner{
+  width:min(1180px,92%);
+  margin:auto;
+}
+
+.v2-hero-content{
+  width:min(650px,100%);
+}
+
+.v2-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 14px;
+  border-radius:999px;
+  border:1px solid var(--v2-border);
+  background:rgba(0,234,255,.06);
+  color:#aefaff;
+  font-size:.85rem;
+  font-weight:800;
+  letter-spacing:.6px;
+}
+
+.v2-hero h1{
+  margin:22px 0 16px;
+  font-size:clamp(3.5rem,7vw,6.5rem);
+  line-height:.92;
+  letter-spacing:-3px;
+  color:#fff;
+  text-shadow:none;
+}
+
+.v2-hero h1 span{
+  display:block;
+  color:var(--v2-cyan);
+  text-shadow:0 0 28px rgba(0,234,255,.34);
+}
+
+.v2-hero-description{
+  max-width:600px;
+  font-size:1.15rem;
+  line-height:1.75;
+  color:#b8cfdd;
+  margin:0;
+}
+
+.v2-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+
+.v2-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:50px;
+  padding:0 22px;
+  border-radius:13px;
+  text-decoration:none;
+  font-weight:900;
+  border:1px solid var(--v2-border);
+  transition:.2s ease;
+}
+
+.v2-btn-primary{
+  background:linear-gradient(135deg,var(--v2-cyan),var(--v2-blue));
+  color:#001018;
+  box-shadow:0 0 28px rgba(0,234,255,.24);
+}
+
+.v2-btn-secondary{
+  background:rgba(5,18,32,.78);
+  color:#e8fdff;
+}
+
+.v2-btn-generator{
+  border-color:rgba(0,234,255,.40);
+  color:var(--v2-cyan);
+  background:rgba(0,234,255,.07);
+}
+
+.v2-btn:hover{
+  transform:translateY(-2px);
+}
+
+.v2-feature-row{
+  margin-top:34px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+
+.v2-feature{
+  padding:16px;
+  border:1px solid rgba(0,234,255,.14);
+  border-radius:16px;
+  background:rgba(3,14,27,.62);
+  backdrop-filter:blur(8px);
+}
+
+.v2-feature strong{
+  display:block;
+  color:#fff;
+  margin-bottom:5px;
+}
+
+.v2-feature span{
+  color:#91afc1;
+  font-size:.88rem;
+}
+
+/* GENERAL V2 SECTION */
+
+.v2-section{
+  padding:85px 0;
+}
+
+.v2-container{
+  width:min(1180px,92%);
+  margin:auto;
+}
+
+.v2-section-kicker{
+  color:var(--v2-cyan);
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:.78rem;
+  font-weight:900;
+}
+
+.v2-section-title{
+  margin:10px 0 12px;
+  font-size:clamp(2rem,4vw,3.1rem);
+  color:#fff;
+}
+
+.v2-section-intro{
+  color:#93adbd;
+  max-width:700px;
+  line-height:1.7;
+}
+
+/* PROJECT SNAPSHOT */
+
+.v2-snapshot-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-top:34px;
+}
+
+.v2-stat{
+  min-height:125px;
+  padding:21px;
+  border-radius:18px;
+  border:1px solid var(--v2-border);
+  background:
+    radial-gradient(circle at top right, rgba(0,234,255,.10), transparent 38%),
+    var(--v2-card);
+  box-shadow:var(--v2-glow);
+}
+
+.v2-stat-icon{
+  font-size:1.45rem;
+  margin-bottom:14px;
+}
+
+.v2-stat-label{
+  color:#88a9bb;
+  font-size:.82rem;
+  text-transform:uppercase;
+  letter-spacing:.8px;
+}
+
+.v2-stat-value{
+  margin-top:7px;
+  color:#fff;
+  font-size:1.17rem;
+  font-weight:900;
+}
+
+.v2-stat-value.cyan{
+  color:var(--v2-cyan);
+}
+
+.v2-contract{
+  grid-column:span 2;
+}
+
+.v2-contract-address{
+  margin-top:8px;
+  font-family:monospace;
+  overflow-wrap:anywhere;
+  color:#bffcff;
+}
+
+.v2-contract a{
+  display:inline-block;
+  margin-top:10px;
+  color:var(--v2-cyan);
+  text-decoration:none;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+  .v2-nav-links a:not(.v2-nav-buy){
+    display:none;
+  }
+
+  .v2-hero{
+    min-height:760px;
+
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(2,7,17,.55) 0%,
+        rgba(2,7,17,.55) 42%,
+        rgba(2,7,17,.96) 74%,
+        #020711 100%
+      ),
+      url("robot-bg-mobile.png?v=1");
+
+    background-position:center top;
+  }
+
+  .v2-hero{
+    align-items:flex-end;
+    padding-bottom:45px;
+  }
+
+  .v2-hero h1{
+    font-size:clamp(3rem,14vw,5rem);
+  }
+
+  .v2-feature-row{
+    grid-template-columns:1fr;
+  }
+
+  .v2-snapshot-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .v2-contract{
+    grid-column:span 2;
+  }
+}
+
+@media(max-width:520px){
+
+  .v2-nav{
+    height:62px;
+  }
+
+  .v2-brand span{
+    display:none;
+  }
+
+  .v2-brand img{
+    width:38px;
+  }
+
+  .v2-nav-buy{
+    padding:9px 14px;
+  }
+
+  .v2-actions{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+  }
+
+  .v2-btn-generator{
+    grid-column:span 2;
+  }
+
+  .v2-snapshot-grid{
+    grid-template-columns:1fr;
+  }
+
+  .v2-contract{
+    grid-column:span 1;
+  }
+
+  .v2-section{
+    padding:60px 0;
+  }
+} 
 </style>
 </head>
 <body>
@@ -1775,107 +2183,201 @@ INITIALIZING ASKEMAI...
 </div>
   <img src="cube-logo.png" alt="$EMAI Logo" class="logo" />
 
-  <section class="hero">
-   <div class="particles">
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-</div> 
- <div class="ai-sparks">
-    <span>AI</span>
-    <span>0101</span>
-    <span>&lt;&gt;</span>
-    <span>∞</span>
-    <span>BASE</span>
-    <span>//MEME</span>
-</div>   
- <div class="hero-content hero-panel">
+  <!-- =======================================================
+     ASKEMAI V2 NAVIGATION
+     ======================================================= -->
 
-  <h1>$EMAI</h1>
+<nav class="v2-nav">
+  <div class="v2-nav-inner">
 
-  <p id="dynamic-slogan">
-    Meme Intelligence Awakened
-  </p>
-
-  <p class="hero-description">
-    EMAI is where AI-inspired creativity meets meme culture.
-    Create, share and evolve memes with AskEmai.
-  </p>
-
-  <div class="portal-core">
-   <a href="mems.html" class="hero-enter">
-    🚀 ENTER ASKEMAI MEME GENERATOR
+    <a href="#" class="v2-brand">
+      <img src="cube-logo.png" alt="$EMAI Logo">
+      <span>ASKEMAI</span>
     </a>
+
+    <div class="v2-nav-links">
+      <a href="#project-snapshot">Project</a>
+      <a href="#daily-memes">Memes</a>
+      <a href="mems.html">Meme Generator</a>
+
+      <a
+        href="https://app.uniswap.org/swap?chain=base&outputCurrency=0x93F8E67Af68da54B6e15B352379e4f46B629AE04"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="v2-nav-buy"
+      >
+        Buy $EMAI
+      </a>
+    </div>
+
+  </div>
+</nav>
+
+
+<!-- =======================================================
+     ASKEMAI V2 HERO
+     ======================================================= -->
+
+<section class="v2-hero">
+
+  <div class="v2-hero-inner">
+
+    <div class="v2-hero-content">
+
+      <div class="v2-eyebrow">
+        AI + MEMES + COMMUNITY · BUILT ON BASE
+      </div>
+
+      <h1>
+        Meme Intelligence
+        <span>Awakened.</span>
+      </h1>
+
+      <p class="v2-hero-description">
+        AskEmai combines AI-powered meme creation, community participation
+        and $EMAI on Base. Create, share and help shape an ecosystem
+        designed to grow through real interaction — not empty promises.
+      </p>
+
+      <div class="v2-actions">
+
+        <a
+          href="https://app.uniswap.org/swap?chain=base&outputCurrency=0x93F8E67Af68da54B6e15B352379e4f46B629AE04"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="v2-btn v2-btn-primary"
+          data-track="buy_emai"
+        >
+          💎 Buy $EMAI
+        </a>
+
+        <a
+          href="https://www.dextools.io/app/base/pair-explorer/0x3c3b81ea14adcf41d8533de176cc9e0dfac133af"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="v2-btn v2-btn-secondary"
+          data-track="live_chart"
+        >
+          📈 Live Chart
+        </a>
+
+        <a
+          href="mems.html"
+          class="v2-btn v2-btn-generator"
+        >
+          🤖 Open Meme Generator
+        </a>
+
+      </div>
+
+      <div class="v2-feature-row">
+
+        <div class="v2-feature">
+          <strong>✨ Creative Tools</strong>
+          <span>AI-powered meme creation people can actually use.</span>
+        </div>
+
+        <div class="v2-feature">
+          <strong>👥 Community First</strong>
+          <span>Ideas, memes and future features shaped by participation.</span>
+        </div>
+
+        <div class="v2-feature">
+          <strong>⚡ Built in Public</strong>
+          <span>Real development, visible progress and no fake promises.</span>
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
 
-  <div class="hero-features">
-    <div class="hero-feature">
-      <span>⬡</span>
-      <p><strong>Creative Tools</strong><br>Meme creation</p>
-    </div>
-
-    <div class="hero-feature">
-      <span>👥</span>
-      <p><strong>Community First</strong><br>Built by memes</p>
-    </div>
-
-    <div class="hero-feature">
-      <span>⚡</span>
-      <p><strong>Always Evolving</strong><br>New ideas daily</p>
-    </div>
-  </div>
-
-</div>
 </section>
 
 
-<section class="trade-actions-section">
-  <h2>Trade $EMAI</h2>
-  <p class="trade-actions-subtitle">
-    Buy, track and verify $EMAI on Base.
-  </p>
+<!-- =======================================================
+     PROJECT SNAPSHOT
+     ======================================================= -->
 
-  <div class="trade-actions-buttons">
-    <a
-      href="https://app.uniswap.org/swap?chain=base&outputCurrency=0x93F8E67Af68da54B6e15B352379e4f46B629AE04"
-      class="trade-action-btn trade-buy-btn"
-      target="_blank"
-      rel="noopener noreferrer"
-      data-track="buy_emai"
-    >
-      💎 Buy $EMAI
-    </a>
+<section class="v2-section" id="project-snapshot">
 
-    <a
-      href="https://www.dextools.io/app/base/pair-explorer/0x3c3b81ea14adcf41d8533de176cc9e0dfac133af"
-      class="trade-action-btn trade-chart-btn"
-      target="_blank"
-      rel="noopener noreferrer"
-      data-track="live_chart"
-    >
-      📈 Live Chart
-    </a>
+  <div class="v2-container">
+
+    <div class="v2-section-kicker">Project at a glance</div>
+
+    <h2 class="v2-section-title">
+      AskEmai Project Snapshot
+    </h2>
+
+    <p class="v2-section-intro">
+      The key facts about $EMAI and the AskEmai ecosystem —
+      clear, verifiable and easy to check.
+    </p>
+
+    <div class="v2-snapshot-grid">
+
+      <div class="v2-stat">
+        <div class="v2-stat-icon">🔵</div>
+        <div class="v2-stat-label">Network</div>
+        <div class="v2-stat-value">Live on Base</div>
+      </div>
+
+      <div class="v2-stat">
+        <div class="v2-stat-icon">⬡</div>
+        <div class="v2-stat-label">Total Supply</div>
+        <div class="v2-stat-value">100,000,000 $EMAI</div>
+      </div>
+
+      <div class="v2-stat">
+        <div class="v2-stat-icon">%</div>
+        <div class="v2-stat-label">Project Development Tax</div>
+        <div class="v2-stat-value">0.3%</div>
+      </div>
+
+      <div class="v2-stat">
+        <div class="v2-stat-icon">🔒</div>
+        <div class="v2-stat-label">Liquidity Lock</div>
+        <div class="v2-stat-value">Until 25 Jan 2027</div>
+      </div>
+
+      <div class="v2-stat">
+        <div class="v2-stat-icon">🤖</div>
+        <div class="v2-stat-label">AskEmai Meme Generator</div>
+        <div class="v2-stat-value cyan">LIVE</div>
+      </div>
+
+      <div class="v2-stat">
+        <div class="v2-stat-icon">✓</div>
+        <div class="v2-stat-label">Launch</div>
+        <div class="v2-stat-value">No Presale</div>
+      </div>
+
+      <div class="v2-stat v2-contract">
+
+        <div class="v2-stat-icon">🔗</div>
+
+        <div class="v2-stat-label">
+          Official $EMAI Contract
+        </div>
+
+        <div class="v2-contract-address">
+          0x93F8E67Af68da54B6e15B352379e4f46B629AE04
+        </div>
+
+        <a
+          href="https://basescan.org/token/0x93F8E67Af68da54B6e15B352379e4f46B629AE04"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Verify on BaseScan ↗
+        </a>
+
+      </div>
+
+    </div>
+
   </div>
-
-<p class="trade-actions-note">
-  Official $EMAI contract on Base:<br>
-  <strong>0x93F8E67Af68da54B6e15B352379e4f46B629AE04</strong><br>
-  <a
-    href="https://basescan.org/token/0x93F8E67Af68da54B6e15B352379e4f46B629AE04"
-    target="_blank"
-    rel="noopener noreferrer"
-    style="color:#00eaff; text-decoration:none;"
-  >
-    Verify on BaseScan ↗
-  </a>
-  <br>
-  Always verify the contract before trading.
-</p>
 </section>
 
 <section class="daily-memes-section" id="daily-memes">
