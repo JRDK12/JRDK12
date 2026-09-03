@@ -1794,7 +1794,7 @@ body{
 }
 
 .v2-brand img{
-  width:42px;
+  width:56px;
   height:auto;
 }
 
@@ -1830,31 +1830,38 @@ body{
   align-items:center;
   position:relative;
   overflow:hidden;
-
-  background-image:
-    linear-gradient(
-      90deg,
-      rgba(2,7,17,.98) 0%,
-      rgba(2,7,17,.91) 40%,
-      rgba(2,7,17,.42) 67%,
-      rgba(2,7,17,.16) 100%
-    ),
-    url("robot-bg-desktop.png?v=7");
-
-  background-size:cover;
-  background-position:right center;
   border-bottom:1px solid rgba(0,234,255,.12);
+
+  background:
+    radial-gradient(circle at 80% 15%, rgba(0,119,255,.14), transparent 26%),
+    radial-gradient(circle at 20% 35%, rgba(0,234,255,.06), transparent 30%),
+    linear-gradient(180deg, #020711 0%, #03101d 100%);
 }
 
 .v2-hero-inner{
   width:min(1180px,92%);
   margin:auto;
+  display:grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items:center;
+  gap:40px;
 }
 
 .v2-hero-content{
   width:min(650px,100%);
 }
+.v2-hero-visual{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
 
+.v2-hero-visual img{
+  width:min(100%, 520px);
+  height:auto;
+  display:block;
+  filter: drop-shadow(0 0 34px rgba(0,234,255,.15));
+}
 .v2-eyebrow{
   display:inline-flex;
   align-items:center;
@@ -2059,26 +2066,23 @@ body{
     display:none;
   }
 
-  .v2-hero{
-    min-height:760px;
+ .v2-hero{
+  min-height:auto;
+  padding:50px 0 30px;
+}
 
-    background-image:
-      linear-gradient(
-        180deg,
-        rgba(2,7,17,.55) 0%,
-        rgba(2,7,17,.55) 42%,
-        rgba(2,7,17,.96) 74%,
-        #020711 100%
-      ),
-      url("robot-bg-mobile.png?v=1");
+.v2-hero-inner{
+  grid-template-columns:1fr;
+  gap:20px;
+}
 
-    background-position:center top;
-  }
+.v2-hero-visual{
+  order:2;
+}
 
-  .v2-hero{
-    align-items:flex-end;
-    padding-bottom:45px;
-  }
+.v2-hero-content{
+  order:1;
+}
 
   .v2-hero h1{
     font-size:clamp(3rem,14vw,5rem);
@@ -2108,7 +2112,7 @@ body{
   }
 
   .v2-brand img{
-    width:38px;
+  width:46px;
   }
 
   .v2-nav-buy{
@@ -2135,6 +2139,9 @@ body{
   .v2-section{
     padding:60px 0;
   }
+  .v2-hero-visual img{
+  width:min(100%, 320px);
+}
 } 
 </style>
 </head>
@@ -2267,7 +2274,9 @@ INITIALIZING ASKEMAI...
         >
           🤖 Open Meme Generator
         </a>
-
+    <div class="v2-hero-visual">
+      <img src="robot-bg-desktop.png?v=7" alt="AskEmai Robot">
+    </div>
       </div>
 
       <div class="v2-feature-row">
