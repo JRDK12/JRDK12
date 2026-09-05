@@ -6984,15 +6984,16 @@ if (askemaiTopBar && askemaiModal && askemaiClose) {
           const change =
             coin?.quotes?.USD?.percent_change_24h;
 
-          return (
-            Number.isFinite(coin.rank) &&
-            coin.rank > 0 &&
-            coin.rank <= 100 &&
-            Number.isFinite(change) &&
-            !excludedStablecoins.has(
-              String(coin.symbol).toUpperCase()
-            )
-          );
+       return (
+  Number.isFinite(coin.rank) &&
+  coin.rank > 0 &&
+  coin.rank <= 100 &&
+  Number.isFinite(change) &&
+  Math.abs(change) <= 500 &&
+  !excludedStablecoins.has(
+    String(coin.symbol).toUpperCase()
+  )
+);
 
         })
         .sort((a, b) => {
@@ -7455,15 +7456,16 @@ function renderTodayInCrypto(
             coin?.quotes?.USD?.percent_change_24h
           );
 
-        return (
-          Number.isFinite(coin.rank) &&
-          coin.rank > 0 &&
-          coin.rank <= 100 &&
-          Number.isFinite(change) &&
-          !excludedStablecoins.has(
-            String(coin.symbol).toUpperCase()
-          )
-        );
+       return (
+  Number.isFinite(coin.rank) &&
+  coin.rank > 0 &&
+  coin.rank <= 100 &&
+  Number.isFinite(change) &&
+  Math.abs(change) <= 500 &&
+  !excludedStablecoins.has(
+    String(coin.symbol).toUpperCase()
+  )
+);
 
       })
       .sort((a, b) => {
