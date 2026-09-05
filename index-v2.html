@@ -5139,7 +5139,94 @@ gap:24px;
   }
 
 }
+/* =========================================================
+   CRYPTO PULSE - FINAL MOBILE 2 COLUMN LAYOUT
+   ========================================================= */
 
+@media(max-width:650px){
+
+  .crypto-pulse-grid{
+    display:grid !important;
+    grid-template-columns:repeat(2, minmax(0,1fr)) !important;
+    gap:8px !important;
+  }
+
+
+  .crypto-market-card{
+    min-width:0 !important;
+    min-height:122px !important;
+
+    padding:12px 10px !important;
+
+    border-radius:14px !important;
+  }
+
+
+  .crypto-market-top{
+    gap:6px !important;
+  }
+
+
+  .crypto-market-name{
+    gap:7px !important;
+
+    font-size:.72rem !important;
+    line-height:1.15 !important;
+  }
+
+
+  .crypto-market-symbol{
+    margin-top:2px !important;
+
+    font-size:.58rem !important;
+    letter-spacing:.35px !important;
+  }
+
+
+  .crypto-market-icon{
+    flex:0 0 27px !important;
+
+    width:27px !important;
+    height:27px !important;
+
+    font-size:.82rem !important;
+  }
+
+
+  .crypto-market-value{
+    margin-top:14px !important;
+
+    font-size:1.12rem !important;
+    line-height:1.1 !important;
+
+    letter-spacing:-.3px !important;
+  }
+
+
+  .crypto-change{
+    margin-top:7px !important;
+
+    font-size:.67rem !important;
+    line-height:1.2 !important;
+  }
+
+
+  .crypto-market-meta{
+    display:none !important;
+  }
+
+}
+
+
+/* KEEP 2 COLUMNS EVEN ON SMALL PHONES */
+
+@media(max-width:390px){
+
+  .crypto-pulse-grid{
+    grid-template-columns:repeat(2, minmax(0,1fr)) !important;
+  }
+
+}
 </style>
 </head>
 <body>
@@ -5657,7 +5744,7 @@ INITIALIZING ASKEMAI...
             </span>
 
             <strong>
-              Meme Pulse
+  Major memecoins · 24h
             </strong>
           </div>
 
