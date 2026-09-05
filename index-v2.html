@@ -5227,6 +5227,198 @@ gap:24px;
   }
 
 }
+    /* =========================================================
+   60-SECOND MARKET BRIEF — MOBILE UX
+   ========================================================= */
+
+.crypto-60-swipe-hint{
+  display:none;
+}
+
+@media(max-width:650px){
+
+  .crypto-60-swipe-hint{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    margin:0 2px 10px;
+
+    color:#708c9b;
+
+    font-size:.66rem;
+    font-weight:700;
+    letter-spacing:.35px;
+  }
+
+  .crypto-60-swipe-hint span{
+    color:#00eaff;
+
+    font-size:.59rem;
+    font-weight:900;
+    letter-spacing:1.2px;
+  }
+
+  .crypto-60-swipe-hint strong{
+    margin-left:4px;
+
+    color:#00eaff;
+
+    font-size:.9rem;
+  }
+
+
+  .crypto-60-grid{
+    gap:11px !important;
+
+    overflow-x:auto !important;
+
+    padding:2px 12% 12px 0 !important;
+
+    scroll-snap-type:x mandatory;
+    scroll-padding-left:0;
+
+    scrollbar-width:none;
+  }
+
+  .crypto-60-grid::-webkit-scrollbar{
+    display:none;
+  }
+
+
+  .crypto-60-card{
+    flex:0 0 82% !important;
+
+    width:82% !important;
+    min-width:82% !important;
+
+    min-height:255px !important;
+
+    padding:20px 18px !important;
+
+    scroll-snap-align:start;
+  }
+
+}
+    /* =========================================================
+   FAQ — COMPACT MOBILE VERSION
+   ========================================================= */
+
+@media(max-width:650px){
+
+  .v2-faq-section{
+    padding-top:42px !important;
+    padding-bottom:46px !important;
+  }
+
+
+  .v2-faq-header{
+    margin-bottom:22px !important;
+  }
+
+
+  .v2-faq-kicker{
+    margin-bottom:7px !important;
+
+    font-size:.62rem !important;
+    letter-spacing:1.8px !important;
+  }
+
+
+  .v2-faq-title{
+    max-width:330px;
+
+    margin:0 auto 9px !important;
+
+    font-size:2rem !important;
+    line-height:1.03 !important;
+
+    letter-spacing:-.6px !important;
+  }
+
+
+  .v2-faq-intro{
+    max-width:320px;
+
+    font-size:.78rem !important;
+    line-height:1.45 !important;
+  }
+
+
+  .v2-faq-section .faq{
+    gap:7px !important;
+  }
+
+
+  .v2-faq-section .faq-item{
+    border-radius:14px !important;
+  }
+
+
+  .v2-faq-section .faq-question{
+    min-height:56px !important;
+
+    gap:10px !important;
+
+    padding:7px 11px !important;
+
+    font-size:.79rem !important;
+    line-height:1.25 !important;
+  }
+
+
+  /* NUMBER */
+
+  .v2-faq-section .faq-question::before{
+    flex:0 0 30px !important;
+
+    width:30px !important;
+    height:30px !important;
+
+    border-radius:9px !important;
+
+    font-size:.55rem !important;
+  }
+
+
+  /* PLUS */
+
+  .v2-faq-section .faq-question::after{
+    flex:0 0 30px !important;
+
+    width:30px !important;
+    height:30px !important;
+
+    border-radius:9px !important;
+
+    font-size:.95rem !important;
+  }
+
+
+  /* ANSWER */
+
+  .v2-faq-section .faq-answer{
+    padding:
+      0
+      13px
+      17px
+      51px !important;
+
+    font-size:.77rem !important;
+    line-height:1.55 !important;
+  }
+
+
+  .v2-faq-section
+  .faq-item.active
+  .faq-answer::before{
+
+    width:30px !important;
+
+    margin-bottom:10px !important;
+  }
+
+}
 </style>
 </head>
 <body>
@@ -5819,8 +6011,12 @@ INITIALIZING ASKEMAI...
     </div>
 
 
-    <div class="crypto-60-grid">
+<div class="crypto-60-swipe-hint">
+  <span>3 MARKET SIGNALS</span>
+  Swipe <strong>→</strong>
+</div>
 
+<div class="crypto-60-grid">
 
       <!-- MARKET -->
 
