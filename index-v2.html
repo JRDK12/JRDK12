@@ -4930,6 +4930,216 @@ gap:24px;
   }
 
 }
+
+/* =========================================================
+   ASKEMAI MEME MARKET
+   ========================================================= */
+
+.meme-market{
+  margin-top:14px;
+  padding:16px;
+  border:1px solid rgba(0,234,255,.12);
+  border-radius:17px;
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(0,234,255,.055),
+      transparent 32%
+    ),
+    rgba(3,14,27,.72);
+  box-shadow:0 8px 28px rgba(0,0,0,.12);
+}
+
+.meme-market-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  margin-bottom:13px;
+}
+
+.meme-market-title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.meme-market-fire{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:34px;
+  height:34px;
+  flex:0 0 34px;
+  border-radius:10px;
+  border:1px solid rgba(0,234,255,.13);
+  background:rgba(0,234,255,.045);
+  font-size:.95rem;
+}
+
+.meme-market-title > div{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+
+.meme-market-kicker{
+  color:#00eaff;
+  font-size:.59rem;
+  font-weight:900;
+  letter-spacing:1.25px;
+  text-transform:uppercase;
+}
+
+.meme-market-title strong{
+  color:#fff;
+  font-size:.86rem;
+  font-weight:900;
+}
+
+.meme-market-heat{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:29px;
+  padding:0 11px;
+  border-radius:999px;
+  border:1px solid rgba(0,234,255,.13);
+  background:rgba(0,234,255,.04);
+  color:#93adbd;
+  font-size:.67rem;
+  font-weight:800;
+  white-space:nowrap;
+}
+
+.meme-market-track{
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:8px;
+}
+
+.meme-market-card{
+  min-width:0;
+  padding:11px 10px;
+  border-radius:12px;
+  border:1px solid rgba(0,234,255,.09);
+  background:rgba(1,11,22,.62);
+}
+
+.meme-market-symbol{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:6px;
+  margin-bottom:6px;
+}
+
+.meme-market-symbol strong{
+  color:#fff;
+  font-size:.75rem;
+  font-weight:900;
+}
+
+.meme-market-rank{
+  color:#526e7c;
+  font-size:.54rem;
+  font-weight:700;
+}
+
+.meme-market-price{
+  color:#dffcff;
+  font-size:.70rem;
+  font-weight:800;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.meme-market-change{
+  margin-top:4px;
+  font-size:.65rem;
+  font-weight:900;
+}
+
+.meme-market-change.positive{
+  color:#55e6a5;
+}
+
+.meme-market-change.negative{
+  color:#ff7185;
+}
+
+.meme-market-change.neutral{
+  color:#9eb5c2;
+}
+
+.meme-market-loading{
+  grid-column:1 / -1;
+  padding:10px 0;
+  color:#718d9d;
+  font-size:.72rem;
+}
+
+@media(max-width:900px){
+  .meme-market-track{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+}
+
+@media(max-width:650px){
+
+  .meme-market{
+    margin-top:10px;
+    padding:12px 10px;
+    border-radius:14px;
+  }
+
+  .meme-market-header{
+    margin-bottom:10px;
+  }
+
+  .meme-market-title strong{
+    font-size:.78rem;
+  }
+
+  .meme-market-fire{
+    width:30px;
+    height:30px;
+    flex-basis:30px;
+    border-radius:9px;
+  }
+
+  .meme-market-heat{
+    min-height:26px;
+    padding:0 8px;
+    font-size:.58rem;
+  }
+
+  .meme-market-track{
+    display:flex !important;
+    grid-template-columns:none !important;
+    gap:8px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    padding:1px 0 7px;
+    scrollbar-width:none;
+  }
+
+  .meme-market-track::-webkit-scrollbar{
+    display:none;
+  }
+
+  .meme-market-card{
+    flex:0 0 42%;
+    min-width:42%;
+    scroll-snap-align:start;
+    padding:10px;
+  }
+
+}
+
 </style>
 </head>
 <body>
@@ -5408,74 +5618,70 @@ INITIALIZING ASKEMAI...
 
   <!-- TOP MOVERS -->
 
-<div class="crypto-movers">
+    <div class="crypto-movers-panel">
 
-  ...
+      <div class="crypto-movers-head">
+        <h3>🔥 Top Movers</h3>
+        <span>Top 100 · 24h</span>
+      </div>
 
-  <div
-    class="crypto-movers-grid"
-    id="crypto-movers-grid"
-  >
-    ...
-  </div>
-
-</div>
-
-
-<!-- =======================================================
-     ASKEMAI MEME MARKET
-     ======================================================= -->
-
-<div class="meme-market">
-
-  <div class="meme-market-header">
-
-    <div class="meme-market-title">
-
-      <span class="meme-market-fire">
-        🔥
-      </span>
-
-      <div>
-
-        <span class="meme-market-kicker">
-          MEME MARKET
-        </span>
-
-        <strong>
-          Meme Pulse
-        </strong>
-
+      <div
+        class="crypto-movers-grid"
+        id="crypto-movers-grid"
+      >
+        <div class="crypto-mover">
+          <div class="crypto-loading">
+            Loading market movers...
+          </div>
+        </div>
       </div>
 
     </div>
 
 
-    <div
-      class="meme-market-heat"
-      id="meme-market-heat"
-    >
-      Loading...
+    <!-- =======================================================
+         ASKEMAI MEME MARKET
+         ======================================================= -->
+
+    <div class="meme-market">
+
+      <div class="meme-market-header">
+
+        <div class="meme-market-title">
+
+          <span class="meme-market-fire">🔥</span>
+
+          <div>
+            <span class="meme-market-kicker">
+              MEME MARKET
+            </span>
+
+            <strong>
+              Meme Pulse
+            </strong>
+          </div>
+
+        </div>
+
+        <div
+          class="meme-market-heat"
+          id="meme-market-heat"
+        >
+          Loading...
+        </div>
+
+      </div>
+
+      <div
+        class="meme-market-track"
+        id="meme-market-track"
+      >
+        <div class="meme-market-loading">
+          Loading meme market...
+        </div>
+      </div>
+
     </div>
-
-  </div>
-
-
-  <div
-    class="meme-market-track"
-    id="meme-market-track"
-  >
-
-    <div class="meme-market-loading">
-      Loading meme market...
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- DALEJ RESZTA CRYPTO PULSE -->
 
 
     <!-- FOOTER -->
@@ -6602,6 +6808,186 @@ if (askemaiTopBar && askemaiModal && askemaiClose) {
       }).join('');
 
   }
+
+
+  /* ---------------------------------------------------------
+     MEME MARKET
+     --------------------------------------------------------- */
+
+  function renderMemeMarket(tickers) {
+
+    const track =
+      document.getElementById('meme-market-track');
+
+    const heat =
+      document.getElementById('meme-market-heat');
+
+    if (!track || !heat) return;
+
+    try {
+
+      if (!Array.isArray(tickers)) {
+        throw new Error('Ticker data is not an array');
+      }
+
+      const wantedSymbols = [
+        'DOGE',
+        'SHIB',
+        'PEPE',
+        'BONK',
+        'WIF',
+        'FLOKI'
+      ];
+
+      const memeCoins =
+        wantedSymbols
+          .map(symbol => {
+
+            const matches =
+              tickers
+                .filter(coin =>
+                  String(coin?.symbol || '')
+                    .toUpperCase() === symbol
+                )
+                .sort((a, b) => {
+
+                  const rankA =
+                    Number.isFinite(a?.rank)
+                      ? a.rank
+                      : Number.MAX_SAFE_INTEGER;
+
+                  const rankB =
+                    Number.isFinite(b?.rank)
+                      ? b.rank
+                      : Number.MAX_SAFE_INTEGER;
+
+                  return rankA - rankB;
+
+                });
+
+            return matches[0] || null;
+
+          })
+          .filter(Boolean);
+
+      if (!memeCoins.length) {
+
+        heat.textContent = 'Data unavailable';
+
+        track.innerHTML =
+          '<div class="meme-market-loading">' +
+          'Meme market data temporarily unavailable.' +
+          '</div>';
+
+        return;
+      }
+
+      const greenCount =
+        memeCoins.filter(coin => {
+
+          const change =
+            Number(
+              coin?.quotes?.USD?.percent_change_24h
+            );
+
+          return Number.isFinite(change) && change > 0;
+
+        }).length;
+
+      heat.textContent =
+        greenCount +
+        ' / ' +
+        memeCoins.length +
+        ' GREEN';
+
+      track.innerHTML =
+        memeCoins.map(coin => {
+
+          const price =
+            Number(
+              coin?.quotes?.USD?.price
+            );
+
+          const change =
+            Number(
+              coin?.quotes?.USD?.percent_change_24h
+            );
+
+          const changeClass =
+            change > 0
+              ? 'positive'
+              : change < 0
+                ? 'negative'
+                : 'neutral';
+
+          const direction =
+            change > 0
+              ? '▲'
+              : change < 0
+                ? '▼'
+                : '•';
+
+          const changeText =
+            Number.isFinite(change)
+              ? Math.abs(change).toFixed(2) + '%'
+              : '—';
+
+          const rankText =
+            Number.isFinite(coin?.rank)
+              ? '#' + coin.rank
+              : '';
+
+          return `
+
+            <div class="meme-market-card">
+
+              <div class="meme-market-symbol">
+
+                <strong>
+                  ${coin.symbol}
+                </strong>
+
+                <span class="meme-market-rank">
+                  ${rankText}
+                </span>
+
+              </div>
+
+              <div class="meme-market-price">
+                ${formatPrice(price)}
+              </div>
+
+              <div
+                class="meme-market-change ${changeClass}"
+              >
+                ${direction} ${changeText}
+              </div>
+
+            </div>
+
+          `;
+
+        }).join('');
+
+    }
+    catch (error) {
+
+      console.error(
+        'AskEmai Meme Market error:',
+        error
+      );
+
+      heat.textContent = 'Data unavailable';
+
+      track.innerHTML =
+        '<div class="meme-market-loading">' +
+        'Meme market data temporarily unavailable.' +
+        '</div>';
+
+    }
+
+  }
+
 /* ---------------------------------------------------------
    TODAY IN CRYPTO — 60 SECOND BRIEF
    --------------------------------------------------------- */
@@ -7073,7 +7459,6 @@ function renderTodayInCrypto(
 renderMovers(tickerData);
 renderMemeMarket(tickerData);
 
-updateLastUpdated();
       
 renderTodayInCrypto(
   globalData,
