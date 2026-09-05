@@ -4553,6 +4553,171 @@ gap:24px;
   }
 
 }
+    /* =========================================================
+   NEWSLETTER - HIDDEN UNTIL NEXT STAGE
+   ========================================================= */
+
+.pulse-newsletter{
+  display:none !important;
+}
+    /* =========================================================
+   ASKEMAI DAILY MEMES - MOBILE SWIPE CAROUSEL
+   ========================================================= */
+
+/* Desktop: swipe hint hidden */
+.meme-swipe-hint{
+  display:none;
+}
+
+
+/* MOBILE CAROUSEL */
+@media (max-width:650px){
+
+  /* Header */
+
+  .daily-memes-header{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+
+  /* Categories can scroll sideways too */
+
+  .meme-category-tabs{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+
+    overflow-x:auto;
+
+    gap:8px;
+
+    padding-bottom:4px;
+
+    scrollbar-width:none;
+
+    -webkit-overflow-scrolling:touch;
+  }
+
+  .meme-category-tabs::-webkit-scrollbar{
+    display:none;
+  }
+
+  .meme-category-tabs span{
+    flex:0 0 auto;
+    white-space:nowrap;
+  }
+
+
+  /* SWIPE MESSAGE */
+
+  .meme-swipe-hint{
+    display:flex;
+
+    align-items:center;
+    gap:7px;
+
+    margin:2px 0 12px;
+
+    color:#688795;
+
+    font-size:.72rem;
+    font-weight:700;
+
+    letter-spacing:.4px;
+  }
+
+  .meme-swipe-hint span{
+    color:#00eaff;
+
+    font-size:1rem;
+  }
+
+
+  /* MAIN MEME CAROUSEL */
+
+  .meme-preview-grid{
+    display:flex !important;
+
+    grid-template-columns:none !important;
+
+    gap:14px;
+
+    width:100%;
+
+    overflow-x:auto;
+    overflow-y:hidden;
+
+    scroll-snap-type:x mandatory;
+    scroll-behavior:smooth;
+
+    -webkit-overflow-scrolling:touch;
+
+    padding:2px 0 14px;
+
+    scrollbar-width:none;
+  }
+
+  .meme-preview-grid::-webkit-scrollbar{
+    display:none;
+  }
+
+
+  /* ONE LARGE MEME AT A TIME */
+
+  .meme-preview-grid .meme-card{
+    flex:0 0 86% !important;
+
+    width:86% !important;
+    max-width:none !important;
+
+    scroll-snap-align:start;
+    scroll-snap-stop:always;
+
+    margin:0 !important;
+
+    transform:none !important;
+  }
+
+
+  /* IMAGE */
+
+  .meme-preview-grid .meme-card img{
+    width:100%;
+
+    aspect-ratio:1 / 1;
+
+    object-fit:cover;
+  }
+
+
+  /* CARD TEXT */
+
+  .meme-preview-grid .meme-card-content{
+    padding:15px 16px 17px;
+  }
+
+  .meme-preview-grid .meme-card-content h3{
+    font-size:.96rem;
+  }
+
+  .meme-preview-grid .meme-card-content p{
+    font-size:.82rem;
+    line-height:1.5;
+  }
+
+}
+
+
+/* EXTRA SMALL PHONES */
+
+@media (max-width:390px){
+
+  .meme-preview-grid .meme-card{
+    flex-basis:89% !important;
+    width:89% !important;
+  }
+
+}
 </style>
 </head>
 <body>
@@ -5329,6 +5494,9 @@ INITIALIZING ASKEMAI...
     <!-- <span>🚗 Driving</span> -->
 <!-- <span>❤️ Relationships</span> -->
     </div>
+<div class="meme-swipe-hint">
+  Swipe to explore <span>→</span>
+</div>
 
     <div class="meme-preview-grid">
 
