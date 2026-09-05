@@ -5406,36 +5406,76 @@ INITIALIZING ASKEMAI...
     </div>
 
 
-    <!-- TOP MOVERS -->
+  <!-- TOP MOVERS -->
 
-    <div class="crypto-movers-panel">
+<div class="crypto-movers">
 
-      <div class="crypto-movers-head">
+  ...
 
-        <h3>
-          ⚡ Top Movers
-        </h3>
+  <div
+    class="crypto-movers-grid"
+    id="crypto-movers-grid"
+  >
+    ...
+  </div>
 
-        <span>
-          Top 100 assets · 24h
+</div>
+
+
+<!-- =======================================================
+     ASKEMAI MEME MARKET
+     ======================================================= -->
+
+<div class="meme-market">
+
+  <div class="meme-market-header">
+
+    <div class="meme-market-title">
+
+      <span class="meme-market-fire">
+        🔥
+      </span>
+
+      <div>
+
+        <span class="meme-market-kicker">
+          MEME MARKET
         </span>
 
-      </div>
-
-      <div
-        class="crypto-movers-grid"
-        id="crypto-movers-grid"
-      >
-
-        <div class="crypto-mover">
-          <div class="crypto-loading">
-            Loading market movers...
-          </div>
-        </div>
+        <strong>
+          Meme Pulse
+        </strong>
 
       </div>
 
     </div>
+
+
+    <div
+      class="meme-market-heat"
+      id="meme-market-heat"
+    >
+      Loading...
+    </div>
+
+  </div>
+
+
+  <div
+    class="meme-market-track"
+    id="meme-market-track"
+  >
+
+    <div class="meme-market-loading">
+      Loading meme market...
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- DALEJ RESZTA CRYPTO PULSE -->
 
 
     <!-- FOOTER -->
@@ -7030,7 +7070,10 @@ function renderTodayInCrypto(
 
       /* MOVERS */
 
-      renderMovers(tickerData);
+renderMovers(tickerData);
+renderMemeMarket(tickerData);
+
+updateLastUpdated();
       
 renderTodayInCrypto(
   globalData,
