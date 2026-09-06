@@ -5489,6 +5489,8 @@ INITIALIZING ASKEMAI...
         target="_blank"
         rel="noopener noreferrer"
         class="v2-nav-buy"
+        data-track="buy_emai_click"
+data-location="navigation"
       >
         Buy $EMAI
       </a>
@@ -5530,7 +5532,8 @@ INITIALIZING ASKEMAI...
     target="_blank"
     rel="noopener noreferrer"
     class="v2-btn v2-btn-primary"
-    data-track="buy_emai"
+    data-track="buy_emai_click"
+data-location="hero"
   >
     💎 Buy $EMAI
   </a>
@@ -5540,14 +5543,17 @@ INITIALIZING ASKEMAI...
     target="_blank"
     rel="noopener noreferrer"
     class="v2-btn v2-btn-secondary"
-    data-track="live_chart"
+    data-track="live_chart_click"
+data-location="hero"
   >
     📈 Live Chart
   </a>
 
   <a
-    href="mems.html"
-    class="v2-btn v2-btn-generator"
+     href="mems.html"
+  class="v2-btn v2-btn-generator"
+  data-track="meme_generator_click"
+  data-location="hero"
   >
     🤖 Open Meme Generator
   </a>
@@ -5679,6 +5685,8 @@ INITIALIZING ASKEMAI...
           href="https://basescan.org/token/0x93F8E67Af68da54B6e15B352379e4f46B629AE04"
           target="_blank"
           rel="noopener noreferrer"
+          data-track="basescan_click"
+data-location="project_snapshot"
         >
           Verify on BaseScan ↗
         </a>
@@ -6217,8 +6225,10 @@ INITIALIZING ASKEMAI...
   </div>
 
   <a
-    href="meme-gallery.html"
-    class="view-all-memes"
+   href="meme-gallery.html"
+  class="view-all-memes"
+  data-track="meme_gallery_click"
+  data-location="daily_memes"
   >
     View All Memes →
   </a>
@@ -6465,6 +6475,8 @@ INITIALIZING ASKEMAI...
     rel="noopener noreferrer sponsored"
     class="rollercoin-banner"
     id="rollercoin-partner-link"
+    data-track="rollercoin_click"
+data-location="partner_section"
 aria-label="Play RollerCoin and support EMAI"  >
     <img
       src="https://static.rollercoin.com/static/img/ref/gen2/w970h250.gif"
@@ -6564,6 +6576,8 @@ Enjoy RollerCoin. Your activity helps support AskEmai 💙
             href="https://x.com/Emai_token?t=EvnKR-L3z6UK6bH4zhpr6Q&s=09"
             target="_blank"
             rel="noopener noreferrer"
+            data-track="x_click"
+data-location="footer"
             aria-label="AskEmai on X"
           >
             <img
@@ -6577,6 +6591,8 @@ Enjoy RollerCoin. Your activity helps support AskEmai 💙
             href="https://instagram.com/emai_token"
             target="_blank"
             rel="noopener noreferrer"
+            data-track="instagram_click"
+data-location="footer"
             aria-label="AskEmai on Instagram"
           >
             <img
@@ -6590,6 +6606,8 @@ Enjoy RollerCoin. Your activity helps support AskEmai 💙
             href="https://t.me/emaitoken"
             target="_blank"
             rel="noopener noreferrer"
+            data-track="telegram_click"
+data-location="footer"
             aria-label="AskEmai on Telegram"
           >
             <img
@@ -6603,6 +6621,8 @@ Enjoy RollerCoin. Your activity helps support AskEmai 💙
             href="https://www.tiktok.com/@askemai"
             target="_blank"
             rel="noopener noreferrer"
+            data-track="tiktok_click"
+data-location="footer"
             aria-label="AskEmai on TikTok"
           >
             <img
@@ -7866,6 +7886,49 @@ renderTodayInCrypto(
   );
 
 })();
+</script>
+  <script>
+document.addEventListener('click', function(event) {
+
+  const trackedElement =
+    event.target.closest('[data-track]');
+
+  if (!trackedElement) return;
+
+
+  const eventName =
+    trackedElement.dataset.track;
+
+  const eventLocation =
+    trackedElement.dataset.location || 'unknown';
+
+  const linkUrl =
+    trackedElement.href || '';
+
+  const linkText =
+    trackedElement.textContent
+      .trim()
+      .replace(/\s+/g, ' ')
+      .slice(0, 100);
+
+
+  if (typeof gtag === 'function') {
+
+    gtag('event', eventName, {
+
+      button_location: eventLocation,
+
+      link_url: linkUrl,
+
+      link_text: linkText,
+
+      transport_type: 'beacon'
+
+    });
+
+  }
+
+});
 </script>
 </body>
 </html>
