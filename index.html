@@ -5423,125 +5423,317 @@ gap:24px;
    ASKEMAI MUSIC
 ========================= */
 
+/* =========================================================
+   ASKEMAI MUSIC — DESKTOP / LAPTOP / MOBILE
+   ========================================================= */
+
+.music-section,
+.music-section * {
+  box-sizing: border-box;
+}
+
 .music-section {
-  padding: 80px 20px;
+  width: 100%;
+  padding: 72px 0;
+  scroll-margin-top: 110px;
+
   background:
-    radial-gradient(circle at 20% 20%, rgba(0, 210, 255, 0.10), transparent 35%),
-    radial-gradient(circle at 80% 60%, rgba(0, 120, 255, 0.10), transparent 35%),
+    radial-gradient(circle at 15% 20%, rgba(0, 210, 255, 0.10), transparent 32%),
+    radial-gradient(circle at 85% 60%, rgba(0, 120, 255, 0.09), transparent 32%),
     #050b14;
+
   border-top: 1px solid rgba(0, 210, 255, 0.12);
   border-bottom: 1px solid rgba(0, 210, 255, 0.12);
 }
 
 .music-inner {
-  max-width: 1100px;
+  width: min(1180px, calc(100% - 48px));
   margin: 0 auto;
 }
 
 .music-badge {
   display: inline-block;
+
+  margin-bottom: 14px;
+
   color: #25dfff;
+
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 2px;
-  margin-bottom: 16px;
 }
 
 .music-section h2 {
-  font-size: clamp(30px, 5vw, 48px);
-  margin: 0 0 18px;
+  max-width: 900px;
+
+  margin: 0 0 14px;
+
   color: #ffffff;
+
+  font-size: clamp(36px, 4vw, 52px);
+  line-height: 1.08;
+  font-weight: 800;
 }
 
 .music-intro {
-  max-width: 720px;
+  max-width: 780px;
+
+  margin: 0 0 32px;
+
   color: #aebed0;
-  font-size: 18px;
-  line-height: 1.7;
-  margin-bottom: 35px;
+
+  font-size: 17px;
+  line-height: 1.65;
 }
 
 .music-release {
+  width: 100%;
+
+  padding: 30px;
+
   background: rgba(10, 22, 38, 0.82);
+
   border: 1px solid rgba(37, 223, 255, 0.22);
   border-radius: 22px;
-  padding: 32px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
 }
 
 .music-label {
   color: #25dfff;
+
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 2px;
 }
 
 .music-release h3 {
+  margin: 9px 0 10px;
+
   color: #ffffff;
-  font-size: 34px;
-  margin: 10px 0 12px;
+
+  font-size: 32px;
+  line-height: 1.1;
 }
 
 .music-release p {
+  max-width: 850px;
+
+  margin: 0 0 22px;
+
   color: #aebed0;
-  line-height: 1.7;
-  margin-bottom: 25px;
+
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .music-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 28px;
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 10px;
+
+  width: 100%;
+  margin-bottom: 24px;
 }
 
 .music-btn {
-  display: inline-flex;
+  display: flex;
+
   align-items: center;
   justify-content: center;
-  padding: 13px 20px;
+
+  min-height: 50px;
+
+  padding: 11px 12px;
+
   border-radius: 10px;
   border: 1px solid rgba(37, 223, 255, 0.35);
+
   color: #ffffff;
+  background: rgba(255, 255, 255, 0.04);
+
   text-decoration: none;
-  font-weight: 600;
-  background: rgba(255,255,255,0.04);
+  text-align: center;
+
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.25;
+
   transition: 0.25s ease;
 }
 
 .music-btn:hover {
   transform: translateY(-2px);
+
   border-color: #25dfff;
+
   box-shadow: 0 8px 25px rgba(37, 223, 255, 0.15);
 }
 
 .music-btn.primary {
   background: #25dfff;
+
   color: #031018;
+
   border-color: #25dfff;
 }
 
 .spotify-player {
   width: 100%;
-  margin-top: 5px;
+  margin-top: 0;
 }
 
-@media (max-width: 700px) {
+.spotify-player iframe {
+  display: block;
+
+  width: 100% !important;
+  height: 152px !important;
+
+  border: 0;
+  border-radius: 12px;
+}
+
+
+/* =========================================================
+   SMALL LAPTOP / TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
   .music-section {
-    padding: 55px 16px;
+    padding: 60px 0;
   }
 
-  .music-release {
-    padding: 22px 18px;
+  .music-inner {
+    width: min(900px, calc(100% - 36px));
+  }
+
+  .music-section h2 {
+    font-size: 40px;
   }
 
   .music-buttons {
-    flex-direction: column;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   PHONE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+  .music-section {
+    padding: 42px 0;
+    scroll-margin-top: 95px;
+  }
+
+  .music-inner {
+    width: calc(100% - 28px);
+  }
+
+  .music-badge {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 11px;
+    letter-spacing: 1.6px;
+
+    text-align: center;
+  }
+
+  .music-section h2 {
+    max-width: 340px;
+
+    margin: 0 auto 12px;
+
+    font-size: clamp(28px, 9vw, 36px);
+    line-height: 1.08;
+
+    text-align: center;
+  }
+
+  .music-intro {
+    max-width: 340px;
+
+    margin: 0 auto 22px;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    text-align: center;
+  }
+
+  .music-release {
+    padding: 20px 16px;
+
+    border-radius: 20px;
+
+    text-align: center;
+  }
+
+  .music-label {
+    font-size: 11px;
+  }
+
+  .music-release h3 {
+    margin: 8px 0 10px;
+
+    font-size: 27px;
+  }
+
+  .music-release p {
+    margin: 0 auto 20px;
+
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .music-buttons {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 9px;
+
+    margin-bottom: 20px;
   }
 
   .music-btn {
     width: 100%;
+    min-width: 0;
+    min-height: 48px;
+
+    padding: 9px 7px;
+
+    font-size: 12px;
+    line-height: 1.2;
+
+    border-radius: 10px;
   }
+
+  .spotify-player iframe {
+    height: 152px !important;
+  }
+
+}
+
+
+/* VERY SMALL PHONE */
+
+@media (max-width: 350px) {
+
+  .music-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .music-btn {
+    font-size: 13px;
+  }
+
 }
 </style>
 </head>
@@ -6326,17 +6518,7 @@ data-location="project_snapshot"
   </div>
 
 </section>
-<section class="daily-memes-section" id="daily-memes">
-  <div class="daily-memes-wrap">
-
-   <div class="daily-memes-header">
-
-  <div class="daily-memes-heading">
-
-    <div class="daily-memes-kicker">
-      ASKEMAI CULTURE
-    </div>
-<!-- ASKEMAI MUSIC -->
+  <!-- ASKEMAI MUSIC -->
 <section class="music-section" id="music">
   <div class="music-inner">
 
@@ -6424,6 +6606,17 @@ data-location="project_snapshot"
     </div>
   </div>
 </section>
+<section class="daily-memes-section" id="daily-memes">
+  <div class="daily-memes-wrap">
+
+   <div class="daily-memes-header">
+
+  <div class="daily-memes-heading">
+
+    <div class="daily-memes-kicker">
+      ASKEMAI CULTURE
+    </div>
+
     <h2>
       AskEmai <span>Daily Memes</span>
     </h2>
